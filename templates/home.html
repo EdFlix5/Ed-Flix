@@ -4,6 +4,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Ed-Flix: An E-Learning Hub</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css'>
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'>
@@ -223,19 +224,19 @@
     <header class="header-fixed">
 
       <div class="header-limiter">
-        <img src="{% static 'assets/logo_blue.svg' %}" alt="Ed-Flix" style="height:60px;" >
+        <img class="nav-logo" src="{% static 'assets/logo_blue.svg' %}" alt="Ed-Flix" >
        
       
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-light blue-grey lighten-5 mb-4">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">Home</a>
+ 
 
   <!-- Collapse button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+  <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-      class="navbar-toggler-icon"></span></button>
+      class="navbar-toggler-icon"></span></button>-->
 
   <!-- Collapsible content -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -243,7 +244,12 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Lectures <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#"><a class="navbar-brand" href="javascript:void(0)">Home</a> <span class="sr-only">(current)</span></a>
+      </li>
+     
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Lectures</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Notes</a>

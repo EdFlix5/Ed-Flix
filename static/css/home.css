@@ -579,3 +579,16 @@ body {
 .chiller-theme .sidebar-footer>a:last-child {
     border-right: none;
 }
+
+
+/* nav logo */
+
+.nav-logo {
+    height: 60px;
+}
+
+@media screen and(max-width:576px) {
+    .nav-logo {
+        height: 50px;
+    }
+}
