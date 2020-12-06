@@ -1,8 +1,8 @@
 /* LOGIN - MAIN.JS - dp 2017 */
 
-// LOGIN TABS
+//LOGIN TABS
 $(function() {
-    var tab = $('.tabs h3 a');
+    var tab = $('.tabs h3 .log-in,.tabs h3 .sign-up');
     tab.on('click', function(event) {
         event.preventDefault();
         tab.removeClass('active');
@@ -39,6 +39,7 @@ $(function() {
 // I'll optimize when time permits.
 $(function() {
     $('.agree,.forgot, #toggle-terms, .log-in, .sign-up').on('click', function(event) {
+        console.log('bg');
         event.preventDefault();
         var terms = $('.terms'),
             recovery = $('.recovery'),
@@ -75,15 +76,16 @@ $(function() {
 });
 
 // DISPLAY MSSG
-$(function() {
-    $('.recovery .button').on('click', function(event) {
-        event.preventDefault();
-        $('.recovery .mssg').addClass('animate');
-        setTimeout(function() {
-            $('.recovery').swapClass('open', 'closed');
-            $('#toggle-terms').swapClass('open', 'closed');
-            $('.tabs-content .fa').swapClass('active', 'inactive');
-            $('.recovery .mssg').removeClass('animate');
-        }, 2500);
-    });
-});
+// $(function() {
+//     $('.recovery .button').on('click', function(event) {
+//         event.preventDefault();
+//         $('.recovery .mssg').addClass('animate');
+//         setTimeout(function() {
+//             $('.recovery').swapClass('open', 'closed');
+//             $('#toggle-terms').swapClass('open', 'closed');
+//             $('.tabs-content .fa').swapClass('active', 'inactive');
+//             $('.recovery .mssg').removeClass('animate');
+//             $('.recovery-form').submit();
+//         }, 2500);
+//     });
+// });

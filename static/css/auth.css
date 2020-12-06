@@ -17,6 +17,23 @@
     overflow: hidden;
 }
 
+
+/* Other Authentications */
+
+.or_auth {
+    position: absolute;
+    margin-left: 130px;
+    margin-top: -40px;
+    color: white;
+    display: flex;
+}
+
+.or_item {
+    height: 30px;
+    width: 30px;
+    margin-left: 20px;
+}
+
 a.button:hover {
     border-color: #2D515C;
     color: #fff;
@@ -360,7 +377,7 @@ a.button:hover {
 }
 
 #toggle-terms:before {
-    speak: none;
+    speak: never;
     display: block;
     -webkit-font-smoothing: antialiased;
 }
@@ -582,7 +599,6 @@ input {
 
 .form-wrap {
     width: 100%;
-    margin: 2em auto 0;
 }
 
 .form-wrap a {
@@ -622,6 +638,10 @@ input {
 
 .form-wrap .tabs h3 a.active {
     color: #ccc;
+}
+
+.form-wrap .tabs h3 a.active:hover {
+    text-decoration: none;
 }
 
 .form-wrap .tabs h3 a.active span {
@@ -967,9 +987,6 @@ input {
     .user {
         height: 550px;
     }
-    .form-wrap {
-        margin: 5em auto 0;
-    }
     .form-wrap .tabs-content {
         padding: 1.5em 4.9em;
     }
@@ -992,4 +1009,17 @@ input {
 .element.inactive {
     opacity: 0.0;
     transform: scale(1) translate3d(0, 0, 0);
+}
+
+.or_auth a {
+    cursor: pointer;
+    border-bottom: none;
+}
+
+@media screen and (max-width:578px) {
+    .or_item {
+        margin-left: 15px;
+        height: 25px;
+        width: 25px;
+    }
 }

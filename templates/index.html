@@ -132,7 +132,7 @@ Ed-Flix : An E-Learning Hub
     </div> -->
 
     <!-- card -->
-    <div id="#branch">
+    <div class="container-fluid" id="#branch">
       <h1>Select Your Branch</h1>
         <div class="row">
 
@@ -267,13 +267,13 @@ Ed-Flix : An E-Learning Hub
      Amet facilisis magna etiam tempor orci. Ac orci phasellus egestas tellus rutrum tellus pellentesque.</p>
             </div>
             <div class="col-sm-12 col-lg-4 col-md-2"><p class="h3">Contact us</p><br>
-    <p class="contact-para">Mail: Edflix@edflix.com</p></div>
+    <p>Mail: Edflix@edflix.com</p></div>
             <div class="col-sm-12 col-lg-4 col-md-2"></div>
         </div>
         <hr style="background:white;">
         <div class="row">
             <div class="col-12">
-            Ed-Flix &copy; 
+            Ed-Flix &copy; 2020 All rights reserved. 
             </div>
         </div>
          <br>
@@ -352,8 +352,8 @@ Ed-Flix : An E-Learning Hub
                     <h2>Password Recovery</h2>
                     <p>Enter either the <strong>email address</strong> or <strong>username</strong> on the account and <strong>click Submit</strong></p>
                     <p>We'll email instructions on how to reset your password.</p>
-                    <form class="recovery-form" action="" method="post">
-                        <input type="text" class="input" id="user_recover" placeholder="Enter Email or Username Here">
+                    <form class="recovery-form" action="accounts/password_reset" method="post">
+                        <input type="text" name="email" class="input" id="user_recover" placeholder="Enter Email or Username Here">
                         <input type="submit" class="button" value="Submit">
                     </form>
                     <p class="mssg">An email has been sent to you with further instructions.</p>
@@ -402,7 +402,7 @@ Ed-Flix : An E-Learning Hub
                     	<div class="tabs-content">
                             <!-- TABS CONTENT LOGIN -->
                     		<div id="login-tab-content" class="active">
-                    			<form class="login-form" action="login" method="post">
+                    			<form class="login-form" action="api/login" method="post">
                                 {% csrf_token %}
                     				<input type="text" class="input" id="user_login" name="user_name" autocomplete="off" placeholder="Email or Username" required>
                     				<input type="password" class="input" id="login_pass" name="user_pass" autocomplete="off" placeholder="Password" required>
@@ -410,19 +410,45 @@ Ed-Flix : An E-Learning Hub
                     				<label for="remember_me">Remember me</label>
                     				<input type="submit" class="button" value="Login">
                     			</form>
+                                <div class="or_auth">
+                                or
+                                <a class="or_item" href="accounts/google/login/?process=login">
+                                    <img src="{% static 'assets/logos/google.svg' %}" style="background:white;border-radius:50%;" >
+                                </a>
+                                <a class="or_item">
+                                    <img src="{% static 'assets/logos/facebook.svg' %}">
+                                </a>
+                                <a class="or_item" href="twitter/login/?process=login">
+                                    <img src="{% static 'assets/logos/twitt.svg' %}">
+                                </a>
+
+                                </div>
                     			<div class="help-action">
                     				<p><i class="fa fa-arrow-left" aria-hidden="true"></i><a class="forgot" href="#">Forgot your password?</a></p>
                     			</div>
                     		</div>
                             <!-- TABS CONTENT SIGNUP -->
                     		<div id="signup-tab-content">
-                    			<form class="signup-form" action="signup" method="post">
+                    			<form class="signup-form" action="api/signup" method="post">
                                 {% csrf_token %}
                     				<input type="email" name="user_email" class="input" id="user_email" autocomplete="off" placeholder="Email" required>
                     				<input type="text" name="user_name" class="input" id="user_name" autocomplete="off" placeholder="Username" required>
                     				<input type="password" name="user_pass" class="input" id="user_pass" autocomplete="off" placeholder="Password" required>
                     				<input type="submit" class="button" value="Sign Up">
                     			</form>
+                                <div class="or_auth">
+                                or
+                                <a class="or_item" href="accounts/google/login/?process=login">
+                                    <img src="{% static 'assets/logos/google.svg' %}" style="background:white;border-radius:50%;" >
+                                </a>
+                                <a class="or_item">
+                                    <img src="{% static 'assets/logos/facebook.svg' %}">
+                                </a>
+                                <a class="or_item" href="twitter/login/?process=login">
+                                    <img src="{% static 'assets/logos/twitt.svg' %}">
+                                </a>
+
+                                </div>
                     			<div class="help-action">
                     				<p>By signing up, you agree to our</p>
                     				<p><i class="fa fa-arrow-left" aria-hidden="true"></i><a class="agree" href="#">Terms of service</a></p>

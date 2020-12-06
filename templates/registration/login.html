@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Login
+{% endblock title %}
+
+{% block css %}
+
+ <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+
+    <div class="auth" style="display:block;">
+
+        <div class="login">
+            <div class="wrap">
+                <!-- TOGGLE -->
+                <div id="toggle-wrap">
+                    <div id="toggle-terms">
+                        <div id="cross">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RECOVERY -->
+                <div class="recovery">
+                    <h2>Password Recovery</h2>
+                    <p>Enter either the <strong>email address</strong> or <strong>username</strong> on the account and <strong>click Submit</strong></p>
+                    <p>We'll email instructions on how to reset your password.</p>
+                    <form class="recovery-form" action="password_reset" method="post">
+                    {% csrf_token %}
+                        <input type="text" name="email" class="input" id="user_recover" placeholder="Enter Email or Username Here">
+                        <input type="submit" class="button" value="Submit">
+                    </form>
+                    <p class="mssg">An email has been sent to you with further instructions.</p>
+                </div>
+
+                <!-- SLIDER -->
+                <div class="content">
+                    <!-- LOGO -->
+                    <div class="logo">
+                        <a href="javascript:void(0)" onclick="viewModal();"><i class="fa fa-times-circle"></i></a>
+                    </div>
+                    <!-- SLIDESHOW -->
+                    <div id="slideshow">
+                        <div class="one">
+                            <h2><span>EVENTS</span></h2>
+                            <p>Sign up to attend any of hundreds of events nationwide</p>
+                        </div>
+                        <div class="two">
+                            <h2><span>LEARNING</span></h2>
+                            <p>Thousands of instant online classes/tutorials included</p>
+                        </div>
+                        <div class="three">
+                            <h2><span>GROUPS</span></h2>
+                            <p>Create your own groups and connect with others that share your interests</p>
+                        </div>
+                        <div class="four">
+                            <h2><span>SHARING</span></h2>
+                            <p>Share your works and knowledge with the community on the public showcase section</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- LOGIN FORM -->
+                <div class="user">
+                    <!-- ACTIONS
+                    <div class="actions">
+                        <a class="help" href="#signup-tab-content">Sign Up</a><a class="faq" href="#login-tab-content">Login</a>
+                    </div>
+                    -->
+                    <div class="form-wrap">
+                        <!-- TABS -->
+                    	<div class="tabs">
+                            <h3 class="login-tab"><a class="active" ><span>Login<span></a></h3>
+                    		<h3 class="signup-tab"><a href="signup"><span>Sign Up</span></a></h3>
+                    	</div>
+                        <!-- TABS CONTENT -->
+                    	<div class="tabs-content">
+                            <!-- TABS CONTENT LOGIN -->
+                    		<div id="login-tab-content" class="active">
+                                {% if error %}
+                                    <div class="alert alert-danger"><a class="close" href="#" data-dismiss="alert">×</a>
+                                                {{ error }}
+                                    </div>
+                                {% endif %}
+                    			<form class="login-form" method="post">
+                                {% csrf_token %}
+                    				<input type="text" class="input" id="user_login" name="username" autocomplete="off" placeholder="Email or Username" required>
+                    				<input type="password" class="input" id="login_pass" name="password" autocomplete="off" placeholder="Password" required>
+                    				<input type="checkbox" class="checkbox" checked id="remember_me">
+                    				<label for="remember_me">Remember me</label>
+                    				<input type="submit" class="button" value="Login">
+                    			</form>
+                                <div class="or_auth">
+                                or
+                                <a class="or_item" href="google/login/?process=login">
+                                    <img src="{% static 'assets/logos/google.svg' %}" style="background:white;border-radius:50%;" >
+                                </a>
+                                <a class="or_item">
+                                    <img src="{% static 'assets/logos/facebook.svg' %}">
+                                </a>
+                                <a class="or_item" href="twitter/login/?process=login">
+                                    <img src="{% static 'assets/logos/twitt.svg' %}">
+                                </a>
+
+                                </div>
+                    			<div class="help-action">
+                    				<p><i class="fa fa-arrow-left" aria-hidden="true"></i><a class="forgot" href="#">Forgot your password?</a></p>
+                    			</div>
+                    		</div>
+
+                    	</div>
+                	</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script src="{% static 'js/auth.js' %}"></script>
+{% endblock js %}

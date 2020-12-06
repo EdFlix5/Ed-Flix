@@ -1,17 +1,26 @@
 
+{% extends 'base.html' %}
 {% load static %}
+
+{% block title %}Ed-Flix: An E-Learning Hub
+{% endblock title %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <link rel="shortcut icon" href="Favicon_White.png" type="image/x-icon"> 
+{% endblock css %}
 <!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Ed-Flix: An E-Learning Hub</title>
+  <title></title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css'>
-  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'>
-  <link rel="stylesheet" href="{% static 'css/home.css' %}">
-<link rel="shortcut icon" href="Favicon_White.png" type="image/x-icon"> 
+  
+  
 </head>
-<body>
+
+{% block content %}
 <!-- partial:index.partial.html -->
 <div class="page-wrapper chiller-theme toggled">
   <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
@@ -20,7 +29,7 @@
   <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
       <div class="sidebar-brand">
-        <a href="#">pro sidebar</a>
+        <a href="#">ED-FLIX</a>
         <div id="close-sidebar">
           <i class="fas fa-times"></i>
         </div>
@@ -33,7 +42,11 @@
           <span class="user-name">
             <strong>{{request.user}}</strong>
           </span>
+          {% if request.user.is_superuser %}
           <span class="user-role">Administrator</span>
+          {% else %}
+           <span class="user-role">User</span>
+          {% endif %}
           <span class="user-status">
             <i class="fa fa-circle"></i>
             <span>Online</span>
@@ -214,7 +227,7 @@
         <i class="fa fa-cog"></i>
         <span class="badge-sonar"></span>
       </a>
-      <a href="/logout">
+      <a href="api/logout">
         <i class="fa fa-power-off"></i>
       </a>
     </div>
@@ -380,11 +393,16 @@
   <!-- page-content" -->
 </div>
 <!-- page-wrapper -->
+
+{% endblock content %}
+
 <!-- partial -->
+{% block js %}
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/esm/popper.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.js'></script>
 <script  src="{% static 'js/home.js' %}"></script>
+{% endblock js %}
 
 </body>
 </html>
