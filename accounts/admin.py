@@ -14,4 +14,8 @@ class UserAdmin(BaseUserAdmin):
     list_display = BaseUserAdmin.list_display + ('gender','profession','course',)
     
 
+admin.site.site_header = "Ed-Flix Administration"
+admin.site.site_title = "Ed-Flix Admin Portal"
+admin.site.index_title = "Welcome to Ed-Flix Admin Portal"
+
 admin.site.register(User,UserAdmin)
