@@ -11,6 +11,11 @@ Ed-Flix : An E-Learning Hub
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/auth.css' %}">
     <link rel="stylesheet" href="{% static 'css/home-styles.css' %}">
+    <style>
+        h5{
+            font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;;
+        }
+    </style>
 
     
 {% endblock css %}
@@ -353,7 +358,8 @@ Ed-Flix : An E-Learning Hub
                     <p>Enter either the <strong>email address</strong> or <strong>username</strong> on the account and <strong>click Submit</strong></p>
                     <p>We'll email instructions on how to reset your password.</p>
                     <form class="recovery-form" action="accounts/password_reset" method="post">
-                        <input type="text" name="email" class="input" id="user_recover" placeholder="Enter Email or Username Here">
+                        {% csrf_token %}
+                        <input type="text" name="email" class="input" id="user_recover" placeholder="Enter Email Here">
                         <input type="submit" class="button" value="Submit">
                     </form>
                     <p class="mssg">An email has been sent to you with further instructions.</p>

@@ -124,16 +124,26 @@
     label {
         font-size: 14px;
     }
-}
-
-@media (max-width: 1024px) {
     #content {
         padding: 20px 30px 30px;
     }
-}
-
-@media (max-width: 1024px) {
     #container #header {
         padding: 15px 20px;
     }
+}
+
+@media screen and (max-width:587px) {
+    #container {
+        width: 90%;
+        margin: 50px auto;
+    }
+    #container .submit-row {
+        padding: 0;
+    }
+}
+
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 5%;
 }
