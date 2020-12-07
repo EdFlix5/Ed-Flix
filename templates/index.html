@@ -33,7 +33,7 @@ Ed-Flix : An E-Learning Hub
             <form class="form-inline my-2 my-lg-0 ml-auto" method="post">
             {% csrf_token %}
                 <input class="form-control mr-sm-2 search-input" type="search" placeholder="Search">
-                <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
+                <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
                 
             </form>
 
@@ -357,7 +357,7 @@ Ed-Flix : An E-Learning Hub
                     <h2>Password Recovery</h2>
                     <p>Enter either the <strong>email address</strong> or <strong>username</strong> on the account and <strong>click Submit</strong></p>
                     <p>We'll email instructions on how to reset your password.</p>
-                    <form class="recovery-form" action="accounts/password_reset" method="post">
+                    <form class="recovery-form" action="{% url 'password_reset' %}" method="post">
                         {% csrf_token %}
                         <input type="text" name="email" class="input" id="user_recover" placeholder="Enter Email Here">
                         <input type="submit" class="button" value="Submit">
@@ -408,9 +408,9 @@ Ed-Flix : An E-Learning Hub
                     	<div class="tabs-content">
                             <!-- TABS CONTENT LOGIN -->
                     		<div id="login-tab-content" class="active">
-                    			<form class="login-form" action="api/login" method="post">
+                    			<form class="login-form" action="{% url 'api_login' %}" method="post">
                                 {% csrf_token %}
-                    				<input type="text" class="input" id="user_login" name="user_name" autocomplete="off" placeholder="Email or Username" required>
+                    				<input type="text" class="input" id="user_login" name="user_name" autocomplete="off" placeholder="Username" required>
                     				<input type="password" class="input" id="login_pass" name="user_pass" autocomplete="off" placeholder="Password" required>
                     				<input type="checkbox" class="checkbox" checked id="remember_me">
                     				<label for="remember_me">Remember me</label>
@@ -418,13 +418,13 @@ Ed-Flix : An E-Learning Hub
                     			</form>
                                 <div class="or_auth">
                                 or
-                                <a class="or_item" href="accounts/google/login/?process=login">
+                                <a class="or_item" href="{% url 'google_login' %}">
                                     <img src="{% static 'assets/logos/google.svg' %}" style="background:white;border-radius:50%;" >
                                 </a>
                                 <a class="or_item">
                                     <img src="{% static 'assets/logos/facebook.svg' %}">
                                 </a>
-                                <a class="or_item" href="twitter/login/?process=login">
+                                <a class="or_item" href="{% url 'twitter_login' %}">
                                     <img src="{% static 'assets/logos/twitt.svg' %}">
                                 </a>
 
@@ -435,22 +435,22 @@ Ed-Flix : An E-Learning Hub
                     		</div>
                             <!-- TABS CONTENT SIGNUP -->
                     		<div id="signup-tab-content">
-                    			<form class="signup-form" action="api/signup" method="post">
+                    			<form class="signup-form" action="{% url 'api_signup' %}" method="post">
                                 {% csrf_token %}
                     				<input type="email" name="user_email" class="input" id="user_email" autocomplete="off" placeholder="Email" required>
                     				<input type="text" name="user_name" class="input" id="user_name" autocomplete="off" placeholder="Username" required>
-                    				<input type="password" name="user_pass" class="input" id="user_pass" autocomplete="off" placeholder="Password" required>
+                    				<input type="password" name="user_pass" class="input" id="user_pass" autocomplete="off" placeholder="Password" minlength="8" required>
                     				<input type="submit" class="button" value="Sign Up">
                     			</form>
                                 <div class="or_auth">
                                 or
-                                <a class="or_item" href="accounts/google/login/?process=login">
+                                <a class="or_item" href="{% url 'google_login' %}">
                                     <img src="{% static 'assets/logos/google.svg' %}" style="background:white;border-radius:50%;" >
                                 </a>
                                 <a class="or_item">
                                     <img src="{% static 'assets/logos/facebook.svg' %}">
                                 </a>
-                                <a class="or_item" href="twitter/login/?process=login">
+                                <a class="or_item" href="{% url 'twitter_login' %}">
                                     <img src="{% static 'assets/logos/twitt.svg' %}">
                                 </a>
 
@@ -496,7 +496,7 @@ Ed-Flix : An E-Learning Hub
                     window.location.href = "/";
                 else {
                     console.log(data.message);
-                    var res = `<div class="alert alert-success"><a class="close" href="#" data-dismiss="alert">×</a>
+                    var res = `<div class="alert alert-danger"><a class="close" href="#" data-dismiss="alert">×</a>
                             ${data.message}
                             </div>`;
                     $('.message').html(res);
@@ -521,7 +521,7 @@ Ed-Flix : An E-Learning Hub
                     window.location.href = "/";
                 else {
                     console.log(data.message);
-                    var res = `<div class="alert alert-success"><a class="close" href="#" data-dismiss="alert">×</a>
+                    var res = `<div class="alert alert-danger"><a class="close" href="#" data-dismiss="alert">×</a>
                             ${data.message}
                             </div>`;
                     $('.message').html(res);

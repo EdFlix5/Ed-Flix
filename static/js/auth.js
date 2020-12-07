@@ -10,6 +10,13 @@ $(function() {
         tab_content = $(this).attr('href');
         $('div[id$="tab-content"]').removeClass('active');
         $(tab_content).addClass('active');
+        if (tab_content == '#login-tab-content') {
+            $('.signup-form').trigger('reset');
+        }
+        if (tab_content == '#signup-tab-content') {
+            $('.login-form').trigger('reset');
+        }
+
     });
 });
 

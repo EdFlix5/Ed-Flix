@@ -31,7 +31,7 @@
                     <h2>Password Recovery</h2>
                     <p>Enter either the <strong>email address</strong> or <strong>username</strong> on the account and <strong>click Submit</strong></p>
                     <p>We'll email instructions on how to reset your password.</p>
-                    <form class="recovery-form" action="password_reset" method="post">
+                    <form class="recovery-form" action="{% url 'password_reset' %}" method="post">
                     {% csrf_token %}
                         <input type="text" name="email" class="input" id="user_recover" placeholder="Enter Email or Username Here">
                         <input type="submit" class="button" value="Submit">
@@ -89,7 +89,8 @@
                                 {% endif %}
                     			<form class="login-form" method="post">
                                 {% csrf_token %}
-                    				<input type="text" class="input" id="user_login" name="username" autocomplete="off" placeholder="Email or Username" required>
+                                    <input type="hidden" name="next" value="{{next}}">
+                    				<input type="text" class="input" id="user_login" name="username" autocomplete="off" placeholder="Username" required>
                     				<input type="password" class="input" id="login_pass" name="password" autocomplete="off" placeholder="Password" required>
                     				<input type="checkbox" class="checkbox" checked id="remember_me">
                     				<label for="remember_me">Remember me</label>
@@ -103,7 +104,7 @@
                                 <a class="or_item">
                                     <img src="{% static 'assets/logos/facebook.svg' %}">
                                 </a>
-                                <a class="or_item" href="twitter/login/?process=login">
+                                <a class="or_item" href="{% url 'twitter_login' %}">
                                     <img src="{% static 'assets/logos/twitt.svg' %}">
                                 </a>
 

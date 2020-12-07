@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 .auth {
     position: fixed;
     top: 0;
@@ -8,7 +8,7 @@
     width: 100%;
     display: none;
     color: #666;
-    font: 16px/26px "Raleway", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     background: -moz-linear-gradient(270deg, rgba(34, 46, 64, 1) 0%, rgba(81, 195, 184, 1) 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(34, 46, 64, 1)), color-stop(100%, rgba(81, 195, 184, 1)));

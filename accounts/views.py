@@ -40,7 +40,7 @@ def user_login(request):
                 error = "Invalid username or password."
                 return render(request,'registration/login.html',{'form':form,'error':error})
         else:
-            error = "Invalid username or password."
+            error = "Invalid Credentials."
             return render(request,'registration/login.html',{'form':form,'error':error})
     else:
         if request.user.is_authenticated:

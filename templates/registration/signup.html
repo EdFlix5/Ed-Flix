@@ -117,13 +117,19 @@
                                                 {{ msg }}
                                             </div>
                                         {% endfor %}
+                                {% elif form.password.errors %}
+                                        {% for msg in form.password.errors %}
+                                            <div class="alert alert-danger"><a class="close" href="#" data-dismiss="alert">×</a>
+                                                {{ msg }}
+                                            </div>
+                                        {% endfor %}
                                 {% endif %}
                                 
                     			<form class="signup-form" method="post">
                                 {% csrf_token %}
                                  	<input type="email" name="email" class="input" id="user_email" autocomplete="off" placeholder="Email" {% if form.is_bound %}value="{{form.email.value}}"{% endif%} required>
                     				<input type="text" name="username" class="input" id="user_name" autocomplete="off" placeholder="Username"{% if form.is_bound %}value="{{form.username.value}}"{% endif%} required>
-                    				<input type="password" name="password" class="input" id="user_pass" autocomplete="off" placeholder="Password" required>
+                    				<input type="password" name="password" class="input" id="user_pass" autocomplete="off" placeholder="Password" minlength="8" required>
                     				<input type="submit" class="button" value="Sign Up">
                     			</form>
                                 <div class="or_auth">

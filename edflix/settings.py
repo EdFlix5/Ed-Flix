@@ -26,7 +26,7 @@ SECRET_KEY = 'k9j5#4qr!wmn%c_9&mxjhuzve5p-++kf0hvseqdwkccn)r)i=j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','edflix5.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','edflix5.pythonanywhere.com','yashobanta027.pythonanywhere.com']
 
 
 # Application definition
@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.twitter',
 ]
 
-SITE_ID = 1
+SITE_ID = 3
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -85,6 +85,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'edflix.wsgi.application'
 
+TIME_ZONE =  'Asia/Calcutta'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
