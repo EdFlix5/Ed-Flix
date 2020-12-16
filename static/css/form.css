@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 28em;
+    min-width: 300px;
+    margin: 100px auto;
+    height: auto;
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+}
+
+#branding {
+    float: left;
+}
+
+#branding h1 {
+    padding: 0;
+    margin: 0 20px 0 0;
+    font-weight: 300;
+    font-size: 24px;
+    color: #f5dd5d;
+}
+
+#container #header h1 a {
+    color: #fff;
+}
+
+#container>.main {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+#container>div {
+    flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+    #header {
+        flex-direction: column;
+        padding: 15px 30px;
+        justify-content: flex-start;
+    }
+}
+
+#header {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background: #417690;
+    color: #ffc;
+    overflow: hidden;
+}
+
+#content-main {
+    float: left;
+    width: 100%;
+}
+
+#container #content-main {
+    width: 100%;
+}
+
+#container #header {
+    height: auto;
+    padding: 15px 16px;
+    justify-content: center;
+}
+
+#container .form-row {
+    padding: 4px 0;
+    float: left;
+    width: 100%;
+    border-bottom: none;
+}
+
+#container .submit-row {
+    clear: both;
+    padding: 1em 0 0 9.4em;
+    margin: 0;
+    border: none;
+    background: none;
+    text-align: left;
+}
+
+#footer {
+    clear: both;
+    padding: 10px;
+}
+
+#container .form-row label {
+    padding-right: 0.5em;
+    line-height: 2em;
+    font-size: 1em;
+    clear: both;
+    color: #333;
+}
+
+#container #content {
+    padding: 20px 20px 0;
+}
+
+#content {
+    padding: 20px 40px;
+}
+
+.main>.content {
+    flex: 1 0;
+    max-width: 100%;
+}
+
+.clear {
+    clear: both;
+}
+
+@media (max-width: 1024px) {
+    label {
+        font-size: 14px;
+    }
+    #content {
+        padding: 20px 30px 30px;
+    }
+    #container #header {
+        padding: 15px 20px;
+    }
+}
+
+@media screen and (max-width:587px) {
+    #container {
+        width: 90%;
+        margin: 50px auto;
+    }
+    #container .submit-row {
+        padding: 0;
+    }
+}
+
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 5%;
+}

@@ -1,4 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="797.773" height="210" viewBox="0 0 797.773 210">
+  <defs>
+      <style>
+          @import url('../fonts/la-belle-aurore.ttf');
+          @import url('../fonts/Monotype Corsiva.ttf');
+      </style>
+  </defs>
+  
   <g id="logo_blue" transform="translate(-92.227 -93)">
     <g id="logo-icon" transform="translate(92.227 99.58)">
       <g id="layer101">

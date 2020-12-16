@@ -1,5 +1,13 @@
 {
-    "python.pythonPath": "/usr/bin/python3",
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true
+    "python.pythonPath": "D:\\InstalledApps\\python.exe",
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": true,
+    "python.linting.pycodestyleEnabled": false,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "python.linting.prospectorEnabled": true
 }
