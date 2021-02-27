@@ -11,6 +11,7 @@ Ed-Flix : An E-Learning Hub
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/auth.css' %}">
     <link rel="stylesheet" href="{% static 'css/home-styles.css' %}">
+    <script src="{% static 'js/index.js' %}" defer></script>
     <style>
         h5{
             font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;;
@@ -149,7 +150,7 @@ Ed-Flix : An E-Learning Hub
                     <div class="card-body">
                         <h4 class="card-title">Computer Science Engineering</h4>
                         <p class="card-text">Computer Science & Engineering is an academic program at many universities which comprises scientific and engineering aspects of computing.</p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <a href="" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -161,7 +162,7 @@ Ed-Flix : An E-Learning Hub
                   </div>
                     <div class="card-body">
                         <h4 class="card-title">Mechanical Engineering</h4>
-                        <p class="card-text">Mechanical engineering is an engineering branch that combines engineering physics and mathematics principles with materials science to design, analyze, manufacture, and maintain mechanical systems.</p>
+                        <p class="card-text">Mechanical engineering is an engineering branch that combines engineering physics and mathematics principles with materials science to <span id="more-ME" style="display: none;" >design, analyze, manufacture, and maintain mechanical systems. </span><span id="dots-ME" onclick="toggleCardText('more-ME', 'dots-ME')">more...</span></p>
                         <a href="subject.html" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
@@ -174,7 +175,7 @@ Ed-Flix : An E-Learning Hub
                   </div>
                     <div class="card-body">
                         <h4 class="card-title">Civil Engineering</h4>
-                        <p class="card-text">Civil engineering is a professional engineering discipline that deals with the design, construction, and maintenance of the physical and naturally built environment, including public works such as roads, bridges, canals, dams, airports, sewerage systems, pipelines, structural components of buildings, and railways.</p>
+                        <p class="card-text">Civil engineering is a professional engineering discipline that deals with the design, construction, and maintenance of the physical and naturally built environment, including public <span id="more-CIV" style="display: none;"> works such as roads, bridges, canals, dams, airports, sewerage systems, pipelines, structural components of buildings, and railways. </span><span id="dots-CIV" onclick="toggleCardText('more-CIV', 'dots-CIV')">more...</span></p>
                         <a href="subject.html" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
@@ -187,7 +188,7 @@ Ed-Flix : An E-Learning Hub
                   </div>
                     <div class="card-body">
                         <h4 class="card-title">Electrical Engineering</h4>
-                        <p class="card-text">Electrical engineering is an engineering discipline concerned with the study, design and application of equipment, devices and systems which use electricity, electronics, and electromagnetism.</p>
+                        <p class="card-text">Electrical engineering is an engineering discipline concerned with the study, design and application of equipment, devices and systems which use <span id="more-EE" style="display: none;"> electricity, electronics, and electromagnetism. </span><span id="dots-EE" onclick="toggleCardText('more-EE', 'dots-EE')">more...</span></p>
                         <a href="subject.html" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
@@ -200,7 +201,7 @@ Ed-Flix : An E-Learning Hub
                   </div>
                     <div class="card-body">
                         <h4 class="card-title">Electronics and Telecommunication Engineering</h4>
-                        <p class="card-text">Electronics and Telecommunication Engineering deals with the reception of video, microprocessors, analogue communication, digital and analogue integrated circuits, satellite communication, antennae and wave progression, solid-state devices, voice and data etc.</p>
+                        <p class="card-text">Electronics and Telecommunication Engineering deals with the reception of <span id="more-ETC" style="display: none;"> video, microprocessors, analogue communication, digital and analogue integrated circuits, satellite communication, antennae and wave progression, solid-state devices, voice and data etc. </span><span id="dots-ETC" onclick="toggleCardText('more-ETC', 'dots-ETC')">more...</span></p>
                         <a href="subject.html" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
@@ -212,7 +213,7 @@ Ed-Flix : An E-Learning Hub
                     <img src="{% static 'assets/images/sample11.jpg' %}" class="card-img-top" alt="...">
                   </div>
                     <div class="card-body">
-                        </h4 class="card-title">Chemical Engineering</h4>
+                        <h4 class="card-title">Chemical Engineering</h4>
                         <p class="card-text">Chemical engineering is a branch of engineering which deals with the study of design and operation of chemical plants as well as methods of improving production.</p>
                         <a href="subject.html" class="btn btn-primary">Explore here</a>
                     </div>
@@ -245,7 +246,7 @@ Ed-Flix : An E-Learning Hub
                 </div>
             </div>
 
-            <div class="branch-column col-lg-4 col-md-6 col-sm-12">
+            <!-- <div class="branch-column col-lg-4 col-md-6 col-sm-12">
                 <div class="card" style="width: 20rem;">
                   <div class="card-header">
                     <img src="{% static 'assets/images/sample5.jpg' %}" class="card-img-top" alt="...">
@@ -256,7 +257,7 @@ Ed-Flix : An E-Learning Hub
                         <a href="subject.html" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <h2>Thank you for visiting us</h2>
     </div>
