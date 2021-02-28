@@ -742,11 +742,6 @@ body {
   position: relative;
 }
 
-.sem-toggler {
-  position: absolute;
-  right: 10px;
-}
-
 /************************************** Subject New **************************************/
 
 .contained {
@@ -804,4 +799,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+@media (min-width: 580px) {
+  form input {
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .second-heading {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .dropdown {
+    margin-bottom: 50px;
+  }
 }

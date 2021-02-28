@@ -59,3 +59,24 @@ for (let i = 0; i < dropdownItem.length; i++) {
     dropdownToggle.innerHTML = dropdownItem[i].innerHTML;
   });
 }
+
+// Search implementation
+function searchSubjects() {
+  const input = document.querySelector(".form-control");
+  const inputValue = input.value.toLowerCase();
+  const subject = document.querySelectorAll("span"); // Array
+  const subjectDiv = document.querySelectorAll(".bg-clip"); // Array
+  console.log(subject[0]);
+  console.log(subjectDiv[0]);
+  let subjectValue;
+
+  for (let i = 0; i < subject.length; i++) {
+    subjectValue = subject[i].innerText.toLowerCase();
+
+    if (subjectValue.indexOf(inputValue) > -1) {
+      subjectDiv[i].style.display = "";
+    } else {
+      subjectDiv[i].style.setProperty("display", "none", "important");
+    }
+  }
+}
