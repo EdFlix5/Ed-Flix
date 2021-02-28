@@ -1,25 +1,3 @@
-$(document).ready(function () {
-  var showHeaderAt = 60;
-
-  var win = $(window),
-    body = $("body");
-
-  // Show the fixed header only on larger screen devices
-
-  if (win.width() > 400) {
-    // When we scroll more than 150px down, we set the
-    // "fixed" class on the body element.
-
-    win.on("scroll", function (e) {
-      if (win.scrollTop() > showHeaderAt) {
-        body.addClass("fixed");
-      } else {
-        body.removeClass("fixed");
-      }
-    });
-  }
-});
-
 function openNav() {
   document.getElementById("mySidenav").style.width = "100%";
   document.getElementById("main").style.marginLeft = "100%";
@@ -81,5 +59,3 @@ for (let i = 0; i < dropdownItem.length; i++) {
     dropdownToggle.innerHTML = dropdownItem[i].innerHTML;
   });
 }
-
-console.log(dropdownItem);

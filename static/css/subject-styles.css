@@ -784,3 +784,24 @@ body {
     transform: scale(1);
   }
 }
+
+.nav-logo {
+  height: 60px;
+}
+
+@media screen and (max-width: 576px) {
+  .nav-logo {
+    height: 50px;
+    margin-left: 0;
+  }
+}
+
+.header-fixed {
+  padding: 0;
+}
+
+.second-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
