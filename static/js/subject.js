@@ -1,25 +1,3 @@
-$(document).ready(function () {
-  var showHeaderAt = 60;
-
-  var win = $(window),
-    body = $("body");
-
-  // Show the fixed header only on larger screen devices
-
-  if (win.width() > 400) {
-    // When we scroll more than 150px down, we set the
-    // "fixed" class on the body element.
-
-    win.on("scroll", function (e) {
-      if (win.scrollTop() > showHeaderAt) {
-        body.addClass("fixed");
-      } else {
-        body.removeClass("fixed");
-      }
-    });
-  }
-});
-
 function openNav() {
   document.getElementById("mySidenav").style.width = "100%";
   document.getElementById("main").style.marginLeft = "100%";
@@ -82,4 +60,23 @@ for (let i = 0; i < dropdownItem.length; i++) {
   });
 }
 
-console.log(dropdownItem);
+// Search implementation
+function searchSubjects() {
+  const input = document.querySelector(".form-control");
+  const inputValue = input.value.toLowerCase();
+  const subject = document.querySelectorAll("span"); // Array
+  const subjectDiv = document.querySelectorAll(".bg-clip"); // Array
+  console.log(subject[0]);
+  console.log(subjectDiv[0]);
+  let subjectValue;
+
+  for (let i = 0; i < subject.length; i++) {
+    subjectValue = subject[i].innerText.toLowerCase();
+
+    if (subjectValue.indexOf(inputValue) > -1) {
+      subjectDiv[i].style.display = "";
+    } else {
+      subjectDiv[i].style.setProperty("display", "none", "important");
+    }
+  }
+}
