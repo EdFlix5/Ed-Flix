@@ -310,7 +310,13 @@
 
       <footer>
         <div class="row inner">
-          <copy class="copyright"> ©copyright 2020 Team Ed-Flix </copy>
+          <copy class="copyright">
+            ©copyright
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            Team Ed-Flix
+          </copy>
 
           <!-- <span class="meta"> -->
           <!-- <ul class="links">
