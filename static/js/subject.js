@@ -66,17 +66,28 @@ function searchSubjects() {
   const inputValue = input.value.toLowerCase();
   const subject = document.querySelectorAll("span"); // Array
   const subjectDiv = document.querySelectorAll(".bg-clip"); // Array
-  console.log(subject[0]);
-  console.log(subjectDiv[0]);
+  const subjectShortcut = document.querySelectorAll("div.bg-clip"); // Array
+  // console.log(subject[0]);
+  // console.log(subjectDiv[0]);
   let subjectValue;
+  let subjectShortcutValue;
 
   for (let i = 0; i < subject.length; i++) {
     subjectValue = subject[i].innerText.toLowerCase();
+    subjectShortcutValue = subjectShortcut[i].innerText
+      .split("\n")[0]
+      .toLowerCase();
+    // console.log(subjectShortcutValue); // [m-i, phy, be, ...]
 
-    if (subjectValue.indexOf(inputValue) > -1) {
+    if (
+      subjectValue.indexOf(inputValue) > -1 ||
+      subjectShortcutValue.indexOf(inputValue) > -1
+    ) {
       subjectDiv[i].style.display = "";
     } else {
       subjectDiv[i].style.setProperty("display", "none", "important");
     }
   }
 }
+
+// console.log(subjectShortcut[0].innerText.split("\n")[0]);
