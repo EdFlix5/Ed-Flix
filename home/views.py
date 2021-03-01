@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -6,15 +6,19 @@ from django.contrib.auth.decorators import login_required
 
 def index(request):
     if request.user.is_authenticated:
-        return render(request,'home.html')
+        return render(request, 'home.html')
     else:
-        return render(request,'index.html')
+        return render(request, 'index.html')
 
 
 def explore(request):
-    return render(request,'index_backup.html')
+    #subjects = request.GET['subject']
+    # print(subjects)
+    #dd = {"branch": "Mechanical"}
+
+    return render(request, 'subject.html')
+
 
 @login_required(login_url="login")
 def home(request):
-        return render(request,'auth.html')
-
+    return render(request, 'auth.html')

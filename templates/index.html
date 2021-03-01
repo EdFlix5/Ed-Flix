@@ -118,17 +118,17 @@ Ed-Flix : An E-Learning Hub
           <div class="col-lg-4 feature-section">
             <img src="{% static 'assets/images/feature1.png' %}">
             <h3 class="feature-heading">University and Lab Notes</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p></p>
           </div>
           <div class="col-lg-4 feature-section">
             <img src="{% static 'assets/images/feature2.png' %}">
             <h3 class="feature-heading">Exam Questions and Syllabus</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p></p>
           </div>
           <div class="col-lg-4 feature-section">
             <img src="{% static 'assets/images/feature3.png' %}">
             <h3 class="feature-heading">Lectures and Tutorials</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p></p>
           </div>
         </div>
 
@@ -157,7 +157,7 @@ Ed-Flix : An E-Learning Hub
                     <div class="card-body">
                         <h4 class="card-title">Computer Science Engineering</h4>
                         <p class="card-text">Computer Science & Engineering is an academic program at many universities which comprises scientific and engineering aspects of computing.</p>
-                        <a href="" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -248,7 +248,7 @@ Ed-Flix : An E-Learning Hub
                     <div class="card-body">
                         <h5 class="card-title">Production Engineering</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                        <a href="subject.html" class="btn btn-primary">Go somewhere</a>
+                        <a href="subject.html" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -275,12 +275,12 @@ Ed-Flix : An E-Learning Hub
   <footer>
         <div class="row">
             <div class="col-sm-12 col-lg-4 col-md-2"><p class="h3">About us</p><br>
-            <p>commodo ullamcorper a lacus vestibulum. Cursus eget nunc scelerisque viverra mauris in aliquam.
-    Dictumst quisque sagittis purus sit amet volutpat consequat. Semper risus in hendrerit gravida.
-     Amet facilisis magna etiam tempor orci. Ac orci phasellus egestas tellus rutrum tellus pellentesque.</p>
+            <p>
+           <span style="color: #0099ff">Ed-Flix</span> provides a free platform to the students, teachers and learning enthusiasts to gain and provide undefined knowledge for various puposes.
+            </p>
             </div>
             <div class="col-sm-12 col-lg-4 col-md-2"><p class="h3">Contact us</p><br>
-    <p>Mail: Edflix@edflix.com</p></div>
+    <p>  Email:<a href= mailto:edflix5@gmail.com> edflix5@gmail.com</a></p></div>
             <div class="col-sm-12 col-lg-4 col-md-2"></div>
         </div>
         <hr style="background:white;">

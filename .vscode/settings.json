@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "D:\\InstalledApps\\python.exe",
+    "python.pythonPath": "C:\\Users\\abhin\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "python.linting.pycodestyleEnabled": false,

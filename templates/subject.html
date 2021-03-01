@@ -1,331 +1,302 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Ed-Flix Subjects</title>
-    <link rel="icon" href="images/icon.png" />
+{% extends 'base.html' %} {% load static %} {% block css %}
+<link
+  href="https://fonts.googleapis.com/css?family=Raleway"
+  rel="stylesheet"
+  type="text/css"
+/>
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway"
-      rel="stylesheet"
-      type="text/css"
-    />
+<link rel="stylesheet" href="{% static 'css/subject-styles.css' %}" />
+{% endblock css %} {% block content %}
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-      crossorigin="anonymous"
-    />
+<header class="header-fixed">
+  <a class="navbar-brand" href="#"
+    ><img class="nav-logo" src="{% static 'assets/logo_blue.svg' %}"
+  /></a>
+</header>
 
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/subject-styles.css" />
-  </head>
+<!-- MAIN CONTENT HERE -->
 
-  <body>
-    <!-- partial:index.partial.html -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Choose your favourite topic to study</h1>
+    <h2>Computer Science</h2>
+  </div>
+</section>
 
-    <body>
-      <header class="header-fixed">
-        <a class="navbar-brand" href="#"
-          ><img class="nav-logo" src="images/logo_blue.svg"
-        /></a>
-      </header>
-
-      <!-- MAIN CONTENT HERE -->
-
-      <section class="hero">
-        <div class="hero-content">
-          <h1>Choose your favourite topic to study</h1>
-          <h2>Computer Science</h2>
-        </div>
-      </section>
-
-      <main style="text-align: center">
-        <div class="container">
-          <div class="jumbotron text-center">
-            <div class="searchbar">
-              <form class="form-inline" style="display: inline">
-                <input
-                  onkeyup="searchSubjects()"
-                  class="form-control"
-                  type="text"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-              </form>
-            </div>
-            <div class="second-heading">
-              <h1>Available Lectures</h1>
-              <!-- <nav> -->
-              <div class="dropdown">
-                <button
-                  class="btn btn-secondary btn-md dropdown-toggle sem-toggler"
-                  type="button"
-                  id="dropdownMenuButton"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Filter Subjects
-                </button>
-                <div
-                  class="dropdown-menu mySemContainer"
-                  aria-labelledby="dropdownMenuButton"
-                >
-                  <a
-                    class="dropdown-item item-all sem"
-                    onclick="filterSelection('all')"
-                    href="#"
-                    >All</a
-                  >
-                  <a
-                    class="dropdown-item item-prog sem"
-                    onclick="filterSelection('prog')"
-                    href="#"
-                    >Programming</a
-                  >
-                  <a
-                    class="dropdown-item item-core sem"
-                    onclick="filterSelection('core')"
-                    href="#"
-                    >Core Subjects</a
-                  >
-                  <a
-                    class="dropdown-item item-common sem"
-                    onclick="filterSelection('common')"
-                    href="#"
-                    >Common Subjects</a
-                  >
-                </div>
-              </div>
-              <!-- </nav> -->
-            </div>
-
-            <section class="contained">
-              <div class="bg-clip filterDiv common">
-                M-I
-                <span>Applied Mathematics-I</span>
-              </div>
-              <div class="bg-clip filterDiv common">
-                Phy
-                <span>Applied Physics</span>
-              </div>
-              <div class="bg-clip filterDiv common">
-                BE
-                <span>Basic Electronics</span>
-              </div>
-              <div class="bg-clip filterDiv common">
-                BCE
-                <span>Basic Civil Engg</span>
-              </div>
-              <div class="bg-clip filterDiv prog core">
-                C
-                <span>C Programming</span>
-              </div>
-              <div class="bg-clip filterDiv common">
-                English
-                <span>English Comm Skills</span>
-              </div>
-              <div class="bg-clip filterDiv common">
-                WS
-                <span>Engg Workshop</span>
-              </div>
-
-              <div class="bg-clip filterDiv common">
-                M-II
-                <span>Mathematics-II</span>
-              </div>
-              <div class="bg-clip filterDiv common">
-                Chem
-                <span>Applied Chemistry</span>
-              </div>
-              <div class="bg-clip filterDiv common">
-                BEE
-                <span>Basic Electrical Engg</span>
-              </div>
-              <div class="bg-clip filterDiv common">
-                BME
-                <span>Basic Mechanical Engg</span>
-              </div>
-              <div class="bg-clip filterDiv prog core">
-                DS
-                <span>Data Structure</span>
-              </div>
-              <div class="bg-clip filterDiv common">
-                ED
-                <span>Engg Drawing</span>
-              </div>
-
-              <div class="bg-clip filterDiv common">
-                STLD
-                <span>Digital Electronics</span>
-              </div>
-
-              <div class="bg-clip filterDiv prog core">
-                Java
-                <span>Programming using JAVA</span>
-              </div>
-              <div class="bg-clip filterDiv prog core">
-                C++
-                <span>Programming using C++</span>
-              </div>
-              <div class="bg-clip filterDiv core">
-                SP
-                <span>System Programming</span>
-              </div>
-              <div class="bg-clip filterDiv core">
-                SE
-                <span>Software Engg</span>
-              </div>
-              <div class="bg-clip filterDiv core">
-                DS
-                <span>Discrete Mathematics</span>
-              </div>
-              <div class="bg-clip filterDiv common">
-                EE
-                <span>Engg Economics</span>
-              </div>
-
-              <div class="bg-clip filterDiv common">
-                M-III
-                <span>Mathematics-III</span>
-              </div>
-              <div class="bg-clip filterDiv core">
-                COA
-                <span>Computer Architecture</span>
-              </div>
-              <div class="bg-clip filterDiv core">
-                DAA
-                <span>Algorithm</span>
-              </div>
-              <div class="bg-clip filterDiv core">
-                DBMS
-                <span>Database Managemant System</span>
-              </div>
-              <div class="bg-clip filterDiv core">
-                FLAT
-                <span>Theory Of Computation</span>
-              </div>
-              <div class="bg-clip filterDiv common">
-                OB
-                <span>Organisational Behaviour</span>
-              </div>
-
-              <div class="bg-clip filterDiv core">
-                OS
-                <span>Operating System</span>
-              </div>
-              <div class="bg-clip filterDiv core">
-                CG
-                <span>Computer Graphics</span>
-              </div>
-              <div class="bg-clip filterDiv core">
-                ACA
-                <span>Advanced Computer Architecture</span>
-              </div>
-              <div class="bg-clip filterDiv prog core">
-                Advanced Java
-                <span>Adavanced JAVA</span>
-              </div>
-              <div class="bg-clip filterDiv core">
-                CC
-                <span>Cloud Computing</span>
-              </div>
-              <div class="bg-clip filterDiv core">
-                DMDW
-                <span>Data Mining Data Warehousing</span>
-              </div>
-
-              <div class="bg-clip filterDiv core">
-                CN
-                <span>Computer Networks</span>
-              </div>
-              <div class="bg-clip filterDiv core">
-                CD
-                <span>Compiler Design</span>
-              </div>
-              <div class="bg-clip filterDiv core">
-                WSN
-                <span>Wireless Sensor Network</span>
-              </div>
-              <div class="bg-clip filterDiv core">
-                ML
-                <span>Machine Learning</span>
-              </div>
-              <div class="bg-clip filterDiv common">
-                EVS
-                <span>Environmental Science</span>
-              </div>
-
-              <div class="bg-clip filterDiv core">
-                CNS
-                <span>Cryptography and Network Security</span>
-              </div>
-              <div class="bg-clip filterDiv core">
-                SC
-                <span>Soft Computing</span>
-              </div>
-              <div class="bg-clip filterDiv core">
-                IoT
-                <span>Internet of Things</span>
-              </div>
-              <div class="bg-clip filterDiv common">
-                EC & ERP
-                <span>E-Commerce</span>
-              </div>
-              <div class="bg-clip filterDiv common">
-                GT
-                <span>Green Technology</span>
-              </div>
-
-              <div class="bg-clip filterDiv common">
-                ET
-                <span>Entrepreneurship Training</span>
-              </div>
-            </section>
+<main style="text-align: center">
+  <div class="container">
+    <div class="jumbotron text-center">
+      <div class="searchbar">
+        <form class="form-inline" style="display: inline">
+          <input
+            onkeyup="searchSubjects()"
+            class="form-control"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </form>
+      </div>
+      <div class="second-heading" style="padding: 20px 0 40px">
+        <h1 style="color: #000">Available Lectures</h1>
+        <!-- <nav> -->
+        <div class="dropdown">
+          <button
+            style="font-size: 14px"
+            class="btn btn-secondary btn-md dropdown-toggle sem-toggler"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Filter Subjects
+          </button>
+          <div
+            class="dropdown-menu mySemContainer"
+            aria-labelledby="dropdownMenuButton"
+          >
+            <a
+              class="dropdown-item item-all sem"
+              onclick="filterSelection('all')"
+              href="#"
+              >All</a
+            >
+            <a
+              class="dropdown-item item-prog sem"
+              onclick="filterSelection('prog')"
+              href="#"
+              >Programming</a
+            >
+            <a
+              class="dropdown-item item-core sem"
+              onclick="filterSelection('core')"
+              href="#"
+              >Core Subjects</a
+            >
+            <a
+              class="dropdown-item item-common sem"
+              onclick="filterSelection('common')"
+              href="#"
+              >Common Subjects</a
+            >
           </div>
         </div>
-      </main>
-
-      <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="/">Home</a>
-        <a href="/lectures">Lectures</a>
-        <a href="/notes">Notes</a>
-        <a href="/contact">Contact</a>
+        <!-- </nav> -->
       </div>
 
-      <footer>
-        <div class="row inner">
-          <copy class="copyright">
-            ©copyright
-            <script>
-              document.write(new Date().getFullYear());
-            </script>
-            Team Ed-Flix
-          </copy>
+      <section class="contained">
+        <div class="bg-clip filterDiv common">
+          M-I
+          <span>Applied Mathematics-I</span>
+        </div>
+        <div class="bg-clip filterDiv common">
+          Phy
+          <span>Applied Physics</span>
+        </div>
+        <div class="bg-clip filterDiv common">
+          BE
+          <span>Basic Electronics</span>
+        </div>
+        <div class="bg-clip filterDiv common">
+          BCE
+          <span>Basic Civil Engg</span>
+        </div>
+        <div class="bg-clip filterDiv prog core">
+          C
+          <span>C Programming</span>
+        </div>
+        <div class="bg-clip filterDiv common">
+          English
+          <span>English Comm Skills</span>
+        </div>
+        <div class="bg-clip filterDiv common">
+          WS
+          <span>Engg Workshop</span>
+        </div>
 
-          <!-- <span class="meta"> -->
-          <!-- <ul class="links">
+        <div class="bg-clip filterDiv common">
+          M-II
+          <span>Mathematics-II</span>
+        </div>
+        <div class="bg-clip filterDiv common">
+          Chem
+          <span>Applied Chemistry</span>
+        </div>
+        <div class="bg-clip filterDiv common">
+          BEE
+          <span>Basic Electrical Engg</span>
+        </div>
+        <div class="bg-clip filterDiv common">
+          BME
+          <span>Basic Mechanical Engg</span>
+        </div>
+        <div class="bg-clip filterDiv prog core">
+          DS
+          <span>Data Structure</span>
+        </div>
+        <div class="bg-clip filterDiv common">
+          ED
+          <span>Engg Drawing</span>
+        </div>
+
+        <div class="bg-clip filterDiv common">
+          STLD
+          <span>Digital Electronics</span>
+        </div>
+
+        <div class="bg-clip filterDiv prog core">
+          Java
+          <span>Programming using JAVA</span>
+        </div>
+        <div class="bg-clip filterDiv prog core">
+          C++
+          <span>Programming using C++</span>
+        </div>
+        <div class="bg-clip filterDiv core">
+          SP
+          <span>System Programming</span>
+        </div>
+        <div class="bg-clip filterDiv core">
+          SE
+          <span>Software Engg</span>
+        </div>
+        <div class="bg-clip filterDiv core">
+          DS
+          <span>Discrete Mathematics</span>
+        </div>
+        <div class="bg-clip filterDiv common">
+          EE
+          <span>Engg Economics</span>
+        </div>
+
+        <div class="bg-clip filterDiv common">
+          M-III
+          <span>Mathematics-III</span>
+        </div>
+        <div class="bg-clip filterDiv core">
+          COA
+          <span>Computer Architecture</span>
+        </div>
+        <div class="bg-clip filterDiv core">
+          DAA
+          <span>Algorithm</span>
+        </div>
+        <div class="bg-clip filterDiv core">
+          DBMS
+          <span>Database Managemant System</span>
+        </div>
+        <div class="bg-clip filterDiv core">
+          FLAT
+          <span>Theory Of Computation</span>
+        </div>
+        <div class="bg-clip filterDiv common">
+          OB
+          <span>Organisational Behaviour</span>
+        </div>
+
+        <div class="bg-clip filterDiv core">
+          OS
+          <span>Operating System</span>
+        </div>
+        <div class="bg-clip filterDiv core">
+          CG
+          <span>Computer Graphics</span>
+        </div>
+        <div class="bg-clip filterDiv core">
+          ACA
+          <span>Advanced Computer Architecture</span>
+        </div>
+        <div class="bg-clip filterDiv prog core">
+          Advanced Java
+          <span>Adavanced JAVA</span>
+        </div>
+        <div class="bg-clip filterDiv core">
+          CC
+          <span>Cloud Computing</span>
+        </div>
+        <div class="bg-clip filterDiv core">
+          DMDW
+          <span>Data Mining Data Warehousing</span>
+        </div>
+
+        <div class="bg-clip filterDiv core">
+          CN
+          <span>Computer Networks</span>
+        </div>
+        <div class="bg-clip filterDiv core">
+          CD
+          <span>Compiler Design</span>
+        </div>
+        <div class="bg-clip filterDiv core">
+          WSN
+          <span>Wireless Sensor Network</span>
+        </div>
+        <div class="bg-clip filterDiv core">
+          ML
+          <span>Machine Learning</span>
+        </div>
+        <div class="bg-clip filterDiv common">
+          EVS
+          <span>Environmental Science</span>
+        </div>
+
+        <div class="bg-clip filterDiv core">
+          CNS
+          <span>Cryptography and Network Security</span>
+        </div>
+        <div class="bg-clip filterDiv core">
+          SC
+          <span>Soft Computing</span>
+        </div>
+        <div class="bg-clip filterDiv core">
+          IoT
+          <span>Internet of Things</span>
+        </div>
+        <div class="bg-clip filterDiv common">
+          EC & ERP
+          <span>E-Commerce</span>
+        </div>
+        <div class="bg-clip filterDiv common">
+          GT
+          <span>Green Technology</span>
+        </div>
+
+        <div class="bg-clip filterDiv common">
+          ET
+          <span>Entrepreneurship Training</span>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="/">Home</a>
+  <a href="/lectures">Lectures</a>
+  <a href="/notes">Notes</a>
+  <a href="/contact">Contact</a>
+</div>
+
+<footer>
+  <div class="row inner">
+    <copy class="copyright">
+      ©copyright
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+      Team Ed-Flix
+    </copy>
+
+    <!-- <span class="meta"> -->
+    <!-- <ul class="links">
               <a href="/">Home</a>
               <a href="/lectures">Lectures</a>
               <a href="/notes">Notes</a>
               <a href="/contact">Contact</a>
             </ul> -->
-          <!-- <ul class="icons">
+    <!-- <ul class="icons">
               <li>
                 <a
                   class="fab fa-2x fa-youtube-play"
@@ -336,31 +307,19 @@
                 <a class="fab fa-2x fa-linkedin-square" href="#"></a>
               </li>
             </ul> -->
-          <!-- </span> -->
-        </div>
-      </footer>
-      <!--
+    <!-- </span> -->
+  </div>
+</footer>
+<!--
 Do not remove below content OR site will break.
 -->
-      <div class="attribution">
-        <p>
-          Website designed and developed by
-          <strong><a href="#" style="color: #ffffff">Team Ed-Flix</a></strong>
-        </p>
-      </div>
-      <!-- <span class="navside" onclick="openNav()">☰</span> -->
-    </body>
-    <!-- partial -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/subject.js"></script>
-  </body>
-</html>
+<div class="attribution">
+  <p>
+    Website designed and developed by
+    <strong><a href="#" style="color: #ffffff">Team Ed-Flix</a></strong>
+  </p>
+</div>
+<!-- <span class="navside" onclick="openNav()">☰</span> -->
+{% endblock content %} {% block js %}
+<script src="{% static 'js/subject.js' %}"></script>
+{% endblock js %}
