@@ -820,3 +820,7 @@ body {
     margin-bottom: 50px;
   }
 }
+
+.dropdown-menu .dropdown-item {
+  font-size: 14px;
+}
