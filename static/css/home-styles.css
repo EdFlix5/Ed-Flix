@@ -123,3 +123,14 @@ footer {
   color: blue;
   cursor: pointer;
 }
+
+/* .header {
+  height: 80vh !important;
+  position: relative !important;
+  background-image: linear-gradient(to bottom right, #938dc7, #332c74)
+    url("static/assets/images/hero.jpg") !important;
+  background-size: cover !important;
+  background-position: top !important;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%) !important;
+  clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%) !important;
+} */

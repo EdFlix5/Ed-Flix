@@ -61,9 +61,10 @@ for (let i = 0; i < dropdownItem.length; i++) {
 }
 
 // Search implementation
-function searchSubjects() {
+const searchSubjects = () => {
   const input = document.querySelector(".form-control");
   const inputValue = input.value.toLowerCase();
+  // console.log(inputValue.trim());
   const subject = document.querySelectorAll("span"); // Array
   const subjectDiv = document.querySelectorAll(".bg-clip"); // Array
   const subjectShortcut = document.querySelectorAll("div.bg-clip"); // Array
@@ -80,14 +81,14 @@ function searchSubjects() {
     // console.log(subjectShortcutValue); // [m-i, phy, be, ...]
 
     if (
-      subjectValue.indexOf(inputValue) > -1 ||
-      subjectShortcutValue.indexOf(inputValue) > -1
+      subjectValue.indexOf(inputValue.trim()) > -1 ||
+      subjectShortcutValue.indexOf(inputValue.trim()) > -1
     ) {
       subjectDiv[i].style.display = "";
     } else {
       subjectDiv[i].style.setProperty("display", "none", "important");
     }
   }
-}
+};
 
 // console.log(subjectShortcut[0].innerText.split("\n")[0]);

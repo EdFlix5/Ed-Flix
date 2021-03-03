@@ -9,5 +9,6 @@
         "**/.settings": true,
         "**/.factorypath": true
     },
-    "python.linting.prospectorEnabled": true
+    "python.linting.prospectorEnabled": true,
+    "liveServer.settings.port": 5501
 }
