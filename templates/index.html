@@ -59,7 +59,7 @@ Ed-Flix : An E-Learning Hub
         .header {
             height: 85vh;
             position: relative;
-            background-image: linear-gradient(to bottom right, rgba(147, 141, 199, .8), rgba(51, 44, 116, .8)), url("{% static 'assets/images/hero-11.jpg' %}");
+            background-image: linear-gradient(to bottom right, rgba(147, 141, 199, .8), rgba(33, 26, 97, 0.8)), url("{% static 'assets/images/hero-11.jpg' %}");
             background-size: cover;
             background-position: top;
             -webkit-clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
@@ -138,6 +138,12 @@ Ed-Flix : An E-Learning Hub
                     font-size: 10px;
                     letter-spacing: 0.3rem;
                 }
+
+                .btn2 {
+                    padding: .6rem 1.2rem !important;
+                    border-radius: 10rem !important;
+                    font-size: .8rem !important;
+                }
             }
 
             @media (max-width: 500px) {
@@ -154,6 +160,51 @@ Ed-Flix : An E-Learning Hub
                     font-size: 8px;
                     letter-spacing: 0.3rem;
                 }
+            }
+
+            .btn2, .btn2:link, .btn2:visited {
+                text-transform: uppercase;
+                text-decoration: none;
+                padding: 1rem 2rem;
+                border-radius: 10rem;
+                font-size: 1rem;
+                display: inline-block;
+                position: relative;
+                transition: all ease-in-out .5s;
+                border: none;
+                cursor: pointer;
+            }
+
+            .btn2:hover {
+                transform: translateY(-0.3rem);
+                box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+                color: #777;
+            }
+
+            .btn2:focus, .btn2:active {
+            outline: none;
+            transform: translateY(-0.1rem);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+            }
+
+            .btn--white {
+            background-color: #eee;
+            color: #777;
+            }
+
+            .btn--animated {
+                animation: moveInBottom .5s ease-in-out .75s;
+                animation-fill-mode: backwards;
+            }
+            @keyframes moveInBottom {
+                0% {
+                    opacity: 0;
+                    transform: translateY(3rem);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                } 
             }
 
     </style>
@@ -251,6 +302,7 @@ Ed-Flix : An E-Learning Hub
               <span class="heading-primary--main">ED-FLIX</span>
               <span class="heading-primary--sub">an e-learning hub</span>
             </h1>
+            <a href="#features" class="btn2 btn--white btn--animated">EXPLORE NOW</a>
           </div>
     </div>
 
