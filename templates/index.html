@@ -13,6 +13,11 @@ Ed-Flix : An E-Learning Hub
     <link rel="stylesheet" href="{% static 'css/home-styles.css' %}">
     <script src="{% static 'js/index.js' %}" defer></script>
     <style>
+
+        html{
+            scroll-behavior: smooth;
+        }
+
         body {
             padding: 0 25px;
             background-color: #f7f7f7;
@@ -353,7 +358,7 @@ Ed-Flix : An E-Learning Hub
                     <div class="card-body">
                         <h4 class="card-title">Computer Science Engineering</h4>
                         <p class="card-text">Computer Science & Engineering is an academic program at many universities which comprises scientific and engineering aspects of computing.</p>
-                        <a href="{% url 'explore' %}" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=cse" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -366,7 +371,7 @@ Ed-Flix : An E-Learning Hub
                     <div class="card-body">
                         <h4 class="card-title">Mechanical Engineering</h4>
                         <p class="card-text">Mechanical engineering is an engineering branch that combines engineering physics and mathematics principles with materials science to design, analyze, <span id="more-ME" style="display: none;" > manufacture, and maintain mechanical systems. </span><span id="dots-ME" onclick="toggleCardText('more-ME', 'dots-ME')">more...</span></p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=mechanical" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -379,7 +384,7 @@ Ed-Flix : An E-Learning Hub
                     <div class="card-body">
                         <h4 class="card-title">Civil Engineering</h4>
                         <p class="card-text">Civil engineering is a professional engineering discipline that deals with the design, construction, and maintenance of the physical and naturally built environment, including public <span id="more-CIV" style="display: none;"> works such as roads, bridges, canals, dams, airports, sewerage systems, pipelines, structural components of buildings, and railways. </span><span id="dots-CIV" onclick="toggleCardText('more-CIV', 'dots-CIV')">more...</span></p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=civil" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -392,7 +397,7 @@ Ed-Flix : An E-Learning Hub
                     <div class="card-body">
                         <h4 class="card-title">Electrical Engineering</h4>
                         <p class="card-text">Electrical engineering is an engineering discipline concerned with the study, design and application of equipment, devices and systems which use <span id="more-EE" style="display: none;"> electricity, electronics, and electromagnetism. </span><span id="dots-EE" onclick="toggleCardText('more-EE', 'dots-EE')">more...</span></p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=electrical" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -405,7 +410,7 @@ Ed-Flix : An E-Learning Hub
                     <div class="card-body">
                         <h4 class="card-title">Electronics and Telecommunication Engineering</h4>
                         <p class="card-text">Electronics and Telecommunication Engineering deals with the reception of <span id="more-ETC" style="display: none;"> video, microprocessors, analogue communication, digital and analogue integrated circuits, satellite communication, antennae and wave progression, solid-state devices, voice and data etc. </span><span id="dots-ETC" onclick="toggleCardText('more-ETC', 'dots-ETC')">more...</span></p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=etc" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -418,7 +423,7 @@ Ed-Flix : An E-Learning Hub
                     <div class="card-body">
                         <h4 class="card-title">Chemical Engineering</h4>
                         <p class="card-text">Chemical engineering is a branch of engineering which deals with the study of design and operation of chemical plants as well as methods of improving production.</p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=chemical" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -431,7 +436,9 @@ Ed-Flix : An E-Learning Hub
                     <div class="card-body">
                         <h5 class="card-title">Metallurgical Engineering</h5>
                         <p class="card-text">Metallurgy is a domain of materials science that studies the physical and chemical behavior of metallic elements, their intermetallic compounds and their mixtures called alloys.</p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+
+                        <a href="{% url 'explore' %}?sub=metallurgy" class="btn btn-primary">Explore here</a>
+
                     </div>
                 </div>
             </div>
@@ -444,7 +451,9 @@ Ed-Flix : An E-Learning Hub
                     <div class="card-body">
                         <h5 class="card-title">Production Engineering</h5>
                         <p class="card-text">Production Engineering, also known as Manufacture Engineering, deals with planning, designing, developing and managing of various processes to produce high quality products.</p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+
+                        <a href="{% url 'explore' %}?sub=production" class="btn btn-primary">Explore here</a>
+
                     </div>
                 </div>
             </div>
