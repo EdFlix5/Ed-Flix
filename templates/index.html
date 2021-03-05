@@ -13,9 +13,11 @@ Ed-Flix : An E-Learning Hub
     <link rel="stylesheet" href="{% static 'css/home-styles.css' %}">
     <script src="{% static 'js/index.js' %}" defer></script>
     <style>
+
         html{
             scroll-behavior: smooth;
         }
+
         body {
             padding: 0 25px;
             background-color: #f7f7f7;
@@ -128,9 +130,9 @@ Ed-Flix : An E-Learning Hub
             }
 
             @media (max-width: 600px) {
-                .navbar {
+                {% comment %} .navbar {
                     height: 11vh !important;
-                }
+                } {% endcomment %}
 
                 .heading-primary--main {
                     font-size: 30px;
@@ -150,9 +152,9 @@ Ed-Flix : An E-Learning Hub
             }
 
             @media (max-width: 500px) {
-                .navbar {
+                {% comment %} .navbar {
                     height: 11vh !important;
-                }
+                } {% endcomment %}
 
                 .heading-primary--main {
                     font-size: 25px;
@@ -217,8 +219,8 @@ Ed-Flix : An E-Learning Hub
 
 {% block content %}
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed" style="height: 9vh; position: relative; z-index: 10;">
-        <a class="navbar-brand" href="#"><img class="nav-logo" src = "{% static 'assets/logo_blue.svg' %}"></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed">
+        <a class="navbar-brand" href="/"><img class="nav-logo" src = "{% static 'assets/logo_blue.svg' %}"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -432,9 +434,11 @@ Ed-Flix : An E-Learning Hub
                     <img style="height: 157.8px;" src="{% static 'assets/images/sample13.jpg' %}" class="card-img-top" alt="...">
                   </div>
                     <div class="card-body">
-                        <h5 class="card-title">Metallurgical Engineering</h5>
+                        <h4 class="card-title">Metallurgical Engineering</h4>
                         <p class="card-text">Metallurgy is a domain of materials science that studies the physical and chemical behavior of metallic elements, their intermetallic compounds and their mixtures called alloys.</p>
+
                         <a href="{% url 'explore' %}?sub=metallurgy" class="btn btn-primary">Explore here</a>
+
                     </div>
                 </div>
             </div>
@@ -445,13 +449,31 @@ Ed-Flix : An E-Learning Hub
                     <img src="{% static 'assets/images/sample12.jpg' %}" class="card-img-top" alt="...">
                   </div>
                     <div class="card-body">
-                        <h5 class="card-title">Production Engineering</h5>
+                        <h4 class="card-title">Production Engineering</h4>
                         <p class="card-text">Production Engineering, also known as Manufacture Engineering, deals with planning, designing, developing and managing of various processes to produce high quality products.</p>
+
                         <a href="{% url 'explore' %}?sub=production" class="btn btn-primary">Explore here</a>
+
                     </div>
                 </div>
             </div>
 
+        
+            
+            <div class="branch-column col-lg-4 col-md-6 col-sm-12">
+                <div class="card" style="width: 20rem;">
+                  <div class="card-header">
+                    <img src="{% static 'assets/images/sample12.jpg' %}" class="card-img-top" alt="...">
+                  </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Mining Engineering</h4>
+                        <p class="card-text"> Mining engineering is associated with many other disciplines, such as mineral processing, exploration, excavation, geology, and metallurgy, geotechnical engineering and surveying.</p>
+
+                        <a href="{% url 'explore' %}?sub=mining" class="btn btn-primary">Explore here</a>
+
+                    </div>
+                </div>
+            </div>
             <!-- <div class="branch-column col-lg-4 col-md-6 col-sm-12">
                 <div class="card" style="width: 20rem;">
                   <div class="card-header">

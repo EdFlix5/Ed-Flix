@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% load static %} {% block css %}
+{% extends 'base_with_navbar.html' %} {% load static %}
+{% block css-ex %}
 <link
   href="https://fonts.googleapis.com/css?family=Raleway"
   rel="stylesheet"
@@ -6,13 +7,14 @@
 />
 
 <link rel="stylesheet" href="{% static 'css/subject-styles.css' %}" />
-{% endblock css %} {% block content %}
+{% endblock css-ex %}
+{% block content-ex %}
 
-<header class="header-fixed">
+{% comment %} <header class="header-fixed">
   <a class="navbar-brand" href="#"
     ><img class="nav-logo" src="{% static 'assets/logo_blue.svg' %}"
   /></a>
-</header>
+</header> {% endcomment %}
 
 <!-- MAIN CONTENT HERE -->
 
@@ -155,6 +157,6 @@ Do not remove below content OR site will break.
   </p>
 </div>
 <!-- <span class="navside" onclick="openNav()">☰</span> -->
-{% endblock content %} {% block js %}
+{% endblock content-ex %} {% block js %}
 <script src="{% static 'js/subject.js' %}"></script>
 {% endblock js %}
