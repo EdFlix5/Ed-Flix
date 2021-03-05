@@ -13,6 +13,14 @@ Ed-Flix : An E-Learning Hub
     <link rel="stylesheet" href="{% static 'css/home-styles.css' %}">
     <script src="{% static 'js/index.js' %}" defer></script>
     <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body {
+            padding: 0 25px;
+            background-color: #f7f7f7;
+        }
+
         h5{
             font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;;
         }
@@ -28,6 +36,180 @@ Ed-Flix : An E-Learning Hub
             box-shadow: 0 0 0 .2rem #332c74 !important;
         }
 
+        .footer-logo {
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+        }
+
+        .footer-logo:hover {
+            color: #fff !important;
+            box-shadow: 0 1.4rem 2rem rgba(0, 0, 0, .9);
+            transform: scale(1.1) rotate(4deg);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lato', sans-serif !important;
+            background-image: linear-gradient(to right, #938dc7, #2e2c2c);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 600;
+        }
+
+        h3 {
+            margin-top: 30px;
+        }
+
+        .header {
+            height: 85vh;
+            position: relative;
+            background-image: linear-gradient(to bottom right, rgba(147, 141, 199, .8), rgba(33, 26, 97, 0.8)), url("{% static 'assets/images/hero-11.jpg' %}");
+            background-size: cover;
+            background-position: top;
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%); 
+        }
+
+        .heading-primary {
+            color: #eee;
+            text-transform: uppercase;
+            backface-visibility: hidden;
+            /* Especially for the buttton */
+            margin-bottom: 6rem;
+        }
+        .heading-primary--main {
+            display: block;
+            font-size: 60px;
+            font-weight: 400;
+            letter-spacing: 2rem;
+            animation-name: moveInLeft;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            margin-bottom: 10px;
+            }
+
+        .heading-primary--sub {
+            display: block;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 1rem;
+            animation: moveInRight 1s ease-in-out;
+        }
+
+        @keyframes moveInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-10rem); }
+            80% {
+                opacity: 0.8;
+                transform: translateX(1rem); }
+            100% {
+                opacity: 1;
+                transform: translateX(0); }
+            }
+
+        @keyframes moveInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(10rem); }
+            80% {
+                opacity: 0.8;
+                transform: translateX(-1rem); }
+            100% {
+                opacity: 1;
+                transform: translateX(0); }
+            }
+
+        .header__text-box {
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            }
+
+            @media (max-width: 600px) {
+                .navbar {
+                    height: 11vh !important;
+                }
+
+                .heading-primary--main {
+                    font-size: 30px;
+                    letter-spacing: 1rem;
+                }
+
+                .heading-primary--sub {
+                    font-size: 10px;
+                    letter-spacing: 0.3rem;
+                }
+
+                .btn2 {
+                    padding: .6rem 1.2rem !important;
+                    border-radius: 10rem !important;
+                    font-size: .8rem !important;
+                }
+            }
+
+            @media (max-width: 500px) {
+                .navbar {
+                    height: 11vh !important;
+                }
+
+                .heading-primary--main {
+                    font-size: 25px;
+                    letter-spacing: .5rem;
+                }
+
+                .heading-primary--sub {
+                    font-size: 8px;
+                    letter-spacing: 0.3rem;
+                }
+            }
+
+            .btn2, .btn2:link, .btn2:visited {
+                text-transform: uppercase;
+                text-decoration: none;
+                padding: 1rem 2rem;
+                border-radius: 10rem;
+                font-size: 1rem;
+                display: inline-block;
+                position: relative;
+                transition: all ease-in-out .5s;
+                border: none;
+                cursor: pointer;
+            }
+
+            .btn2:hover {
+                transform: translateY(-0.3rem);
+                box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+                color: #777;
+            }
+
+            .btn2:focus, .btn2:active {
+            outline: none;
+            transform: translateY(-0.1rem);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+            }
+
+            .btn--white {
+            background-color: #eee;
+            color: #777;
+            }
+
+            .btn--animated {
+                animation: moveInBottom .5s ease-in-out .75s;
+                animation-fill-mode: backwards;
+            }
+            @keyframes moveInBottom {
+                0% {
+                    opacity: 0;
+                    transform: translateY(3rem);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                } 
+            }
+
     </style>
 
     
@@ -35,7 +217,7 @@ Ed-Flix : An E-Learning Hub
 
 {% block content %}
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed" style="height: 9vh; position: relative; z-index: 10;">
         <a class="navbar-brand" href="#"><img class="nav-logo" src = "{% static 'assets/logo_blue.svg' %}"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -43,6 +225,7 @@ Ed-Flix : An E-Learning Hub
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
            
+            <!-- SEARCHBAR -->
             <form class="form-inline my-2 my-lg-0 ml-auto" method="post">
             {% csrf_token %}
                 <input class="form-control mr-sm-2 search-input" type="search" placeholder="Search">
@@ -74,7 +257,7 @@ Ed-Flix : An E-Learning Hub
     </nav>
 
         <!--carousel-->
-    <div class="container-fluid my-0 px-0">
+    <!-- <div class="container-fluid my-0 px-0">
       <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
               <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -113,6 +296,17 @@ Ed-Flix : An E-Learning Hub
               <span class="sr-only">Next</span>
           </a>
       </div>
+    </div> -->
+
+    <!-- HERO -->
+    <div class="header">
+        <div class="header__text-box">
+            <h1 class="heading-primary">
+              <span class="heading-primary--main">ED-FLIX</span>
+              <span class="heading-primary--sub">an e-learning hub</span>
+            </h1>
+            <a href="#features" class="btn2 btn--white btn--animated">EXPLORE NOW</a>
+          </div>
     </div>
 
     <!-- Features -->
@@ -162,7 +356,7 @@ Ed-Flix : An E-Learning Hub
                     <div class="card-body">
                         <h4 class="card-title">Computer Science Engineering</h4>
                         <p class="card-text">Computer Science & Engineering is an academic program at many universities which comprises scientific and engineering aspects of computing.</p>
-                        <a href="{% url 'explore' %}" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=cse" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -174,8 +368,8 @@ Ed-Flix : An E-Learning Hub
                   </div>
                     <div class="card-body">
                         <h4 class="card-title">Mechanical Engineering</h4>
-                        <p class="card-text">Mechanical engineering is an engineering branch that combines engineering physics and mathematics principles with materials science to <span id="more-ME" style="display: none;" >design, analyze, manufacture, and maintain mechanical systems. </span><span id="dots-ME" onclick="toggleCardText('more-ME', 'dots-ME')">more...</span></p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <p class="card-text">Mechanical engineering is an engineering branch that combines engineering physics and mathematics principles with materials science to design, analyze, <span id="more-ME" style="display: none;" > manufacture, and maintain mechanical systems. </span><span id="dots-ME" onclick="toggleCardText('more-ME', 'dots-ME')">more...</span></p>
+                        <a href="{% url 'explore' %}?sub=mechanical" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -188,7 +382,7 @@ Ed-Flix : An E-Learning Hub
                     <div class="card-body">
                         <h4 class="card-title">Civil Engineering</h4>
                         <p class="card-text">Civil engineering is a professional engineering discipline that deals with the design, construction, and maintenance of the physical and naturally built environment, including public <span id="more-CIV" style="display: none;"> works such as roads, bridges, canals, dams, airports, sewerage systems, pipelines, structural components of buildings, and railways. </span><span id="dots-CIV" onclick="toggleCardText('more-CIV', 'dots-CIV')">more...</span></p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=civil" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -201,7 +395,7 @@ Ed-Flix : An E-Learning Hub
                     <div class="card-body">
                         <h4 class="card-title">Electrical Engineering</h4>
                         <p class="card-text">Electrical engineering is an engineering discipline concerned with the study, design and application of equipment, devices and systems which use <span id="more-EE" style="display: none;"> electricity, electronics, and electromagnetism. </span><span id="dots-EE" onclick="toggleCardText('more-EE', 'dots-EE')">more...</span></p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=electrical" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -214,7 +408,7 @@ Ed-Flix : An E-Learning Hub
                     <div class="card-body">
                         <h4 class="card-title">Electronics and Telecommunication Engineering</h4>
                         <p class="card-text">Electronics and Telecommunication Engineering deals with the reception of <span id="more-ETC" style="display: none;"> video, microprocessors, analogue communication, digital and analogue integrated circuits, satellite communication, antennae and wave progression, solid-state devices, voice and data etc. </span><span id="dots-ETC" onclick="toggleCardText('more-ETC', 'dots-ETC')">more...</span></p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=etc" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -227,7 +421,7 @@ Ed-Flix : An E-Learning Hub
                     <div class="card-body">
                         <h4 class="card-title">Chemical Engineering</h4>
                         <p class="card-text">Chemical engineering is a branch of engineering which deals with the study of design and operation of chemical plants as well as methods of improving production.</p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=chemical" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -235,12 +429,12 @@ Ed-Flix : An E-Learning Hub
             <div class="branch-column col-lg-4 col-md-6 col-sm-12">
                 <div class="card" style="width: 20rem;">
                   <div class="card-header">
-                    <img src="{% static 'assets/images/sample5.jpg' %}" class="card-img-top" alt="...">
+                    <img style="height: 157.8px;" src="{% static 'assets/images/sample13.jpg' %}" class="card-img-top" alt="...">
                   </div>
                     <div class="card-body">
                         <h5 class="card-title">Metallurgical Engineering</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <p class="card-text">Metallurgy is a domain of materials science that studies the physical and chemical behavior of metallic elements, their intermetallic compounds and their mixtures called alloys.</p>
+                        <a href="{% url 'explore' %}?sub=metallurgy" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -248,12 +442,12 @@ Ed-Flix : An E-Learning Hub
             <div class="branch-column col-lg-4 col-md-6 col-sm-12">
                 <div class="card" style="width: 20rem;">
                   <div class="card-header">
-                    <img src="{% static 'assets/images/sample5.jpg' %}" class="card-img-top" alt="...">
+                    <img src="{% static 'assets/images/sample12.jpg' %}" class="card-img-top" alt="...">
                   </div>
                     <div class="card-body">
                         <h5 class="card-title">Production Engineering</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <p class="card-text">Production Engineering, also known as Manufacture Engineering, deals with planning, designing, developing and managing of various processes to produce high quality products.</p>
+                        <a href="{% url 'explore' %}?sub=production" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
@@ -271,7 +465,7 @@ Ed-Flix : An E-Learning Hub
                 </div>
             </div> -->
         </div>
-        <h2>Thank you for visiting us</h2>
+        <h2 style="padding: 20px;">Thank you for visiting us</h2>
     </div>
 
 
@@ -281,7 +475,7 @@ Ed-Flix : An E-Learning Hub
         <div class="row">
             <div class="col-sm-12 col-lg-4 col-md-2"><p class="h3">About us</p><br>
             <p>
-           <span style="color: #0099ff">Ed-Flix</span> provides a free platform to the students, teachers and learning enthusiasts to gain and provide undefined knowledge for various puposes.
+           <span class="footer-logo" style="color: #0099ff">Ed-Flix</span> provides a free platform to the students, teachers and learning enthusiasts to gain and provide undefined knowledge for various puposes.
             </p>
             </div>
             <div class="col-sm-12 col-lg-4 col-md-2"><p class="h3">Contact us</p><br>
