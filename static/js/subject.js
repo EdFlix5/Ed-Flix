@@ -68,16 +68,17 @@ $(".search-form").on("submit", function(e) { //prevent from enter key hit
 
 // Search implementation
 const searchSubjects = () => {
-    const input = document.querySelector(".form-control");
-    const inputValue = input.value.toLowerCase();
-    // console.log(inputValue.trim());
-    const subject = document.querySelectorAll("span"); // Array
-    const subjectDiv = document.querySelectorAll(".bg-clip"); // Array
-    const subjectShortcut = document.querySelectorAll("div.bg-clip"); // Array
-    // console.log(subject[0]);
-    // console.log(subjectDiv[0]);
-    let subjectValue;
-    let subjectShortcutValue;
+
+  const input = document.querySelector(".form-control");
+  const inputValue = input.value.toLowerCase();
+  // console.log(inputValue.trim());
+  const subject = document.querySelectorAll("span"); // Array
+  const subjectDiv = document.querySelectorAll(".bg-clip"); // Array
+  const subjectShortcut = document.querySelectorAll("div.bg-clip"); // Array
+  // console.log(subject[0]);
+  // console.log(subjectDiv[0]);
+  let subjectValue;
+  let subjectShortcutValue;
 
     for (let i = 0; i < subject.length; i++) {
         subjectValue = subject[i].innerText.toLowerCase();
@@ -86,15 +87,16 @@ const searchSubjects = () => {
             .toLowerCase();
         // console.log(subjectShortcutValue); // [m-i, phy, be, ...]
 
-        if (
-            subjectValue.indexOf(inputValue.trim()) > -1 ||
-            subjectShortcutValue.indexOf(inputValue.trim()) > -1
-        ) {
-            subjectDiv[i].style.display = "";
-        } else {
-            subjectDiv[i].style.setProperty("display", "none", "important");
-        }
+
+    if (
+      subjectValue.indexOf(inputValue.trim()) > -1 ||
+      subjectShortcutValue.indexOf(inputValue.trim()) > -1
+    ) {
+      subjectDiv[i].style.display = "";
+    } else {
+      subjectDiv[i].style.setProperty("display", "none", "important");
     }
+  }
 };
 
 // console.log(subjectShortcut[0].innerText.split("\n")[0]);
