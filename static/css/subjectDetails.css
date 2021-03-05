@@ -1,163 +1,163 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
 }
 
 .nav-logo {
-  height: 60px;
-  /* margin: -10px; */
+    height: 60px;
+    /* margin: -10px; */
 }
 
 h4 {
-  font-weight: 400;
+    font-weight: 400;
 }
 
 @media screen and (max-width: 576px) {
-  .nav-logo {
-    height: 50px;
-    margin-left: 0;
-  }
+    .nav-logo {
+        height: 50px;
+        margin-left: 0;
+    }
 }
 
 li {
-  list-style: none;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+    list-style: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
-li a {
-  display: inline-block;
-  margin: 0 40px;
-  padding: 20px 0;
-  text-decoration: none;
-  color: #fff;
-  transition: all 0.3s ease-in-out;
+a li {
+    display: inline-block;
+    margin: 0 40px;
+    padding: 20px 10px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
 }
 
 li:hover {
-  background-color: #1f1a4d;
+    background-color: #1f1a4d;
 }
 
-li a:hover {
-  transform: scale(1.1) rotate(2.5deg);
+a li:hover {
+    transform: scale(1.1) rotate(2.5deg);
 }
 
 .active {
-  background-color: #1f1a4d;
+    background-color: #1f1a4d;
 }
 
 ul {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  background-color: #4c458b;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #4c458b;
 }
 
 .notes {
-  text-align: center;
-  color: #1f1a4d;
-  text-decoration: underline;
+    text-align: center;
+    color: #1f1a4d;
+    text-decoration: underline;
 }
 
 .btn {
-  background-color: #4c458b;
-  border-color: #4c458b;
-  transition: all 0.5s ease-in-out;
-  padding: 10px 20px;
-  /* border-radius: 5px; */
-  color: #fff;
-  border: none;
+    background-color: #4c458b;
+    border-color: #4c458b;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    /* border-radius: 5px; */
+    color: #fff;
+    border: none;
 }
 
 .btn:hover,
 .btn:focus,
 .btn:active {
-  background-color: #1f1a4d;
-  cursor: pointer;
+    background-color: #1f1a4d;
+    cursor: pointer;
 }
 
 .homes {
-  display: flex;
-  margin: 50px 30px;
-  justify-content: space-around;
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
+    display: flex;
+    margin: 50px 30px;
+    justify-content: space-around;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (max-width: 900px) {
-  .homes {
-    display: flex;
-    flex-direction: column;
-    /* grid-gap: 250px; */
-    justify-content: space-around;
-  }
+    .homes {
+        display: flex;
+        flex-direction: column;
+        /* grid-gap: 250px; */
+        justify-content: space-around;
+    }
 }
 
 @media (max-width: 600px) {
-  .homes {
-    grid-template-columns: 1fr;
-    /* grid-gap: 250px; */
-  }
+    .homes {
+        grid-template-columns: 1fr;
+        /* grid-gap: 250px; */
+    }
 }
 
 .homes .home {
-  background-color: #f9f7f6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 10px;
-  flex: 0.2;
-  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease-in-out;
+    background-color: #f9f7f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    flex: 0.2;
+    box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
 }
 
 .home:hover {
-  transform: translateY(-8px);
+    transform: translateY(-8px);
 }
 
 .home__name {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  flex: 0.3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 0.3;
 }
 
 .home img {
-  height: 200px;
-  width: 100%;
-  object-fit: contain;
-  display: inline;
-  flex: 0.5;
+    height: 200px;
+    width: 100%;
+    object-fit: contain;
+    display: inline;
+    flex: 0.5;
 }
 
 button {
-  width: 100%;
-  flex: 0.2;
+    width: 100%;
+    flex: 0.2;
 }
 
 .sub-link {
-  color: #fff;
-  width: 100%;
-  text-decoration: none;
+    color: #fff;
+    width: 100%;
+    text-decoration: none;
 }
 
 hr {
-  border-style: dotted;
-  border-width: 5px 0 0 0;
-  color: #777;
-  width: 5%;
-  margin-bottom: 80px;
+    border-style: dotted;
+    border-width: 5px 0 0 0;
+    color: #777;
+    width: 5%;
+    margin-bottom: 80px;
 }
 
 @media (max-width: 600px) {
-  .home {
-    margin-bottom: 50px;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    .home {
+        margin-bottom: 50px;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

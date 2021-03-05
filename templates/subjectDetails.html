@@ -1,27 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+ <link
       href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/subjectDetails.css" />
-    <script src="js/subjectDetails.js" defer></script>
-    <title>Subject-Details</title>
-  </head>
-  <body>
+    <link rel="stylesheet" href="{% static 'css/subjectDetails.css' %}" />
+    <style>
+     html{
+            scroll-behavior: smooth;
+        }
+    </style>
+{% endblock css %}
+
+{% block content %}
+
     <header class="header-fixed">
       <a class="navbar-brand" href="#"
-        ><img class="nav-logo" src="images/logo_blue.svg"
+        ><img class="nav-logo" src="{% static 'assets/logo_blue.svg' %}"
       /></a>
     </header>
     <nav class="navbar">
       <ul class="navbar-list">
-        <li class="navbar-item"><a href="#">NOTES</a></li>
-        <li class="navbar-item"><a href="#pyq-section">PYQ</a></li>
-        <li class="navbar-item"><a href="#gate-section">GATE PYQ</a></li>
+        <a href="#"><li class="navbar-item">NOTES</li></a>
+        <a href="#pyq-section"><li class="navbar-item">PYQ</li></a>
+        <a href="#gate-section"><li class="navbar-item">GATE PYQ</li></a>
       </ul>
     </nav>
 
@@ -30,33 +34,33 @@
     <section id="notes-section">
       <div class="homes">
         <div class="home">
-          <img src="images/sample-sub.png" alt="sample1" class="home__img" />
+          <img src="{% static 'assets/images/sample-sub.png' %}" alt="sample1" class="home__img" />
           <div class="home__name">
             <h2>Advanced Java</h2>
             <h4>Author: R.D Das</h4>
           </div>
 
-          <a class="sub-link" href="images/Java Module-2.pdf" target="_blank"
+          <a class="sub-link" href="{% static 'assets/images/Java Module-2.pdf' %}" target="_blank"
             ><button class="btn">READ NOW</button></a
           >
         </div>
         <div class="home">
-          <img src="images/sample-sub.png" alt="sample1" class="home__img" />
+          <img src="{% static 'assets/images/sample-sub.png' %}" alt="sample1" class="home__img" />
           <div class="home__name">
             <h2>Advanced Java</h2>
             <h4>Author: R.D Das</h4>
           </div>
-          <a class="sub-link" href="images/Java Module-2.pdf" target="_blank"
+          <a class="sub-link" href="{% static 'assets/images/Java Module-2.pdf' %}" target="_blank"
             ><button class="btn">READ NOW</button></a
           >
         </div>
         <div class="home">
-          <img src="images/sample-sub.png" alt="sample1" class="home__img" />
+          <img src="{% static 'assets/images/sample-sub.png' %}" alt="sample1" class="home__img" />
           <div class="home__name">
             <h2>Advanced Java</h2>
             <h4>Author: R.D Das</h4>
           </div>
-          <a class="sub-link" href="images/Java Module-2.pdf" target="_blank"
+          <a class="sub-link" href="{% static 'assets/images/Java Module-2.pdf' %}" target="_blank"
             ><button class="btn">READ NOW</button></a
           >
         </div>
@@ -68,32 +72,32 @@
     <section id="pyq-section">
       <div class="homes">
         <div class="home">
-          <img src="images/sample-sub.png" alt="sample1" class="home__img" />
+          <img src="{% static 'assets/images/sample-sub.png' %}" alt="sample1" class="home__img" />
           <div class="home__name">
             <h2>Advanced Java</h2>
             <h4>Author: R.D Das</h4>
           </div>
-          <a class="sub-link" href="images/Java Module-2.pdf" target="_blank"
+          <a class="sub-link" href="{% static 'assets/images/Java Module-2.pdf' %}" target="_blank"
             ><button class="btn">READ NOW</button></a
           >
         </div>
         <div class="home">
-          <img src="images/sample-sub.png" alt="sample1" class="home__img" />
+          <img src="{% static 'assets/images/sample-sub.png' %}" alt="sample1" class="home__img" />
           <div class="home__name">
             <h2>Advanced Java</h2>
             <h4>Author: R.D Das</h4>
           </div>
-          <a class="sub-link" href="images/Java Module-2.pdf" target="_blank"
+          <a class="sub-link" href="{% static 'assets/images/Java Module-2.pdf' %}" target="_blank"
             ><button class="btn">READ NOW</button></a
           >
         </div>
         <div class="home">
-          <img src="images/sample-sub.png" alt="sample1" class="home__img" />
+          <img src="{% static 'assets/images/sample-sub.png' %}" alt="sample1" class="home__img" />
           <div class="home__name">
             <h2>Advanced Java</h2>
             <h4>Author: R.D Das</h4>
           </div>
-          <a class="sub-link" href="images/Java Module-2.pdf" target="_blank"
+          <a class="sub-link" href="{% static 'assets/images/Java Module-2.pdf' %}" target="_blank"
             ><button class="btn">READ NOW</button></a
           >
         </div>
@@ -105,37 +109,43 @@
     <section id="gate-section">
       <div class="homes">
         <div class="home">
-          <img src="images/sample-sub.png" alt="sample1" class="home__img" />
+          <img src="{% static 'assets/images/sample-sub.png' %}" alt="sample1" class="home__img" />
           <div class="home__name">
             <h2>Advanced Java</h2>
             <h4>Author: R.D Das</h4>
           </div>
-          <a class="sub-link" href="images/Java Module-2.pdf" target="_blank"
+          <a class="sub-link" href="{% static 'assets/images/Java Module-2.pdf' %}" target="_blank"
             ><button class="btn">READ NOW</button></a
           >
         </div>
         <div class="home">
-          <img src="images/sample-sub.png" alt="sample1" class="home__img" />
+          <img src="{% static 'assets/images/sample-sub.png' %}" alt="sample1" class="home__img" />
           <div class="home__name">
             <h2>Advanced Java</h2>
             <h4>Author: R.D Das</h4>
           </div>
-          <a class="sub-link" href="images/Java Module-2.pdf" target="_blank"
+          <a class="sub-link" href="{% static 'assets/images/Java Module-2.pdf' %}" target="_blank"
             ><button class="btn">READ NOW</button></a
           >
         </div>
         <div class="home">
-          <img src="images/sample-sub.png" alt="sample1" class="home__img" />
+          <img src="{% static 'assets/images/sample-sub.png' %}" alt="sample1" class="home__img" />
           <div class="home__name">
             <h2>Advanced Java</h2>
             <h4>Author: R.D Das</h4>
           </div>
-          <a class="sub-link" href="images/Java Module-2.pdf" target="_blank"
+          <a class="sub-link" href="{% static 'assets/images/Java Module-2.pdf' %}" target="_blank"
             ><button class="btn">READ NOW</button></a
           >
         </div>
       </div>
     </section>
     <hr />
-  </body>
-</html>
+ 
+{% endblock content %}
+
+{% block js %}
+     <script src="{% static 'js/subjectDetails.js' %}" defer></script>
+{% endblock js %}
+    
+

@@ -11,7 +11,8 @@ SubjectMapping = {
     "etc":"Electronics and Telecommunication Engineering",
     "metallurgy":"Metallurgical Engineering",
     "chemical":"Chemical Engineering",
-    "production":"Production Engineering"
+    "production":"Production Engineering",
+    "mining" : "Mining engineering",
 }
 
 SubjectArchive = {
@@ -745,10 +746,12 @@ SubjectArchive = {
         {"code":"ALIIP","name":" Advance Lab-II/ Project ","type":"core"},
         {"code":"IoT","name":" Internet of Things","type":"core"}
     ],
-    "metallurgy":[],
-    "production":[]
+    "metallurgy":[{"code":"404","name":"Coming Soon","type":"core"}],
+    "production":[{"code":"404","name":"Coming Soon","type":"core"}]
 
 }
+
+
 
 
 
@@ -769,6 +772,11 @@ def explore(request):
         subject_name = SubjectMapping.get(subject_code)
 
     return render(request, 'subject.html',{"subjects" : subjects,"name":subject_name})
+
+
+
+def sub_details(request):
+    return render(request,"subjectDetails.html")
 
 
 @login_required(login_url="login")
