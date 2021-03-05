@@ -753,6 +753,8 @@ SubjectArchive = {
 
 
 
+
+
 def index(request):
     if request.user.is_authenticated:
         return render(request, 'home.html')
@@ -769,6 +771,11 @@ def explore(request):
         subject_name = SubjectMapping.get(subject_code)
 
     return render(request, 'subject.html',{"subjects" : subjects,"name":subject_name})
+
+
+
+def sub_details(request):
+    return render(request,"subjectDetails.html")
 
 
 @login_required(login_url="login")
