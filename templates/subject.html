@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% load static %} {% block css %}
+{% extends 'base_with_navbar.html' %} {% load static %}
+{% block css-ex %}
 <link
   href="https://fonts.googleapis.com/css?family=Raleway"
   rel="stylesheet"
@@ -6,20 +7,21 @@
 />
 
 <link rel="stylesheet" href="{% static 'css/subject-styles.css' %}" />
-{% endblock css %} {% block content %}
+{% endblock css-ex %}
+{% block content-ex %}
 
-<header class="header-fixed">
+{% comment %} <header class="header-fixed">
   <a class="navbar-brand" href="#"
     ><img class="nav-logo" src="{% static 'assets/logo_blue.svg' %}"
   /></a>
-</header>
+</header> {% endcomment %}
 
 <!-- MAIN CONTENT HERE -->
 
 <section class="hero">
   <div class="hero-content">
     <h1>Choose your favourite topic to study</h1>
-    <h2>Computer Science</h2>
+    <h2>{{name}}</h2>
   </div>
 </section>
 
@@ -27,10 +29,10 @@
   <div class="container">
     <div class="jumbotron text-center">
       <div class="searchbar">
-        <form class="form-inline" style="display: inline">
+        <form class="search-form form-inline" style="display: inline">
           <input
             onkeyup="searchSubjects()"
-            class="form-control"
+            class="form-control search"
             type="text"
             placeholder="Search your subject"
             aria-label="Search"
@@ -86,186 +88,20 @@
       </div>
 
       <section class="contained">
-        <div class="bg-clip filterDiv common">
+        {% comment %} <div class="bg-clip filterDiv common">
           M-I
           <span>Applied Mathematics-I</span>
-        </div>
-        <div class="bg-clip filterDiv common">
-          Phy
-          <span>Applied Physics</span>
-        </div>
-        <div class="bg-clip filterDiv common">
-          BE
-          <span>Basic Electronics</span>
-        </div>
-        <div class="bg-clip filterDiv common">
-          BCE
-          <span>Basic Civil Engg</span>
-        </div>
-        <div class="bg-clip filterDiv prog core">
-          C
-          <span>C Programming</span>
-        </div>
-        <div class="bg-clip filterDiv common">
-          English
-          <span>English Comm Skills</span>
-        </div>
-        <div class="bg-clip filterDiv common">
-          WS
-          <span>Engg Workshop</span>
-        </div>
+        </div> {% endcomment %}
+        {% for subject in subjects %}
 
-        <div class="bg-clip filterDiv common">
-          M-II
-          <span>Mathematics-II</span>
-        </div>
-        <div class="bg-clip filterDiv common">
-          Chem
-          <span>Applied Chemistry</span>
-        </div>
-        <div class="bg-clip filterDiv common">
-          BEE
-          <span>Basic Electrical Engg</span>
-        </div>
-        <div class="bg-clip filterDiv common">
-          BME
-          <span>Basic Mechanical Engg</span>
-        </div>
-        <div class="bg-clip filterDiv prog core">
-          DS
-          <span>Data Structure</span>
-        </div>
-        <div class="bg-clip filterDiv common">
-          ED
-          <span>Engg Drawing</span>
-        </div>
+          <div class="bg-clip filterDiv {{ subject.type }}">
+            {{ subject.code }}
+            <span>{{ subject.name }}</span>
+          </div>
 
-        <div class="bg-clip filterDiv common">
-          STLD
-          <span>Digital Electronics</span>
-        </div>
 
-        <div class="bg-clip filterDiv prog core">
-          Java
-          <span>Programming using JAVA</span>
-        </div>
-        <div class="bg-clip filterDiv prog core">
-          C++
-          <span>Programming using C++</span>
-        </div>
-        <div class="bg-clip filterDiv core">
-          SP
-          <span>System Programming</span>
-        </div>
-        <div class="bg-clip filterDiv core">
-          SE
-          <span>Software Engg</span>
-        </div>
-        <div class="bg-clip filterDiv core">
-          DS
-          <span>Discrete Mathematics</span>
-        </div>
-        <div class="bg-clip filterDiv common">
-          EE
-          <span>Engg Economics</span>
-        </div>
-
-        <div class="bg-clip filterDiv common">
-          M-III
-          <span>Mathematics-III</span>
-        </div>
-        <div class="bg-clip filterDiv core">
-          COA
-          <span>Computer Architecture</span>
-        </div>
-        <div class="bg-clip filterDiv core">
-          DAA
-          <span>Algorithm</span>
-        </div>
-        <div class="bg-clip filterDiv core">
-          DBMS
-          <span>Database Managemant System</span>
-        </div>
-        <div class="bg-clip filterDiv core">
-          FLAT
-          <span>Theory Of Computation</span>
-        </div>
-        <div class="bg-clip filterDiv common">
-          OB
-          <span>Organisational Behaviour</span>
-        </div>
-
-        <div class="bg-clip filterDiv core">
-          OS
-          <span>Operating System</span>
-        </div>
-        <div class="bg-clip filterDiv core">
-          CG
-          <span>Computer Graphics</span>
-        </div>
-        <div class="bg-clip filterDiv core">
-          ACA
-          <span>Advanced Computer Architecture</span>
-        </div>
-        <div class="bg-clip filterDiv prog core">
-          Advanced Java
-          <span>Adavanced JAVA</span>
-        </div>
-        <div class="bg-clip filterDiv core">
-          CC
-          <span>Cloud Computing</span>
-        </div>
-        <div class="bg-clip filterDiv core">
-          DMDW
-          <span>Data Mining Data Warehousing</span>
-        </div>
-
-        <div class="bg-clip filterDiv core">
-          CN
-          <span>Computer Networks</span>
-        </div>
-        <div class="bg-clip filterDiv core">
-          CD
-          <span>Compiler Design</span>
-        </div>
-        <div class="bg-clip filterDiv core">
-          WSN
-          <span>Wireless Sensor Network</span>
-        </div>
-        <div class="bg-clip filterDiv core">
-          ML
-          <span>Machine Learning</span>
-        </div>
-        <div class="bg-clip filterDiv common">
-          EVS
-          <span>Environmental Science</span>
-        </div>
-
-        <div class="bg-clip filterDiv core">
-          CNS
-          <span>Cryptography and Network Security</span>
-        </div>
-        <div class="bg-clip filterDiv core">
-          SC
-          <span>Soft Computing</span>
-        </div>
-        <div class="bg-clip filterDiv core">
-          IoT
-          <span>Internet of Things</span>
-        </div>
-        <div class="bg-clip filterDiv common">
-          EC & ERP
-          <span>E-Commerce</span>
-        </div>
-        <div class="bg-clip filterDiv common">
-          GT
-          <span>Green Technology</span>
-        </div>
-
-        <div class="bg-clip filterDiv common">
-          ET
-          <span>Entrepreneurship Training</span>
-        </div>
+        {% endfor %}
+        
       </section>
     </div>
   </div>
@@ -281,7 +117,7 @@
 
 <footer>
   <div class="row inner">
-    <copy class="copyright">
+    <copy class="copyright col-12 d-flex justify-content-center">
       ©copyright
       <script>
         document.write(new Date().getFullYear());
@@ -314,12 +150,12 @@
 Do not remove below content OR site will break.
 -->
 <div class="attribution">
-  <p>
+  <p class="text-center">
     Website designed and developed by
-    <strong><a href="#" style="color: #ffffff">Team Ed-Flix</a></strong>
+    <strong><a href="https://github.com/EdFlix5/Ed-Flix" style="color: #ffffff">Team Ed-Flix</a></strong>
   </p>
 </div>
 <!-- <span class="navside" onclick="openNav()">☰</span> -->
-{% endblock content %} {% block js %}
+{% endblock content-ex %} {% block js %}
 <script src="{% static 'js/subject.js' %}"></script>
 {% endblock js %}

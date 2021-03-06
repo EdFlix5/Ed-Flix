@@ -5,50 +5,54 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-  margin-bottom: 0;
-  background-color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin-bottom: 0;
+    background-color: #ffffff;
 }
 
 .login {
-  margin-left: 5px;
+    margin-left: 5px;
 }
 
 #branch {
-  padding: 100px 100px 60px;
+    padding: 100px 100px 60px;
 }
 
 .card {
-  margin: 2% auto;
-  background: white;
-  box-shadow: -2px 2px 10px rgba(88, 86, 86, 0.2);
-  border-radius: 10px;
+    margin: 2% auto;
+    background: white;
+    box-shadow: -2px 2px 10px rgba(88, 86, 86, 0.2);
+    border-radius: 10px;
 }
 
 .card:hover {
-  animation: cardAnimation 1s ease-in-out infinite;
-  box-shadow: -2px 0.5px 7px rgba(88, 86, 86, 0.2);
+    animation: cardAnimation 1s ease-in-out infinite;
+    box-shadow: -2px 0.5px 7px rgba(88, 86, 86, 0.2);
 }
 
 @keyframes cardAnimation {
-  50% {
-    transform: scale(1.02);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .card-header {
-  background-color: white;
-  border-bottom: none;
+    background-color: white;
+    border-bottom: none;
 }
 
 .branch-column {
-  padding: 2% 3%;
+    padding: 2% 3%;
 }
+
+.branch-column .card {
+    width: 20rem;
+}
+
 
 /* .carousel-inner .carousel-item {
     width: 100%;
@@ -56,77 +60,84 @@ body {
 } */
 
 .carousel-inner .carousel-item img {
-  width: 720px;
-  height: 500px;
+    width: 720px;
+    height: 500px;
 }
 
 footer {
-  padding: 4% 5% 0;
-  margin-top: 50px;
-  color: rgb(179, 174, 174);
-  background-color: #292b2c;
-  height: auto;
-  width: 100%;
+    padding: 4% 5% 0;
+    margin-top: 50px;
+    color: rgb(179, 174, 174);
+    background-color: #292b2c;
+    height: auto;
+    width: 100%;
 }
 
 .social-icons {
-  margin: 20px 10px;
+    margin: 20px 10px;
 }
 
 #features {
-  padding: 7% 15%;
+    padding: 7% 15%;
 }
 
 .feature-section {
-  margin: 10px 0;
-  padding: 5%;
+    margin: 10px 0;
+    padding: 5%;
 }
 
 .about {
-  text-align: left;
-  position: relative;
-  bottom: 85px;
+    text-align: left;
+    position: relative;
+    bottom: 85px;
 }
 
 .about-para {
-  font-size: 0.7rem;
-  width: 25%;
+    font-size: 0.7rem;
+    width: 25%;
 }
 
 .contact {
-  text-align: right;
-  position: relative;
-  bottom: 230px;
+    text-align: right;
+    position: relative;
+    bottom: 230px;
 }
 
 .contact-para {
-  font-size: 0.7rem;
+    font-size: 0.7rem;
 }
 
 @media screen and (max-width: 578px) {
-  .carousel-inner .carousel-item img {
-    height: 200px;
-  }
-  h1 {
-    font-size: 1.6em;
-  }
-  h3 {
-    font-size: 1.2em;
-  }
+    .branch-column .card {
+        width: 19rem;
+    }
+    .branch-column {
+        padding: 2% 1%;
+    }
+    .carousel-inner .carousel-item img {
+        height: 200px;
+    }
+    h1 {
+        font-size: 1.6em;
+    }
+    h3 {
+        font-size: 1.2em;
+    }
 }
 
 #dots {
-  color: blue;
-  cursor: pointer;
+    color: blue;
+    cursor: pointer;
 }
 
 #dots-ME,
 #dots-CIV,
 #dots-EE,
 #dots-ETC {
-  color: blue;
-  cursor: pointer;
+    color: blue;
+    cursor: pointer;
 }
+
 
 /* .header {
   height: 80vh !important;
