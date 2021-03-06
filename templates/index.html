@@ -13,6 +13,11 @@ Ed-Flix : An E-Learning Hub
     <link rel="stylesheet" href="{% static 'css/home-styles.css' %}">
     <script src="{% static 'js/index.js' %}" defer></script>
     <style>
+
+        html{
+            scroll-behavior: smooth;
+        }
+
         body {
             padding: 0 25px;
             background-color: #f7f7f7;
@@ -75,11 +80,12 @@ Ed-Flix : An E-Learning Hub
         }
         .heading-primary--main {
             display: block;
-            font-size: 60px;
-            font-weight: 400;
-            letter-spacing: 2rem;
+            font-size: 65px;
+            font-weight: 800;
+            letter-spacing: 1rem;
+            font-style: oblique;
             animation-name: moveInLeft;
-            animation-duration: 1s;
+            animation-duration: 1.2s;
             animation-timing-function: ease-in-out;
             margin-bottom: 10px;
             }
@@ -88,8 +94,8 @@ Ed-Flix : An E-Learning Hub
             display: block;
             font-size: 20px;
             font-weight: 700;
-            letter-spacing: 1rem;
-            animation: moveInRight 1s ease-in-out;
+            letter-spacing: .8rem;
+            animation: moveInRight 1.2s ease-in-out;
         }
 
         @keyframes moveInLeft {
@@ -125,9 +131,9 @@ Ed-Flix : An E-Learning Hub
             }
 
             @media (max-width: 600px) {
-                .navbar {
+                {% comment %} .navbar {
                     height: 11vh !important;
-                }
+                } {% endcomment %}
 
                 .heading-primary--main {
                     font-size: 30px;
@@ -142,14 +148,15 @@ Ed-Flix : An E-Learning Hub
                 .btn2 {
                     padding: .6rem 1.2rem !important;
                     border-radius: 10rem !important;
-                    font-size: .8rem !important;
+                    font-size: 1rem !important;
+                    font-color : #0099ff !important;
                 }
             }
 
             @media (max-width: 500px) {
-                .navbar {
+                {% comment %} .navbar {
                     height: 11vh !important;
-                }
+                } {% endcomment %}
 
                 .heading-primary--main {
                     font-size: 25px;
@@ -215,7 +222,7 @@ Ed-Flix : An E-Learning Hub
 {% block content %}
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed">
-        <a class="navbar-brand" href="#"><img class="nav-logo" src = "{% static 'assets/logo_blue.svg' %}"></a>
+        <a class="navbar-brand" href="/"><img class="nav-logo" src = "{% static 'assets/logo_blue.svg' %}"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -346,109 +353,129 @@ Ed-Flix : An E-Learning Hub
         <div class="row">
 
             <div class="branch-column col-lg-4 col-md-6 col-sm-12">
-                <div class="card" style="width: 20rem;">
+                <div class="card">
                   <div class="card-header">
-                    <img src="{% static 'assets/images/sample6.jpg' %}" class="card-img-top" alt="...">
+                    <img src="{% static 'assets/images/CSE.jpg' %}" class="card-img-top" alt="...">
                   </div>
                     <div class="card-body">
                         <h4 class="card-title">Computer Science Engineering</h4>
                         <p class="card-text">Computer Science & Engineering is an academic program at many universities which comprises scientific and engineering aspects of computing.</p>
-                        <a href="{% url 'explore' %}" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=cse" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
 
             <div class="branch-column col-lg-4 col-md-6 col-sm-12">
-                <div class="card" style="width: 20rem;">
+                <div class="card">
                   <div class="card-header">
-                    <img src="{% static 'assets/images/sample7.jpg' %}" class="card-img-top" alt="...">
+                    <img src="{% static 'assets/images/Mech_Engg.jpg' %}" class="card-img-top" alt="...">
                   </div>
                     <div class="card-body">
                         <h4 class="card-title">Mechanical Engineering</h4>
                         <p class="card-text">Mechanical engineering is an engineering branch that combines engineering physics and mathematics principles with materials science to design, analyze, <span id="more-ME" style="display: none;" > manufacture, and maintain mechanical systems. </span><span id="dots-ME" onclick="toggleCardText('more-ME', 'dots-ME')">more...</span></p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=mechanical" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
 
             <div class="branch-column col-lg-4 col-md-6 col-sm-12">
-                <div class="card" style="width: 20rem;">
+                <div class="card">
                   <div class="card-header">
-                    <img src="{% static 'assets/images/sample8.jpg' %}" class="card-img-top" alt="...">
+                    <img src="{% static 'assets/images/Civil_Engg.jpg' %}" class="card-img-top" alt="...">
                   </div>
                     <div class="card-body">
                         <h4 class="card-title">Civil Engineering</h4>
                         <p class="card-text">Civil engineering is a professional engineering discipline that deals with the design, construction, and maintenance of the physical and naturally built environment, including public <span id="more-CIV" style="display: none;"> works such as roads, bridges, canals, dams, airports, sewerage systems, pipelines, structural components of buildings, and railways. </span><span id="dots-CIV" onclick="toggleCardText('more-CIV', 'dots-CIV')">more...</span></p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=civil" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
 
             <div class="branch-column col-lg-4 col-md-6 col-sm-12">
-                <div class="card" style="width: 20rem;">
+                <div class="card">
                   <div class="card-header">
-                    <img src="{% static 'assets/images/sample9.jpg' %}" class="card-img-top" alt="...">
+                    <img src="{% static 'assets/images/Elec_Engg.jpg' %}" class="card-img-top" alt="...">
                   </div>
                     <div class="card-body">
                         <h4 class="card-title">Electrical Engineering</h4>
                         <p class="card-text">Electrical engineering is an engineering discipline concerned with the study, design and application of equipment, devices and systems which use <span id="more-EE" style="display: none;"> electricity, electronics, and electromagnetism. </span><span id="dots-EE" onclick="toggleCardText('more-EE', 'dots-EE')">more...</span></p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=electrical" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
 
             <div class="branch-column col-lg-4 col-md-6 col-sm-12">
-                <div class="card" style="width: 20rem;">
+                <div class="card">
                   <div class="card-header">
-                    <img src="{% static 'assets/images/sample10.jpg' %}" class="card-img-top" alt="...">
+                    <img src="{% static 'assets/images/ETC.jpg' %}" class="card-img-top" alt="...">
                   </div>
                     <div class="card-body">
                         <h4 class="card-title">Electronics and Telecommunication Engineering</h4>
                         <p class="card-text">Electronics and Telecommunication Engineering deals with the reception of <span id="more-ETC" style="display: none;"> video, microprocessors, analogue communication, digital and analogue integrated circuits, satellite communication, antennae and wave progression, solid-state devices, voice and data etc. </span><span id="dots-ETC" onclick="toggleCardText('more-ETC', 'dots-ETC')">more...</span></p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=etc" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
 
             <div class="branch-column col-lg-4 col-md-6 col-sm-12">
-                <div class="card" style="width: 20rem;">
+                <div class="card">
                   <div class="card-header">
-                    <img src="{% static 'assets/images/sample11.jpg' %}" class="card-img-top" alt="...">
+                    <img src="{% static 'assets/images/Chem_Engg.jpg' %}" class="card-img-top" alt="...">
                   </div>
                     <div class="card-body">
                         <h4 class="card-title">Chemical Engineering</h4>
                         <p class="card-text">Chemical engineering is a branch of engineering which deals with the study of design and operation of chemical plants as well as methods of improving production.</p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+                        <a href="{% url 'explore' %}?sub=chemical" class="btn btn-primary">Explore here</a>
                     </div>
                 </div>
             </div>
 
             <div class="branch-column col-lg-4 col-md-6 col-sm-12">
-                <div class="card" style="width: 20rem;">
+                <div class="card">
                   <div class="card-header">
-                    <img style="height: 157.8px;" src="{% static 'assets/images/sample13.jpg' %}" class="card-img-top" alt="...">
+                    <img style="height: 157.8px;" src="{% static 'assets/images/Mett_Engg.jpg' %}" class="card-img-top" alt="...">
                   </div>
                     <div class="card-body">
-                        <h5 class="card-title">Metallurgical Engineering</h5>
+                        <h4 class="card-title">Metallurgical Engineering</h4>
                         <p class="card-text">Metallurgy is a domain of materials science that studies the physical and chemical behavior of metallic elements, their intermetallic compounds and their mixtures called alloys.</p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+
+                        <a href="{% url 'explore' %}?sub=metallurgy" class="btn btn-primary">Explore here</a>
+
                     </div>
                 </div>
             </div>
 
             <div class="branch-column col-lg-4 col-md-6 col-sm-12">
-                <div class="card" style="width: 20rem;">
+                <div class="card">
                   <div class="card-header">
-                    <img src="{% static 'assets/images/sample12.jpg' %}" class="card-img-top" alt="...">
+                    <img src="{% static 'assets/images/Prod_Engg.jpg' %}" class="card-img-top" alt="...">
                   </div>
                     <div class="card-body">
-                        <h5 class="card-title">Production Engineering</h5>
+                        <h4 class="card-title">Production Engineering</h4>
                         <p class="card-text">Production Engineering, also known as Manufacture Engineering, deals with planning, designing, developing and managing of various processes to produce high quality products.</p>
-                        <a href="subject.html" class="btn btn-primary">Explore here</a>
+
+                        <a href="{% url 'explore' %}?sub=production" class="btn btn-primary">Explore here</a>
+
                     </div>
                 </div>
             </div>
 
+        
+            
+            <div class="branch-column col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                  <div class="card-header">
+                    <img src="{% static 'assets/images/Mining_Engg.jpg' %}" class="card-img-top" alt="...">
+                  </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Mining Engineering</h4>
+                        <p class="card-text"> Mining engineering is associated with many other disciplines, such as mineral processing, exploration, excavation, geology, and metallurgy, geotechnical engineering and surveying.</p>
+
+                        <a href="{% url 'explore' %}?sub=mining" class="btn btn-primary">Explore here</a>
+
+                    </div>
+                </div>
+            </div>
             <!-- <div class="branch-column col-lg-4 col-md-6 col-sm-12">
                 <div class="card" style="width: 20rem;">
                   <div class="card-header">
