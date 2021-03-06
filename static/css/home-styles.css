@@ -1,5 +1,9 @@
 /************************************* Home Page ************************************/
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   text-align: center;
