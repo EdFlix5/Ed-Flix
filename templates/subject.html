@@ -94,11 +94,11 @@
         </div> {% endcomment %}
         {% for subject in subjects %}
 
-          <div class="bg-clip filterDiv {{ subject.type }}">
+          <div class="bg-clip filterDiv {{ subject.type }}" onclick="availDocs('{{subject.code}}');">
             {{ subject.code }}
             <span>{{ subject.name }}</span>
           </div>
-
+        
 
         {% endfor %}
         
@@ -158,4 +158,9 @@ Do not remove below content OR site will break.
 <!-- <span class="navside" onclick="openNav()">☰</span> -->
 {% endblock content-ex %} {% block js %}
 <script src="{% static 'js/subject.js' %}"></script>
+<script>
+    function availDocs(sub){
+      document.location.href = `{% url 'subjectContent' %}?sub=${sub}`;
+    }
+</script>
 {% endblock js %}

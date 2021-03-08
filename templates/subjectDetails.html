@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %} {% block css %}
+{% extends 'base_with_navbar.html' %} {% load static %} {% block css-ex %}
 <link
   href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
   rel="stylesheet"
@@ -9,26 +9,16 @@
     scroll-behavior: smooth;
   }
 </style>
-{% endblock css %} {% block content %}
+{% endblock css-ex %} {% block content-ex %}
 
-<header class="header-fixed">
-  <a class="navbar-brand" href="#"
-    ><img class="nav-logo" src="{% static 'assets/logo_blue.svg' %}"
-  /></a>
-</header>
 
-<!-- <iframe
-  src="http://docs.google.com/gview?url=https://edflix5.pythonanywhere.com/static/assets/images/Java%20Module-2.pdf&embedded=true"
-  style="width: 718px; height: 700px"
-  frameborder="0"
-></iframe> -->
-<nav class="navbar">
+<div class="menu-bar">
   <ul class="navbar-list">
     <a href="#"><li class="navbar-item">NOTES</li></a>
     <a href="#pyq-section"><li class="navbar-item">PYQ</li></a>
     <a href="#gate-section"><li class="navbar-item">GATE PYQ</li></a>
   </ul>
-</nav>
+</div>
 
 <div class="notes"><h1>NOTES</h1></div>
 
@@ -36,76 +26,76 @@
   <div class="subject-container">
     <div class="card">
       <div class="image-container">
-        <div class="subject-short">FLAT</div>
+        <div class="subject-short">{{code}}</div>
         <div class="subject-name">
-          <h2>Formal Language and Automata Theory</h2>
+          <h2>{{subject_name}}</h2>
           <h5>MODULE-I</h5>
         </div>
       </div>
       <div class="author">
         <p>
           Author:
-          <span class="author-name">Dr. Prof. Sarojananda Mishra</span> |
+          <span class="author-name"> D. Goswami & K.V Krishna</span> |
           <span class="author-duration">size: 1.4MB</span>
         </p>
-        <a href="{% static 'assets/' %}" target="_blank"
+        <a href="{% url 'contentView' %}?sub={{code}}" target="_blank"
           ><button class="read-button">READ NOW</button></a
         >
       </div>
     </div>
     <div class="card">
       <div class="image-container">
-        <div class="subject-short">FLAT</div>
+        <div class="subject-short">{{code}}</div>
         <div class="subject-name">
-          <h2>Formal Language and Automata Theory</h2>
+          <h2>{{subject_name}}</h2>
           <h5>MODULE-II</h5>
         </div>
       </div>
       <div class="author">
         <p>
           Author:
-          <span class="author-name">Dr. Prof. Sarojananda Mishra</span> |
+          <span class="author-name"> D. Goswami & K.V Krishna</span> |
           <span class="author-duration">size: 1.4MB</span>
         </p>
-        <a href="{% static 'assets/' %}" target="_blank"
+        <a href="{% url 'contentView' %}?sub={{code}}" target="_blank"
           ><button class="read-button">READ NOW</button></a
         >
       </div>
     </div>
     <div class="card">
       <div class="image-container">
-        <div class="subject-short">FLAT</div>
+        <div class="subject-short">{{code}}</div>
         <div class="subject-name">
-          <h2>Formal Language and Automata Theory</h2>
+          <h2>{{subject_name}}</h2>
           <h5>MODULE-III</h5>
         </div>
       </div>
       <div class="author">
         <p>
           Author:
-          <span class="author-name">Dr. Prof. Sarojananda Mishra</span> |
+          <span class="author-name"> D. Goswami & K.V Krishna</span> |
           <span class="author-duration">size: 1.4MB</span>
         </p>
-        <a href="{% static 'assets/' %}" target="_blank"
+        <a href="{% url 'contentView' %}?sub={{code}}" target="_blank"
           ><button class="read-button">READ NOW</button></a
         >
       </div>
     </div>
     <div class="card">
       <div class="image-container">
-        <div class="subject-short">FLAT</div>
+        <div class="subject-short">{{code}}</div>
         <div class="subject-name">
-          <h2>Formal Language and Automata Theory</h2>
+          <h2>{{subject_name}}</h2>
           <h5>MODULE-IV</h5>
         </div>
       </div>
       <div class="author">
         <p>
           Author:
-          <span class="author-name">Dr. Prof. Sarojananda Mishra</span> |
+          <span class="author-name"> D. Goswami & K.V Krishna</span> |
           <span class="author-duration">size: 1.4MB</span>
         </p>
-        <a href="{% static 'assets/' %}" target="_blank"
+        <a href="{% url 'contentView' %}?sub={{code}}" target="_blank"
           ><button class="read-button">READ NOW</button></a
         >
       </div>
@@ -119,38 +109,38 @@
   <div class="subject-container">
     <div class="card">
       <div class="image-container">
-        <div class="subject-short">FLAT</div>
+        <div class="subject-short">{{code}}</div>
         <div class="subject-name">
-          <h2>Formal Language and Automata Theory</h2>
+          <h2>{{subject_name}}</h2>
           <h5>PYQ 2020</h5>
         </div>
       </div>
       <div class="author">
         <p>
           Author:
-          <span class="author-name">Dr. Prof. Sarojananda Mishra</span> |
+          <span class="author-name"> D. Goswami & K.V Krishna</span> |
           <span class="author-duration">size: 1.4MB</span>
         </p>
-        <a href="{% static 'assets/' %}" target="_blank"
+        <a href="{% url 'contentView' %}?sub={{code}}" target="_blank"
           ><button class="read-button">READ NOW</button></a
         >
       </div>
     </div>
     <div class="card">
       <div class="image-container">
-        <div class="subject-short">FLAT</div>
+        <div class="subject-short">{{code}}</div>
         <div class="subject-name">
-          <h2>Formal Language and Automata Theory</h2>
+          <h2>{{subject_name}}</h2>
           <h5>PYQ 2020</h5>
         </div>
       </div>
       <div class="author">
         <p>
           Author:
-          <span class="author-name">Dr. Prof. Sarojananda Mishra</span> |
+          <span class="author-name"> D. Goswami & K.V Krishna</span> |
           <span class="author-duration">size: 1.4MB</span>
         </p>
-        <a href="{% static 'assets/' %}" target="_blank"
+        <a href="{% url 'contentView' %}?sub={{code}}" target="_blank"
           ><button class="read-button">READ NOW</button></a
         >
       </div>
@@ -164,38 +154,38 @@
   <div class="subject-container">
     <div class="card">
       <div class="image-container">
-        <div class="subject-short">FLAT</div>
+        <div class="subject-short">{{code}}</div>
         <div class="subject-name">
-          <h2>Formal Language and Automata Theory</h2>
+          <h2>{{subject_name}}</h2>
           <h5>GATE 2019</h5>
         </div>
       </div>
       <div class="author">
         <p>
           Author:
-          <span class="author-name">Dr. Prof. Sarojananda Mishra</span> |
+          <span class="author-name"> D. Goswami & K.V Krishna</span> |
           <span class="author-duration">size: 1.4MB</span>
         </p>
-        <a href="{% static 'assets/' %}" target="_blank"
+        <a href="{% url 'contentView' %}?sub={{code}}" target="_blank"
           ><button class="read-button">READ NOW</button></a
         >
       </div>
     </div>
     <div class="card">
       <div class="image-container">
-        <div class="subject-short">FLAT</div>
+        <div class="subject-short">{{code}}</div>
         <div class="subject-name">
-          <h2>Formal Language and Automata Theory</h2>
+          <h2>{{subject_name}}</h2>
           <h5>GATE 2020</h5>
         </div>
       </div>
       <div class="author">
         <p>
           Author:
-          <span class="author-name">Dr. Prof. Sarojananda Mishra</span> |
+          <span class="author-name"> D. Goswami & K.V Krishna</span> |
           <span class="author-duration">size: 1.4MB</span>
         </p>
-        <a href="{% static 'assets/' %}" target="_blank"
+        <a href="{% url 'contentView' %}?sub={{code}}" target="_blank"
           ><button class="read-button">READ NOW</button></a
         >
       </div>
@@ -224,6 +214,6 @@
   </p>
 </footer>
 
-{% endblock content %} {% block js %}
+{% endblock content-ex %} {% block js %}
 <script src="{% static 'js/subjectDetails.js' %}" defer></script>
 {% endblock js %}

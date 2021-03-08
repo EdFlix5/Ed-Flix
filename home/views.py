@@ -682,6 +682,11 @@ SubjectArchive = {
 }
 
 
+cse_code_subject_mapping = {
+    "M-I":"Applied Mathematics-I","Phy":"Applied Physics","BE":"Basic Electronics","BCE":"Basic Civil Engg","C":"C Programming","English":"English Comm Skills","WS":"Engg Workshop","Chem":"Applied Chemistry","BEE":"Basic Electrical Engg","BME":"Basic Mechanical Engg","DS":"Data Structure","ED":"Engg Drawing","STLD":"Digital Electronics","Java":"Programming using JAVA","SP":"System Programming","SE":"Software Engg","DS":"Discrete Mathematics","EE":"Engg Economics","COA":"Computer Architecture","DAA":"Algorithm","DBMS":"Database Managemant System","FLAT":"Formal Language and Automata Theory","OB":"Organisational Behaviour","OS":"Operating System","CG":"Computer Graphics","ACA":"Advanced Computer Architecture","CC":"Cloud Computing","DMDW":"Data Mining Data Warehousing","CN":"Computer Networks","CD":"Compiler Design","WSN":"Wireless Sensor Network","ML":"Machine Learning","EVS":"Environmental Science","CNS":"Cryptography and Network Security","SC":"Soft Computing","IoT":"Internet of Things","GT":"Green Technology","ET":"Entrepreneurship Training"
+}
+
+
 
 
 
@@ -706,7 +711,24 @@ def explore(request):
 
 
 def sub_details(request):
-    return render(request,"subjectDetails.html")
+    subject_code = request.GET.get('sub')
+
+    subject_name = ""
+    if subject_code is not None:
+        subject_name = cse_code_subject_mapping.get(subject_code)
+
+    return render(request,"subjectDetails.html",{"subject_name" : subject_name,"code":subject_code})
+
+def contentView(request):
+
+    subject_code = request.GET.get('sub')
+
+    subject_name = ""
+    if subject_code is not None:
+        subject_name = cse_code_subject_mapping.get(subject_code)
+
+    return render(request,"subjectContent.html",{"subject_name" : subject_name,"code":subject_code})
+
 
 
 @login_required(login_url="login")
