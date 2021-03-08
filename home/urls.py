@@ -7,5 +7,5 @@ urlpatterns = [
     path('home',views.home,name="home"),
     path('explore',views.explore,name="explore"),
     path("subjectContent",views.sub_details,name="subjectContent"),
-     path("subjectContent/contentView",views.pdf_viewer,name="contentView"),
+     path("subjectContent/contentView",views.contentView,name="contentView"),
 ]

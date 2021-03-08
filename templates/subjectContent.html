@@ -1,38 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/subjectContent.css" />
-    <title>Subject Content</title>
-  </head>
-  <body>
-    <header class="header-fixed">
-      <a class="navbar-brand" href="#"
-        ><img class="nav-logo" src="images/logo_blue.svg"
-      /></a>
-    </header>
-    <div class="content">
-      <!-- <iframe
-        src="http://docs.google.com/gview?url=https://edflix5.pythonanywhere.com/static/assets/images/Java%20Module-2.pdf&embedded=true"
-        style="width: 718px; height: 700px"
-        frameborder="0"
-      ></iframe> -->
-      <div class="subject-details">
-        <h1>Formal Language and Automata Theory</h1>
-        <!-- <h3>FLAT</h3> -->
-        <p class="author-details">
-          Author: <span class="author-name">D. Goswami and K.V Krishna</span>
-        </p>
-      </div>
-      <object
-        id="subject-pdf"
-        data="https://edflix5.pythonanywhere.com/static/assets/images/Java%20Module-2.pdf"
-        type="application/pdf"
-        style="height: 85vh; width: 900px"
-      >
-        Unable to load pdf
-      </object>
+
+{% extends 'base_with_navbar.html' %}
+{% load static %}
+
+{% block title %}
+Subject Content
+{% endblock title %}
+
+
+
+
+{% block css-ex %}
+    <link rel="stylesheet" href="{% static 'css/subjectContent.css' %}" />
+{% endblock css-ex %}
+
+
+
+{% block content-ex %}
+
+
+       <div class="content">
+        <div class="subject-details">
+          <h1>{{subject_name}}</h1>
+          <!-- <h3>FLAT</h3> -->
+          <p class="author-details">
+            Author: <span class="author-name">D. Goswami & K.V Krishna</span>
+          </p>
+        </div>
+        <object
+          id="subject-pdf"
+          data="https://edflix5.pythonanywhere.com/static/contents/Flat-Notes.pdf"
+          type="application/pdf"
+          style="height: 85vh; width: 900px">
+          Unable to load pdf
+        </object>
     </div>
-  </body>
-</html>
+
+{% endblock content-ex %}
+
+
+
+
+{% block js %}
+
+{% endblock js %}
