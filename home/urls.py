@@ -6,6 +6,6 @@ urlpatterns = [
     path('',views.index,name="index"),
     path('home',views.home,name="home"),
     path('explore',views.explore,name="explore"),
-    path("details",views.sub_details,name="details"),
-     path("pdfview",views.pdf_viewer,name="pdf_view"),
+    path("subjectContent",views.sub_details,name="subjectContent"),
+     path("subjectContent/contentView",views.pdf_viewer,name="contentView"),
 ]

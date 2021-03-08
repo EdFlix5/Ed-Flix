@@ -708,7 +708,7 @@ def explore(request):
 def sub_details(request):
     return render(request,"subjectDetails.html")
 
-def pdf_viewer(request):
+def contentView(request):
     return render(request,"pdf_viewer.html")
 
 
