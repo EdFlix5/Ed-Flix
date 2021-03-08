@@ -73,18 +73,18 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 <li>
-                                    <a href="#">Computer Science
+                                    <a href="{% url 'explore' %}?sub=cse">Computer Science
                   <!--  <span class="badge badge-pill badge-success">Pro</span> -->
                   </a>
                                 </li>
                                 <li>
-                                    <a href="#">Mechanical</a>
+                                    <a href="{% url 'explore' %}?sub=mechanical">Mechanical</a>
                                 </li>
                                 <li>
-                                    <a href="#">Civil</a>
+                                    <a href="{% url 'explore' %}?sub=civil">Civil</a>
                                 </li>
                                 <li>
-                                    <a href="#">Electrical</a>
+                                    <a href="{% url 'explore' %}?sub=electrical">Electrical</a>
                                 </li>
                             </ul>
                         </div>
@@ -233,10 +233,10 @@
     </nav>
     <!-- sidebar-wrapper  -->
     <main class="page-content">
-        <header class="header-fixed">
+        <header class="header-fixed" style="height:650px;">
 
             <div class="header-limiter">
-                <img class="nav-logo" src="{% static 'assets/logo_blue.svg' %}" alt="Ed-Flix">
+                <a href="/"><img class="nav-logo" src="{% static 'assets/logo_blue.svg' %}" alt="Ed-Flix"></a>
 
 
                 <!--Navbar-->
