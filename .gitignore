@@ -2,3 +2,4 @@
 .vscode/
 .vs/
 .vscode/settings.json
+db.sqlite3
