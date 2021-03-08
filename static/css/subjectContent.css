@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4c458b;
+}
+
+.nav-logo {
+  height: 60px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.subject-pdf {
+  flex: 0.6;
+}
+
+.subject-details {
+  flex: 0.4;
+}
+
+@media (max-width: 800px) {
+  .content {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  .subject-details {
+    margin: 20px 0;
+  }
+
+  object {
+    width: 100vw;
+  }
+}
+
+.author-name {
+  font-weight: 600;
+}
