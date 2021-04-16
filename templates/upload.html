@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/upload.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script src="js/upload.js" defer></script>
+    <title>Upload your document</title>
+  </head>
+  <body>
+    <header class="header-fixed">
+      <a class="navbar-brand" href="#"
+        ><img class="nav-logo" src="images/logo_blue.svg"
+      /></a>
+    </header>
+    <div class="upload-container">
+      <form action="" method="POST" class="upload-form">
+        <h1 style="color: #4c458b">Upload your notes</h1>
+        <div class="input-container">
+          <label for="name">Enter title:</label>
+          <input
+            id="name"
+            type="text"
+            placeholder="Subject title here"
+            required
+            class="input-text"
+            autocomplete="off"
+          />
+        </div>
+        <!-- <div class="input-container">
+          <label for="subject">Enter subject Name:</label>
+          <input
+            id="subject"
+            type="text"
+            placeholder="Subject name here"
+            required
+            class="input-text"
+          />
+        </div> -->
+
+        <div class="input-container">
+          <label for="author">Enter Author Name:</label>
+          <input
+            id="author"
+            type="text"
+            placeholder="Author name here"
+            required
+            class="input-text"
+            autocomplete="off"
+          />
+        </div>
+        <div class="input-container input-container-inline-dropdown">
+          <div>
+            <label for="subject">Select your stream:</label>
+            <select name="stream" id="stream">
+              <option value="B.Tech">B.Tech</option>
+              <option value="B.Tech">MCA</option>
+              <option value="B.Tech">Diploma</option>
+              <option value="B.Tech">M.Tech</option>
+            </select>
+          </div>
+          <div>
+            <label for="subject">Select your Branch:</label>
+            <select name="branch" id="branch">
+              <option value="B.Tech">CSE</option>
+              <option value="B.Tech">Mechanical</option>
+              <option value="B.Tech">Civil</option>
+              <option value="B.Tech">Electrical</option>
+              <option value="B.Tech">Electronics</option>
+              <option value="B.Tech">Chemical</option>
+              <option value="B.Tech">Metallurgy</option>
+              <option value="B.Tech">Production</option>
+              <option value="B.Tech">Mining</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-container input-container-block-dropdown">
+          <label for="subject">Select your subject:</label>
+          <select name="subject" id="subject">
+            <option value="B.Tech">OS</option>
+            <option value="B.Tech">DBMS</option>
+            <option value="B.Tech">DCCN</option>
+            <option value="B.Tech">JAVA</option>
+          </select>
+        </div>
+        <div class="input-container" id="file-container">
+          <label id="file-label" for="file"> Choose file </label>
+          <input type="file" required class="input-file" id="file" />
+        </div>
+        <button type="submit" class="btn-submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
