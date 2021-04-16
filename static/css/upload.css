@@ -16,7 +16,7 @@ header a img {
 }
 
 .upload-container {
-  height: 100vh;
+  height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,6 +72,10 @@ input {
 .input-container-inline-dropdown {
   display: flex;
   justify-content: space-between;
+}
+
+.row-fluid .btn-group {
+  width: 100% !important;
 }
 
 .btn-group .btn {
