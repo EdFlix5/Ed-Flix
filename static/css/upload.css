@@ -16,7 +16,7 @@ header a img {
 }
 
 .upload-container {
-  height: 85vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,10 +74,39 @@ input {
   justify-content: space-between;
 }
 
+.btn-group .btn {
+  color: #777;
+  background-color: #f2f2f2;
+  box-sizing: border-box;
+  padding: 16px;
+  border-radius: 5px;
+  margin: 9px 0 20px 0;
+  outline: none !important;
+  border: none !important;
+}
+
+.btn-group .btn:focus {
+  outline: none !important;
+}
+
+/* .input-container-block-dropdown div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+} */
+
+/* .input-container-block-dropdown div label {
+  flex: 0.4;
+}
+
+.input-container-block-dropdown div select {
+  flex: 0.6;
+} */
+
 select {
   outline: none;
   background-color: #f2f2f2;
-  padding: 5px;
+  padding: 10px 5px;
   border: none;
   cursor: pointer;
 }
