@@ -6,27 +6,36 @@ body {
   background-color: #f2f2f2;
 }
 
+:root {
+  font-size: 10px;
+}
+
+h1 {
+  font-size: 3.6rem;
+}
+
 header {
   background-color: #fff;
   height: 80px;
 }
 
 header a img {
-  width: 260px;
+  width: 26rem;
 }
 
 .upload-container {
   height: 85vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 5rem;
 }
 
 .upload-form {
   background-color: #fff;
-  box-shadow: 5px 5px 11px rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
-  padding: 30px 50px;
+  box-shadow: 0.5rem 0.5rem 1.1rem rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  padding: 3rem 5rem;
   width: 35%;
 }
 
@@ -36,29 +45,29 @@ label {
 }
 
 .input-container {
-  margin: 5px auto 15px auto;
+  margin: 0.5rem auto 1.5rem auto;
 }
 
 input {
   display: block;
   width: 100%;
   border-radius: 5px;
-  margin: 9px 0 20px 0;
+  margin: 0.9rem 0 2rem 0;
 }
 
 .input-text {
-  padding: 16px;
+  padding: 1.6rem;
   background-color: #f2f2f2;
   border: none;
   color: #777;
   box-sizing: border-box;
-  border-bottom: 3px solid transparent;
+  border-bottom: 0.3rem solid transparent;
   transition: all 0.2s ease-in-out;
 }
 
 .input-text:focus {
   outline: none;
-  border-bottom: 3px solid #4c458b;
+  border-bottom: 0.3rem solid #4c458b;
 }
 
 ::placeholder {
@@ -82,9 +91,9 @@ input {
   color: #777;
   background-color: #f2f2f2;
   box-sizing: border-box;
-  padding: 16px;
+  padding: 1.6rem;
   border-radius: 5px;
-  margin: 9px 0 20px 0;
+  margin: 0.9rem 0 2rem 0;
   outline: none !important;
   border: none !important;
 }
@@ -110,7 +119,7 @@ input {
 select {
   outline: none;
   background-color: #f2f2f2;
-  padding: 10px 5px;
+  padding: 1rem 0.5rem;
   border: none;
   cursor: pointer;
 }
@@ -125,15 +134,15 @@ select:focus {
   font-weight: 400;
   font-size: 14px;
   color: #4c458b;
-  padding: 2px 5px;
-  border-bottom: 2px solid #4c458b;
+  padding: 0.2rem 0.5rem;
+  border-bottom: 0.2rem solid #4c458b;
   transition: all 0.3s ease-in-out;
 }
 
 #file-label:hover {
   background-color: #4c458b;
   color: #fff;
-  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.7rem 1.5rem rgba(0, 0, 0, 0.2);
 }
 
 #file-container {
@@ -152,8 +161,8 @@ select:focus {
   background-color: #4c458b;
   color: #fff;
   border-radius: 50px;
-  padding: 8px 15px;
-  margin: 10px 0 0 0;
+  padding: 0.8rem 1.5rem;
+  margin: 1rem 0 0 0;
   float: right;
   border: none;
   font-size: 15px;
@@ -172,7 +181,46 @@ select:focus {
   outline: none;
 }
 
+/* .footer {
+  background-color: #4c458b;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0;
+  padding: 50px;
+} */
+
 ::selection {
   background-color: #4c458b;
   color: #fff;
+}
+
+@media (max-width: 1100px) {
+  .upload-form {
+    width: 60%;
+  }
+
+  .upload-container {
+    height: 120vh;
+  }
+}
+
+@media (max-width: 800px) {
+  :root {
+    font-size: 8px;
+  }
+
+  .upload-form {
+    width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+  .upload-container {
+    height: 90vh;
+  }
+
+  .dropdown-menu {
+    /* width: 100vw !important;
+    max-height: 500px !important; */
+  }
 }
