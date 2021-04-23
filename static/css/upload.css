@@ -1,0 +1,226 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+}
+
+:root {
+  font-size: 10px;
+}
+
+h1 {
+  font-size: 3.6rem;
+}
+
+header {
+  background-color: #fff;
+  height: 80px;
+}
+
+header a img {
+  width: 26rem;
+}
+
+.upload-container {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 5rem;
+}
+
+.upload-form {
+  background-color: #fff;
+  box-shadow: 0.5rem 0.5rem 1.1rem rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  padding: 3rem 5rem;
+  width: 35%;
+}
+
+label {
+  font-weight: 600;
+  color: #777;
+}
+
+.input-container {
+  margin: 0.5rem auto 1.5rem auto;
+}
+
+input {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  margin: 0.9rem 0 2rem 0;
+}
+
+.input-text {
+  padding: 1.6rem;
+  background-color: #f2f2f2;
+  border: none;
+  color: #777;
+  box-sizing: border-box;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.input-text:focus {
+  outline: none;
+  border-bottom: 0.3rem solid #4c458b;
+}
+
+::placeholder {
+  color: rgba(119, 119, 119, 0.7);
+}
+
+.input-file {
+  color: #777;
+}
+
+.input-container-inline-dropdown {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row-fluid .btn-group {
+  width: 100% !important;
+}
+
+.btn-group .btn {
+  color: #777;
+  background-color: #f2f2f2;
+  box-sizing: border-box;
+  padding: 1.6rem;
+  border-radius: 5px;
+  margin: 0.9rem 0 2rem 0;
+  outline: none !important;
+  border: none !important;
+}
+
+.btn-group .btn:focus {
+  outline: none !important;
+}
+
+/* .input-container-block-dropdown div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+} */
+
+/* .input-container-block-dropdown div label {
+  flex: 0.4;
+}
+
+.input-container-block-dropdown div select {
+  flex: 0.6;
+} */
+
+select {
+  outline: none;
+  background-color: #f2f2f2;
+  padding: 1rem 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+select:active,
+select:focus {
+  outline: none;
+  border: none;
+}
+
+#file-label {
+  font-weight: 400;
+  font-size: 14px;
+  color: #4c458b;
+  padding: 0.2rem 0.5rem;
+  border-bottom: 0.2rem solid #4c458b;
+  transition: all 0.3s ease-in-out;
+}
+
+#file-label:hover {
+  background-color: #4c458b;
+  color: #fff;
+  box-shadow: 0 0.7rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+#file-container {
+  transition: all 0.3s ease-in-out;
+}
+
+#file-container:hover {
+  transform: translateY(-2px);
+}
+
+#file {
+  display: none;
+}
+
+.btn-submit {
+  background-color: #4c458b;
+  color: #fff;
+  border-radius: 50px;
+  padding: 0.8rem 1.5rem;
+  margin: 1rem 0 0 0;
+  float: right;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all.3s ease-in-out;
+}
+
+.btn-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-submit:focus,
+.btn-submit:active {
+  border: none;
+  outline: none;
+}
+
+/* .footer {
+  background-color: #4c458b;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0;
+  padding: 50px;
+} */
+
+::selection {
+  background-color: #4c458b;
+  color: #fff;
+}
+
+@media (max-width: 1100px) {
+  .upload-form {
+    width: 60%;
+  }
+
+  .upload-container {
+    height: 120vh;
+  }
+}
+
+@media (max-width: 800px) {
+  :root {
+    font-size: 8px;
+  }
+
+  .upload-form {
+    width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+  .upload-container {
+    height: 90vh;
+  }
+
+  .dropdown-menu {
+    /* width: 100vw !important;
+    max-height: 500px !important; */
+  }
+}
