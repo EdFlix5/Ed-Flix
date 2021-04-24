@@ -1,5 +1,8 @@
+from django.http.response import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.core.files.storage import FileSystemStorage
+from .models import FileUpload
 
 # Create your views here.
 
@@ -690,6 +693,7 @@ cse_code_subject_mapping = {
 
 
 
+''' Index Page '''
 
 def index(request):
     if request.user.is_authenticated:
@@ -697,6 +701,9 @@ def index(request):
     else:
         return render(request, 'index.html')
 
+
+
+''' Explore Page '''
 
 def explore(request):
     subject_code = request.GET.get('sub')
@@ -710,6 +717,9 @@ def explore(request):
 
 
 
+
+''' Details of a Subject '''
+
 def sub_details(request):
     subject_code = request.GET.get('sub')
 
@@ -718,6 +728,8 @@ def sub_details(request):
         subject_name = cse_code_subject_mapping.get(subject_code)
 
     return render(request,"subjectDetails.html",{"subject_name" : subject_name,"code":subject_code})
+
+
 
 def contentView(request):
 
@@ -730,7 +742,39 @@ def contentView(request):
     return render(request,"subjectContent.html",{"subject_name" : subject_name,"code":subject_code})
 
 
+''' Upload Page '''
+
+@login_required(login_url="login")
+def upload(request):
+    return render(request,"upload.html")
+
+@login_required(login_url="login")
+def upload_file(request):
+    if request.method == "POST" and request.FILES['file']:
+        file = request.FILES['file']
+        fs = FileSystemStorage("Uploads")
+        filename = fs.save(file.name, file)
+        uploaded_file_url = fs.url(filename)
+        title = request.POST.get('title')
+        author = request.POST.get('author')
+        subject = request.POST.get('subject')
+
+        fileUpload = FileUpload(title = title, author = author, subject=subject)
+        fileUpload.save()
+        
+        reply = {"success" : "file uploaded successfully","file-url": uploaded_file_url}
+        return JsonResponse(reply)
+
+    reply = {"error" : "No File Provided"}
+    return JsonResponse(reply)
 
 @login_required(login_url="login")
 def home(request):
     return render(request, 'auth.html')
+
+
+def allDocs(request):
+    res = []
+    for obj in FileUpload.objects.all():
+        res.append(str(obj.id) + "\t| " + obj.title + "\t| " + obj.author + "\t| " + obj.subject + "\n" )
+    return HttpResponse(res)
