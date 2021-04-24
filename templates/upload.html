@@ -1,28 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css"
-    />
-    <link rel="stylesheet" href="css/upload.css" />
-    <script src="js/upload.js" defer></script>
-    <title>Upload your document</title>
-  </head>
-  <body>
-    <header class="header-fixed">
-      <a class="navbar-brand" href="#"
-        ><img class="nav-logo" src="images/logo_blue.svg"
-      /></a>
-    </header>
-    <div class="upload-container">
+{% extends 'base_with_navbar.html' %}
+
+{% load static %}
+
+{% block css-ex %}
+  <link rel="stylesheet" href="{% static 'css/upload.css' %}"/>
+{% endblock css-ex %}
+
+
+{% block content-ex %}
+
+     <div class="upload-container">
       <form action="" method="POST" class="upload-form">
+      {% csrf_token %}
         <h1 style="color: #4c458b">Upload your notes (Only in PDF format)</h1>
         <div class="input-container">
           <label for="name">Enter title:</label>
@@ -87,6 +76,7 @@
             <label for="subject">Select your subject:</label>
             <div class="row-fluid">
               <select
+                id="subject"
                 class="selectpicker"
                 data-show-subtext="true"
                 data-live-search="true"
@@ -120,10 +110,15 @@
         </div>
         <div class="input-container" id="file-container">
           <label id="file-label" for="file">Choose file</label>
-          <input type="file" required class="input-file" id="file" />
+          <input type="file" required class="input-file" id="file" accept="application/pdf" />
+          <p class="file-name"></p>
         </div>
+  
         <button type="submit" class="btn-submit">Upload</button>
+        <br>
+
       </form>
+      
     </div>
     <!-- <footer class="footer">
       <div class="row inner">
@@ -144,8 +139,22 @@
         >
       </p>
     </footer> -->
-  </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
-</html>
+
+    <div id="dialog-message" title="Upload complete" style="display:none;">
+      <p>
+        <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+        Your files have Uploaded successfully into the Ed-Flix Server.
+      </p>
+    </div>
+
+{% endblock content-ex %}
+
+
+
+{% block js %}
+  <script src="{% static 'js/upload.js' %}" ></script>
+{% endblock js %}
+
+
+
+
