@@ -87,6 +87,8 @@ WSGI_APPLICATION = 'edflix.wsgi.application'
 
 TIME_ZONE =  'Asia/Calcutta'
 
+X_FRAME_OPTIONS='SAMEORIGIN'
+
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 

@@ -1,4 +1,7 @@
+from home.models import FileUpload
 from django.contrib  import auth
+from django.contrib.auth.decorators import login_required
+from django.core.files.storage import FileSystemStorage
 from django.shortcuts import redirect
 from django.http import JsonResponse
 from django.contrib.auth import get_user_model
@@ -83,3 +86,25 @@ def signup(request):
 def signout(request):
     auth.logout(request)
     return redirect('index')
+
+
+
+@login_required(login_url="login")
+def upload_file(request):
+    if request.method == "POST" and request.FILES['file']:
+        file = request.FILES['file']
+        fs = FileSystemStorage("Uploads")
+        filename = fs.save(file.name, file)
+        uploaded_file_url = fs.url(filename)
+        title = request.POST.get('title')
+        author = request.POST.get('author')
+        subject = request.POST.get('subject')
+
+        fileUpload = FileUpload(title = title, author = author, subject=subject)
+        fileUpload.save()
+        
+        reply = {"success" : "file uploaded successfully","file-url": uploaded_file_url}
+        return JsonResponse(reply)
+
+    reply = {"error" : "No File Provided"}
+    return JsonResponse(reply)

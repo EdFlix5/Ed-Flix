@@ -697,7 +697,7 @@ cse_code_subject_mapping = {
 
 def index(request):
     if request.user.is_authenticated:
-        return render(request, 'home.html')
+        return render(request, 'home.html',{"subjects":SubjectMapping})
     else:
         return render(request, 'index.html')
 
@@ -748,25 +748,13 @@ def contentView(request):
 def upload(request):
     return render(request,"upload.html")
 
-@login_required(login_url="login")
-def upload_file(request):
-    if request.method == "POST" and request.FILES['file']:
-        file = request.FILES['file']
-        fs = FileSystemStorage("Uploads")
-        filename = fs.save(file.name, file)
-        uploaded_file_url = fs.url(filename)
-        title = request.POST.get('title')
-        author = request.POST.get('author')
-        subject = request.POST.get('subject')
 
-        fileUpload = FileUpload(title = title, author = author, subject=subject)
-        fileUpload.save()
-        
-        reply = {"success" : "file uploaded successfully","file-url": uploaded_file_url}
-        return JsonResponse(reply)
 
-    reply = {"error" : "No File Provided"}
-    return JsonResponse(reply)
+''' After login Page '''
+@login_required
+def afterLogin(request):
+    return render(request,"afterLogin.html")
+
 
 @login_required(login_url="login")
 def home(request):
