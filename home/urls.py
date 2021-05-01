@@ -8,7 +8,7 @@ urlpatterns = [
     path('explore',views.explore,name="explore"),
     path('docs',views.allDocs,name="docs"),
     path('upload',views.upload,name="upload"),
-    path('upload-file',views.upload_file,name="upload_file"),
+    path('afterLogin',views.afterLogin,name="afterLogin"),
     path("subjectContent",views.sub_details,name="subjectContent"),
     path("subjectContent/contentView",views.contentView,name="contentView"),
 ]

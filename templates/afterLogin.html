@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" href="css/afterLogin.css" />
-    <script src="js/afterLogin.js" defer></script>
-  </head>
-  <body>
-    <!-- I -->
-    <h1 style="text-align: center; text-decoration: underline">
+{% extends 'base_with_navbar.html' %}
+
+{% load static %}
+
+{% block css-ex %}
+
+    <link rel="stylesheet" href="{% static 'css/afterLogin.css' %}" />
+
+{% endblock css-ex %}
+
+{% block content-ex %}
+
+  <h1 style="text-align: center; text-decoration: underline">
       Recommendations
     </h1>
     <div class="outer-wrapper">
@@ -261,5 +262,11 @@
         >
       </p>
     </footer>
-  </body>
-</html>
+
+{% endblock content-ex %}
+
+{% block js %}
+
+    <script src="{% static 'js/afterLogin.js' %}" defer></script>
+
+{% endblock js %}
