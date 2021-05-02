@@ -70,6 +70,9 @@ h1 {
   margin: 40px;
   max-width: 380px;
   min-width: 380px;
+  max-height: 261px;
+  min-height: 261px;
+  height: 261px;
   width: 380px;
   background-image: linear-gradient(120deg, transparent 50%, #4c458b 50%);
   background-size: 265%;
@@ -95,8 +98,10 @@ h1 {
   padding: 7px 13px;
   margin: 10px 0;
   border-radius: 5px;
+  font-size: 13.3px;
   border: 1px solid #4c458b;
   cursor: pointer;
+  margin-top: 25px;
 }
 
 .read-button:focus {
@@ -150,6 +155,12 @@ h1 {
 .subject-name h2 {
   text-align: center;
   font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.subject-name h5 {
+  font-size: 13px;
+  font-weight: bold;
 }
 
 .author {
@@ -223,15 +234,18 @@ hr {
   h1 {
     font-size: 30px;
   }
-  h2 {
+  .subject-name h2 {
     font-size: 15px;
   }
-  h5 {
+  .subject-name h5 {
+    margin: 16px 0;
     font-size: 10px;
   }
   .card {
     max-width: 280px;
     min-width: 280px;
+    max-height: 240px;
+    min-height: 240px;
   }
   .author {
     font-size: 12px;
@@ -239,6 +253,7 @@ hr {
   .read-button {
     padding: 5px 10px;
     font-size: 10px;
+    margin: 8px 0;
   }
 }
 
