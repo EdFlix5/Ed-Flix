@@ -1,5 +1,4 @@
-{% extends 'base_with_navbar.html' %} {% load static %}
-{% block css-ex %}
+{% extends 'base_with_navbar.html' %} {% load static %} {% block css-ex %}
 <link
   href="https://fonts.googleapis.com/css?family=Raleway"
   rel="stylesheet"
@@ -7,14 +6,36 @@
 />
 
 <link rel="stylesheet" href="{% static 'css/subject-styles.css' %}" />
-{% endblock css-ex %}
-{% block content-ex %}
-
-{% comment %} <header class="header-fixed">
+<style>
+  @media (max-width: 500px) {
+    .hero-content h1 {
+      font-size: 2.1rem;
+    }
+    .hero-content h2 {
+      margin: 28px 0;
+      font-size: 1.3rem;
+    }
+    .second-heading h1 {
+      font-size: 2rem;
+    }
+    .dropdown {
+      margin-bottom: 0;
+    }
+    .bg-clip {
+      font-size: 25px;
+    }
+    .bg-clip span {
+      font-size: 13px;
+    }
+  }
+</style>
+{% endblock css-ex %} {% block content-ex %} {% comment %}
+<header class="header-fixed">
   <a class="navbar-brand" href="#"
     ><img class="nav-logo" src="{% static 'assets/logo_blue.svg' %}"
   /></a>
-</header> {% endcomment %}
+</header>
+{% endcomment %}
 
 <!-- MAIN CONTENT HERE -->
 
@@ -88,20 +109,22 @@
       </div>
 
       <section class="contained">
-        {% comment %} <div class="bg-clip filterDiv common">
+        {% comment %}
+        <div class="bg-clip filterDiv common">
           M-I
           <span>Applied Mathematics-I</span>
-        </div> {% endcomment %}
-        {% for subject in subjects %}
+        </div>
+        {% endcomment %} {% for subject in subjects %}
 
-          <div class="bg-clip filterDiv {{ subject.type }}" onclick="availDocs('{{subject.code}}');">
-            {{ subject.code }}
-            <span>{{ subject.name }}</span>
-          </div>
-        
+        <div
+          class="bg-clip filterDiv {{ subject.type }}"
+          onclick="availDocs('{{subject.code}}');"
+        >
+          {{ subject.code }}
+          <span>{{ subject.name }}</span>
+        </div>
 
         {% endfor %}
-        
       </section>
     </div>
   </div>
@@ -152,15 +175,19 @@ Do not remove below content OR site will break.
 <div class="attribution">
   <p class="text-center">
     Website designed and developed by
-    <strong><a href="https://github.com/EdFlix5/Ed-Flix" style="color: #ffffff">Team Ed-Flix</a></strong>
+    <strong
+      ><a href="https://github.com/EdFlix5/Ed-Flix" style="color: #ffffff"
+        >Team Ed-Flix</a
+      ></strong
+    >
   </p>
 </div>
 <!-- <span class="navside" onclick="openNav()">☰</span> -->
 {% endblock content-ex %} {% block js %}
 <script src="{% static 'js/subject.js' %}"></script>
 <script>
-    function availDocs(sub){
-      document.location.href = `{% url 'subjectContent' %}?sub=${sub}`;
-    }
+  function availDocs(sub) {
+    document.location.href = `{% url 'subjectContent' %}?sub=${sub}`;
+  }
 </script>
 {% endblock js %}
