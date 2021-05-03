@@ -1,114 +1,127 @@
-{% extends 'base_with_navbar.html' %}
+{% extends 'base_with_navbar.html' %} {% load static %} {% block css-ex %}
+<link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
+<link rel="stylesheet" href="{% static 'css/afterLogin.css' %}" />
 
-{% load static %}
 
-{% block css-ex %}
 
-    <link rel="stylesheet" href="{% static 'css/afterLogin.css' %}" />
+{% endblock css-ex %} {% block content-ex %}
 
-{% endblock css-ex %}
-
-{% block content-ex %}
-
-  <h1 style="text-align: center; text-decoration: underline">
-      Recommendations
-    </h1>
-    <div class="outer-wrapper">
-      <div class="wrapper recommend">
-        <!-- 1 -->
-        <div class="card">
-          <div class="image-container">
-            <div class="subject-short">FLAT</div>
-            <div class="subject-name">
-              <h2>Formal Language and Automata Theory</h2>
-              <h5>MODULE-I</h5>
-            </div>
-          </div>
-          <div class="author">
-            <p>
-              Author:
-              <span class="author-name">D. Goswami & K.V Krishna</span> |
-              <span class="author-duration">size: 1.4MB</span>
-            </p>
-            <a href="images/Java Module-2.pdf" target="_blank"
-              ><button class="read-button">READ NOW</button></a
-            >
-          </div>
+<!-- I -->
+<h1>
+  Recommendations
+</h1>
+<div class="outer-wrapper">
+  <div class="wrapper recommend slider">
+    <button class="left-arrow left-arrow1">&larr;</button>
+    <!-- 1 -->
+    <div class="card card-recommend">
+      <div class="image-container">
+        <div class="subject-name">
+          <h2>Applied Mathematics-I</h2>
+          <h5>MODULE-I</h5>
+          <span class="read">READ NOW</span>
         </div>
-        <!-- 2 -->
-        <div class="card">
-          <div class="image-container">
-            <div class="subject-short">M-II</div>
-            <div class="subject-name">
-              <h2>Applied Mathematics - II</h2>
-              <h5>MODULE-I</h5>
-            </div>
-          </div>
-          <div class="author">
-            <p>
-              Author:
-              <span class="author-name">D. Goswami & K.V Krishna</span> |
-              <span class="author-duration">size: 1.4MB</span>
-            </p>
-            <a href="images/Java Module-2.pdf" target="_blank"
-              ><button class="read-button">READ NOW</button></a
-            >
-          </div>
-        </div>
-        <!-- 3 -->
-        <div class="card">
-          <div class="image-container">
-            <div class="subject-short">FLAT</div>
-            <div class="subject-name">
-              <h2>Formal Language and Automata Theory</h2>
-              <h5>MODULE-II</h5>
-            </div>
-          </div>
-          <div class="author">
-            <p>
-              Author:
-              <span class="author-name">D. Goswami & K.V Krishna</span> |
-              <span class="author-duration">size: 1.4MB</span>
-            </p>
-            <a href="images/Java Module-2.pdf" target="_blank"
-              ><button class="read-button">READ NOW</button></a
-            >
-          </div>
-        </div>
-        <!-- 4 -->
-        <div class="card">
-          <div class="image-container">
-            <div class="subject-short">CNS</div>
-            <div class="subject-name">
-              <h2>Cryptography and Network Security</h2>
-              <h5>MODULE-I</h5>
-            </div>
-          </div>
-          <div class="author">
-            <p>
-              Author:
-              <span class="author-name">D. Goswami & K.V Krishna</span> |
-              <span class="author-duration">size: 1.4MB</span>
-            </p>
-            <a href="images/Java Module-2.pdf" target="_blank"
-              ><button class="read-button">READ NOW</button></a
-            >
-          </div>
-        </div>
+        <div class="subject-short">FLAT</div>
+      </div>
+      <div class="author">
+        <p>
+          Author:
+          <span class="author-name">D. Goswami & K.V Krishna</span> |
+          <span class="author-duration">size: 1.4MB</span>
+        </p>
       </div>
     </div>
+    <!-- 2 -->
+    <div class="card card-recommend">
+      <div class="image-container">
+        <div class="subject-name">
+          <h2>Formal Language and Automata Theory</h2>
+          <h5>MODULE-I</h5>
+          <span class="read">READ NOW</span>
+        </div>
+        <div class="subject-short">FLAT</div>
+      </div>
+      <div class="author">
+        <p>
+          Author:
+          <span class="author-name">D. Goswami & K.V Krishna</span> |
+          <span class="author-duration">size: 1.4MB</span>
+        </p>
+      </div>
+    </div>
+    <!-- 3 -->
+    <div class="card card-recommend">
+      <div class="image-container">
+        <div class="subject-name">
+          <h2>Cryptography and Network Security</h2>
+          <h5>MODULE-I</h5>
+          <span class="read">READ NOW</span>
+        </div>
+        <div class="subject-short">CNS</div>
+      </div>
+      <div class="author">
+        <p>
+          Author:
+          <span class="author-name">D. Goswami & K.V Krishna</span> |
+          <span class="author-duration">size: 1.4MB</span>
+        </p>
+      </div>
+    </div>
+    <!-- 4 -->
+    <div class="card card-recommend">
+      <div class="image-container">
+        <div class="subject-name">
+          <h2>Formal Language and Automata Theory</h2>
+          <h5>MODULE-I</h5>
+          <span class="read">READ NOW</span>
+        </div>
+        <div class="subject-short">FLAT</div>
+      </div>
+      <div class="author">
+        <p>
+          Author:
+          <span class="author-name">D. Goswami & K.V Krishna</span> |
+          <span class="author-duration">size: 1.4MB</span>
+        </p>
+      </div>
+    </div>
+    <!-- 5 -->
+    <div class="card card-recommend">
+      <div class="image-container">
+        <div class="subject-name">
+          <h2>Formal Language and Automata Theory</h2>
+          <h5>MODULE-I</h5>
+          <span class="read">READ NOW</span>
+        </div>
+        <div class="subject-short">FLAT</div>
+      </div>
+      <div class="author">
+        <p>
+          Author:
+          <span class="author-name">D. Goswami & K.V Krishna</span> |
+          <span class="author-duration">size: 1.4MB</span>
+        </p>
+      </div>
+    </div>
+    <button class="right-arrow right-arrow1">&rarr;</button>
+  </div>
+</div>
+
     <!-- II -->
-    <h1 style="text-align: center; text-decoration: underline">Most Viewed</h1>
+    <h1>Most Viewed</h1>
     <div class="outer-wrapper">
-      <div class="wrapper most-viewed">
+      <div class="wrapper most-viewed slider">
+        <button class="left-arrow left-arrow2">&larr;</button>
         <!-- 1 -->
-        <div class="card">
+        <div class="card card-mostvisited">
           <div class="image-container">
-            <div class="subject-short">FLAT</div>
             <div class="subject-name">
               <h2>Formal Language and Automata Theory</h2>
               <h5>MODULE-I</h5>
+              <span class="read">READ NOW</span>
             </div>
+            <div class="subject-short">FLAT</div>
           </div>
           <div class="author">
             <p>
@@ -116,19 +129,17 @@
               <span class="author-name">D. Goswami & K.V Krishna</span> |
               <span class="author-duration">size: 1.4MB</span>
             </p>
-            <a href="images/Java Module-2.pdf" target="_blank"
-              ><button class="read-button">READ NOW</button></a
-            >
           </div>
         </div>
         <!-- 2 -->
-        <div class="card">
+        <div class="card card-mostvisited">
           <div class="image-container">
-            <div class="subject-short">FLAT</div>
             <div class="subject-name">
               <h2>Formal Language and Automata Theory</h2>
-              <h5>MODULE-II</h5>
+              <h5>MODULE-I</h5>
+              <span class="read">READ NOW</span>
             </div>
+            <div class="subject-short">FLAT</div>
           </div>
           <div class="author">
             <p>
@@ -136,19 +147,17 @@
               <span class="author-name">D. Goswami & K.V Krishna</span> |
               <span class="author-duration">size: 1.4MB</span>
             </p>
-            <a href="images/Java Module-2.pdf" target="_blank"
-              ><button class="read-button">READ NOW</button></a
-            >
           </div>
         </div>
         <!-- 3 -->
-        <div class="card">
+        <div class="card card-mostvisited">
           <div class="image-container">
-            <div class="subject-short">FLAT</div>
             <div class="subject-name">
               <h2>Formal Language and Automata Theory</h2>
-              <h5>MODULE-III</h5>
+              <h5>MODULE-I</h5>
+              <span class="read">READ NOW</span>
             </div>
+            <div class="subject-short">FLAT</div>
           </div>
           <div class="author">
             <p>
@@ -156,19 +165,17 @@
               <span class="author-name">D. Goswami & K.V Krishna</span> |
               <span class="author-duration">size: 1.4MB</span>
             </p>
-            <a href="images/Java Module-2.pdf" target="_blank"
-              ><button class="read-button">READ NOW</button></a
-            >
           </div>
         </div>
         <!-- 4 -->
-        <div class="card">
+        <div class="card card-mostvisited">
           <div class="image-container">
-            <div class="subject-short">FLAT</div>
             <div class="subject-name">
               <h2>Formal Language and Automata Theory</h2>
-              <h5>MODULE-IV</h5>
+              <h5>MODULE-I</h5>
+              <span class="read">READ NOW</span>
             </div>
+            <div class="subject-short">FLAT</div>
           </div>
           <div class="author">
             <p>
@@ -176,59 +183,17 @@
               <span class="author-name">D. Goswami & K.V Krishna</span> |
               <span class="author-duration">size: 1.4MB</span>
             </p>
-            <a href="images/Java Module-2.pdf" target="_blank"
-              ><button class="read-button">READ NOW</button></a
-            >
           </div>
         </div>
         <!-- 5 -->
-        <div class="card">
+        <div class="card card-mostvisited">
           <div class="image-container">
-            <div class="subject-short">M-II</div>
-            <div class="subject-name">
-              <h2>Applied Mathematics - II</h2>
-              <h5>MODULE-I</h5>
-            </div>
-          </div>
-          <div class="author">
-            <p>
-              Author:
-              <span class="author-name">D. Goswami & K.V Krishna</span> |
-              <span class="author-duration">size: 1.4MB</span>
-            </p>
-            <a href="images/Java Module-2.pdf" target="_blank"
-              ><button class="read-button">READ NOW</button></a
-            >
-          </div>
-        </div>
-        <!-- 6 -->
-        <div class="card">
-          <div class="image-container">
-            <div class="subject-short">CNS</div>
-            <div class="subject-name">
-              <h2>Cryptography and Network Security</h2>
-              <h5>MODULE-I</h5>
-            </div>
-          </div>
-          <div class="author">
-            <p>
-              Author:
-              <span class="author-name">D. Goswami & K.V Krishna</span> |
-              <span class="author-duration">size: 1.4MB</span>
-            </p>
-            <a href="images/Java Module-2.pdf" target="_blank"
-              ><button class="read-button">READ NOW</button></a
-            >
-          </div>
-        </div>
-        <!-- 7 -->
-        <div class="card">
-          <div class="image-container">
-            <div class="subject-short">FLAT</div>
             <div class="subject-name">
               <h2>Formal Language and Automata Theory</h2>
               <h5>MODULE-I</h5>
+              <span class="read">READ NOW</span>
             </div>
+            <div class="subject-short">FLAT</div>
           </div>
           <div class="author">
             <p>
@@ -236,37 +201,73 @@
               <span class="author-name">D. Goswami & K.V Krishna</span> |
               <span class="author-duration">size: 1.4MB</span>
             </p>
-            <a href="images/Java Module-2.pdf" target="_blank"
-              ><button class="read-button">READ NOW</button></a
-            >
           </div>
         </div>
+        <!-- 6 -->
+        <div class="card card-mostvisited">
+          <div class="image-container">
+            <div class="subject-name">
+              <h2>Formal Language and Automata Theory</h2>
+              <h5>MODULE-I</h5>
+              <span class="read">READ NOW</span>
+            </div>
+            <div class="subject-short">FLAT</div>
+          </div>
+          <div class="author">
+            <p>
+              Author:
+              <span class="author-name">D. Goswami & K.V Krishna</span> |
+              <span class="author-duration">size: 1.4MB</span>
+            </p>
+          </div>
+        </div>
+        <!-- 7 -->
+        <div class="card card-mostvisited">
+          <div class="image-container">
+            <div class="subject-name">
+              <h2>Formal Language and Automata Theory</h2>
+              <h5>MODULE-I</h5>
+              <span class="read">READ NOW</span>
+            </div>
+            <div class="subject-short">FLAT</div>
+          </div>
+          <div class="author">
+            <p>
+              Author:
+              <span class="author-name">D. Goswami & K.V Krishna</span> |
+              <span class="author-duration">size: 1.4MB</span>
+            </p>
+          </div>
+        </div>
+        <button class="right-arrow right-arrow2">&rarr;</button>
       </div>
     </div>
-    <footer class="footer">
-      <div class="row inner">
-        <copy class="copyright col-12 d-flex justify-content-center">
-          ©copyright
-          <script>
-            document.write(new Date().getFullYear());
-          </script>
-          Team Ed-Flix
-        </copy>
-      </div>
-      <p class="text-center">
-        Website designed and developed by
-        <strong
-          ><a href="https://github.com/EdFlix5" style="color: #ffffff"
-            >Team Ed-Flix</a
-          ></strong
-        >
-      </p>
-    </footer>
+  </div>
+  <footer class="footer">
+    <div class="row inner">
+      <copy class="copyright col-12 d-flex justify-content-center">
+        ©copyright
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Team Ed-Flix
+      </copy>
+    </div>
+    <p class="text-center">
+      Website designed and developed by
+      <strong
+        ><a href="https://github.com/EdFlix5" style="color: #ffffff"
+          >Team Ed-Flix</a
+        ></strong
+      >
+    </p>
+  </footer>
 
-{% endblock content-ex %}
+  {% endblock content-ex %} {% block js %}
 
-{% block js %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
+  <script src="{% static 'js/afterLogin.js' %}"></script>
 
-    <script src="{% static 'js/afterLogin.js' %}" defer></script>
-
-{% endblock js %}
+  {% endblock js %}
+</div>
