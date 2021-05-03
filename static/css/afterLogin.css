@@ -25,6 +25,20 @@ h1 {
   margin-top: 40px;
 }
 
+.no-card {
+  color: #4c458b;
+  margin-left: 40px;
+  font-size: 0.9rem;
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .no-card {
+    margin-left: 10px;
+    font-size: 0.7rem;
+  }
+}
+
 /* .slide {
   width: 40vw;
   height: 40vh;
@@ -136,6 +150,10 @@ h1 {
   color: #fff;
 }
 
+.card:hover .subject-name a {
+  color: #fff;
+}
+
 .card:hover .subject-short {
   color: #fff;
   border-color: #fff;
@@ -157,6 +175,7 @@ h1 {
 
 .read:hover {
   color: rgb(238, 234, 234);
+  transform: translateY(-2px);
 }
 
 .read-button {
@@ -214,9 +233,8 @@ h1 {
   font-family: fantasy;
 }
 
-.subject-name {
-  /* flex: 0.7; */
-  /* text-align: left; */
+.subject-name a {
+  color: #4c458b;
 }
 
 .subject-name h2 {
@@ -300,10 +318,6 @@ hr {
   .subject-name h2 {
     display: none;
   }
-  .left-arrow,
-  .right-arrow {
-    display: none;
-  }
 
   .wrapper {
     grid-template-columns: 1fr;
@@ -321,6 +335,9 @@ hr {
     font-size: 10px;
     margin: 8px 0;
   }
+  .read {
+    font-size: 0.6rem;
+  }
   ::-webkit-scrollbar {
     display: none;
   }
@@ -331,7 +348,7 @@ hr {
   color: #fff;
   text-align: center;
   margin-bottom: 0;
-  margin-top: 12rem;
+  margin-top: 8rem;
   padding: 50px;
 }
 
@@ -339,8 +356,8 @@ hr {
 .slick-next:before {
   color: rgb(141, 137, 137) !important;
 }
-
-.slick-prev {
+/* Slick js */
+/* .slick-prev {
   left: 0;
   z-index: 10;
   padding: 5px;
@@ -357,4 +374,11 @@ hr {
 
 .slick-next:before {
   font-size: 25px;
+} */
+
+@media (max-width: 1200px) {
+  .left-arrow,
+  .right-arrow {
+    display: none;
+  }
 }
