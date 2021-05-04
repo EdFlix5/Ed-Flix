@@ -2,7 +2,8 @@ from django.http.response import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.core.files.storage import FileSystemStorage
-from .models import FileUpload
+from api.models import FileUpload
+from accounts.models import DocViews
 
 # Create your views here.
 
@@ -719,27 +720,42 @@ def explore(request):
 
 
 ''' Details of a Subject '''
-
 def sub_details(request):
     subject_code = request.GET.get('sub')
 
     subject_name = ""
     if subject_code is not None:
         subject_name = cse_code_subject_mapping.get(subject_code)
+    
+    files = FileUpload.objects.filter(subject_code = subject_code.upper())
 
-    return render(request,"subjectDetails.html",{"subject_name" : subject_name,"code":subject_code})
+    notes = []
+    pyqs = []
+    gate_pyqs = []
+
+    for file in files:
+        if file.documentType == 'Notes':
+            notes.append(file)
+        elif file.documentType == 'PYQ':
+            pyqs.append(file)
+        else:
+            gate_pyqs.append(file)
+
+    return render(request,"subjectDetails.html",{"notes":notes,"pyqs":pyqs,"gate_pyqs":gate_pyqs})
 
 
 
 def contentView(request):
 
-    subject_code = request.GET.get('sub')
+    file_id = request.GET.get('id')
+    
+    file = FileUpload.objects.get(pk=file_id)
 
-    subject_name = ""
-    if subject_code is not None:
-        subject_name = cse_code_subject_mapping.get(subject_code)
+    if request.user.is_authenticated:
+        visit = DocViews(username=request.user,visit_id=file_id)
+        visit.save()
 
-    return render(request,"subjectContent.html",{"subject_name" : subject_name,"code":subject_code})
+    return render(request,"subjectContent.html",{"file":file})
 
 
 ''' Upload Page '''
@@ -753,16 +769,78 @@ def upload(request):
 ''' After login Page '''
 @login_required
 def afterLogin(request):
-    return render(request,"afterLogin.html")
+
+
+    #Most Viewed Docs Logic
+    visits = {} 
+    for obj in DocViews.objects.all():
+        if obj.visit_id in visits:
+            visits[obj.visit_id] += 1
+        else:
+            visits[obj.visit_id] = 1
+        
+    visits = dict( sorted(visits.items(), key=lambda item: item[1],reverse=True))
+
+    most_viewed = []
+
+    for k,v in visits.items():
+        most_viewed.append(FileUpload.objects.get(pk=int(k)))
+
+    # print(most_viewed)
+
+    #Recommendations Logic
+
+    file_visited = DocViews.objects.filter(username=request.user)
+    user_visits = {}
+    my_visit = set()
+
+    for obj in file_visited:
+        my_visit.add(obj.visit_id)
+        if obj.visit_id in user_visits:
+            user_visits[obj.visit_id] += 1
+        else:
+            user_visits[obj.visit_id] = 1
+    
+    user_visits = dict( sorted(user_visits.items(), key=lambda item: item[1],reverse=True))
+
+    subject_visits = {}
+    for k,v in user_visits.items():
+        sub = FileUpload.objects.get(pk=int(k)).subject_code
+        if sub in subject_visits:
+            subject_visits[sub] += int(v)
+        else:
+            subject_visits[sub] = int(v)
+
+    subject_visits = dict( sorted(subject_visits.items(), key=lambda item: item[1],reverse=True))
+
+    recommendations = []
+
+    for k,v in subject_visits.items():
+        files = FileUpload.objects.filter(subject_code=k)
+        for file in files:
+            if file.id not in my_visit:
+                recommendations.append(file)
+
+    # print(recommendations)
+
+    # Continue Reading Logic
+
+    user_visit = set()
+    recently_visited = []
+    for obj in reversed(file_visited):
+        if obj.visit_id not in user_visit:
+            recently_visited.append(FileUpload.objects.get(pk=int(obj.visit_id)))
+            user_visit.add(obj.visit_id)
+
+
+
+
+
+
+    return render(request,"afterLogin.html",{"most_vieweds":most_viewed,"recommendations":recommendations,"recently_visiteds":recently_visited})
 
 
 @login_required(login_url="login")
 def home(request):
     return render(request, 'auth.html')
 
-
-def allDocs(request):
-    res = []
-    for obj in FileUpload.objects.all():
-        res.append(str(obj.id) + "\t| " + obj.title + "\t| " + obj.author + "\t| " + obj.subject + "\n" )
-    return HttpResponse(res)

@@ -7,6 +7,44 @@
 
 {% endblock css-ex %} {% block content-ex %}
 
+
+
+
+
+    {% if recently_visiteds %}
+    
+          <h1>Continue Reading</h1>
+          <div class="outer-wrapper">
+            <div class="wrapper most-recent slider">
+              <button class="left-arrow left-arrow3">&larr;</button>
+                  <!-- 1 -->
+                {% for recently_visited in recently_visiteds %}
+            
+                  <div class="card card-recently_visited">
+                      <div class="image-container">
+                        <div class="subject-name">
+                          <h2>{{recently_visited.title}}</h2>
+                          <h5>{{recently_visited.subtitle}}</h5>
+                          <a href="{% url 'contentView' %}?id={{recently_visited.id}}"><span class="read">READ NOW</span></a>
+                        </div>
+                        <div class="subject-short">{{recently_visited.subject_code}}</div>
+                      </div>
+                      <div class="author">
+                        <p>
+                          Author:
+                          <span class="author-name">{{recently_visited.author}}</span> |
+                          <span class="author-duration">size: {{recently_visited.file_size}}</span>
+                        </p>
+                      </div>
+                    </div>
+                {% endfor %}
+              <button class="right-arrow right-arrow3">&rarr;</button>
+            </div>
+          </div>
+    {% endif %}
+
+
+
 <!-- I -->
     <h1>
       Recommendations
@@ -16,24 +54,28 @@
       <div class="wrapper recommend slider">
         <button class="left-arrow left-arrow1">&larr;</button>
         <!-- 1 -->
-        <div class="card card-recommend">
-          <div class="image-container">
-            <div class="subject-name">
-              <h2>Applied Mathematics-I</h2>
-              <h5>MODULE-I</h5>
-              <a href=""><span class="read">READ NOW</span></a>
+       {% for recommendation in recommendations %}
+    
+          <div class="card card-recommend">
+            <div class="image-container">
+              <div class="subject-name">
+                <h2>{{recommendation.title}}</h2>
+                <h5>{{recommendation.subtitle}}</h5>
+                <a href="{% url 'contentView' %}?id={{recommendation.id}}"><span class="read">READ NOW</span></a>
+              </div>
+              <div class="subject-short">{{recommendation.subject_code}}</div>
             </div>
-            <div class="subject-short">FLAT</div>
+            <div class="author">
+              <p>
+                Author:
+                <span class="author-name">{{recommendation.author}}</span> |
+                <span class="author-duration">size: {{recommendation.file_size}}</span>
+              </p>
+            </div>
           </div>
-          <div class="author">
-            <p>
-              Author:
-              <span class="author-name">D. Goswami & K.V Krishna</span> |
-              <span class="author-duration">size: 1.4MB</span>
-            </p>
-          </div>
-        </div>
-        <!-- 2 -->
+
+        {% endfor %}
+        {% comment %} <!-- 2 -->
         <div class="card card-recommend">
           <div class="image-container">
             <div class="subject-name">
@@ -176,7 +218,7 @@
               <span class="author-duration">size: 1.4MB</span>
             </p>
           </div>
-        </div>
+        </div> {% endcomment %}
         <button class="right-arrow right-arrow1">&rarr;</button>
       </div>
     </div>
@@ -187,25 +229,30 @@
           <div class="wrapper most-viewed slider">
             <button class="left-arrow left-arrow2">&larr;</button>
             <!-- 1 -->
-            <div class="card card-mostvisited">
-              <div class="image-container">
-                <div class="subject-name">
-                  <h2>Formal Language and Automata Theory</h2>
-                  <h5>MODULE-I</h5>
-                  <a href=""><span class="read">READ NOW</span></a>
-                </div>
-                <div class="subject-short">FLAT</div>
-              </div>
-              <div class="author">
-                <p>
-                  Author:
-                  <span class="author-name">D. Goswami & K.V Krishna</span> |
-                  <span class="author-duration">size: 1.4MB</span>
-                </p>
-              </div>
-            </div>
+            {% for most_viewed in most_vieweds %}
+        
+                  <div class="card card-mostvisited">
+                      <div class="image-container">
+                        <div class="subject-name">
+                          <h2>{{most_viewed.title}}</h2>
+                          <h5>{{most_viewed.subtitle}}</h5>
+                          <a href="{% url 'contentView' %}?id={{most_viewed.id}}"><span class="read">READ NOW</span></a>
+                        </div>
+                        <div class="subject-short">{{most_viewed.subject_code}}</div>
+                      </div>
+                      <div class="author">
+                        <p>
+                          Author:
+                          <span class="author-name">{{most_viewed.author}}</span> |
+                          <span class="author-duration">size: {{most_viewed.file_size}}</span>
+                        </p>
+                      </div>
+                    </div>
+            
+            
+            {% endfor %}
             <!-- 2 -->
-            <div class="card card-mostvisited">
+            {% comment %} <div class="card card-mostvisited">
               <div class="image-container">
                 <div class="subject-name">
                   <h2>Formal Language and Automata Theory</h2>
@@ -311,7 +358,7 @@
                   <span class="author-duration">size: 1.4MB</span>
                 </p>
               </div>
-            </div>
+            </div> {% endcomment %}
             <button class="right-arrow right-arrow2">&rarr;</button>
           </div>
         </div>
