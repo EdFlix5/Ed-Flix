@@ -20,15 +20,15 @@ Subject Content
 
        <div class="content">
         <div class="subject-details">
-          <h1>{{subject_name}}</h1>
+          <h1>{{file.title}}</h1>
           <!-- <h3>FLAT</h3> -->
           <p class="author-details">
-            Author: <span class="author-name">D. Goswami & K.V Krishna</span>
+            Author: <span class="author-name">{{file.author}}</span>
           </p>
         </div>
         <object
           id="subject-pdf"
-          data="https://edflix5.pythonanywhere.com/static/contents/Flat-Notes.pdf"
+          data="{{file.file_location}}"
           type="application/pdf"
           style="height: 85vh; width: 900px">
           Unable to load pdf

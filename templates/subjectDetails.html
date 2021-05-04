@@ -19,198 +19,120 @@
   </ul>
 </div>
 
-<div class="notes"><h1>NOTES</h1></div>
 
-<section id="notes-section">
-  <div class="subject-container">
-    <div class="card">
-      <div class="image-container">
-        <div class="subject-name">
-          <h2>{{subject_name}}</h2>
-          <h5>MODULE-I</h5>
-          <a href="{% url 'contentView' %}?sub={{code}}"
-            ><span class="read">READ NOW</span></a
-          >
-        </div>
-        <div class="subject-short">{{code}}</div>
-      </div>
-      <div class="author">
-        <p>
-          Author:
-          <span class="author-name">D. Goswami & K.V Krishna</span> |
-          <span class="author-duration">size: 1.4MB</span>
-        </p>
-      </div>
-    </div>
-    <!-- <div class="card">
-      <div class="image-container">
-        <div class="subject-short">{{code}}</div>
-        <div class="subject-name">
-          <h2>{{subject_name}}</h2>
-          <h5>MODULE-I</h5>
-        </div>
-      </div>
-      <div class="author">
-        <p>
-          Author:
-          <span class="author-name"> D. Goswami & K.V Krishna</span> |
-          <span class="author-duration">size: 1.4MB</span>
-        </p>
-        <a href="{% url 'contentView' %}?sub={{code}}"
-          ><button class="read-button">READ NOW</button></a
-        >
-      </div>
-    </div> -->
-    <div class="card">
-      <div class="image-container">
-        <div class="subject-name">
-          <h2>{{subject_name}}</h2>
-          <h5>MODULE-II</h5>
-          <a href="{% url 'contentView' %}?sub={{code}}"
-            ><span class="read">READ NOW</span></a
-          >
-        </div>
-        <div class="subject-short">{{code}}</div>
-      </div>
-      <div class="author">
-        <p>
-          Author:
-          <span class="author-name">D. Goswami & K.V Krishna</span> |
-          <span class="author-duration">size: 1.4MB</span>
-        </p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="image-container">
-        <div class="subject-name">
-          <h2>{{subject_name}}</h2>
-          <h5>MODULE-III</h5>
-          <a href="{% url 'contentView' %}?sub={{code}}"
-            ><span class="read">READ NOW</span></a
-          >
-        </div>
-        <div class="subject-short">{{code}}</div>
-      </div>
-      <div class="author">
-        <p>
-          Author:
-          <span class="author-name">D. Goswami & K.V Krishna</span> |
-          <span class="author-duration">size: 1.4MB</span>
-        </p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="image-container">
-        <div class="subject-name">
-          <h2>{{subject_name}}</h2>
-          <h5>MODULE-IV</h5>
-          <a href="{% url 'contentView' %}?sub={{code}}"
-            ><span class="read">READ NOW</span></a
-          >
-        </div>
-        <div class="subject-short">{{code}}</div>
-      </div>
-      <div class="author">
-        <p>
-          Author:
-          <span class="author-name">D. Goswami & K.V Krishna</span> |
-          <span class="author-duration">size: 1.4MB</span>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<hr />
-<div class="notes"><h1>PYQ</h1></div>
 
-<section id="pyq-section">
-  <div class="subject-container">
-    <div class="card">
-      <div class="image-container">
-        <div class="subject-name">
-          <h2>{{subject_name}}</h2>
-          <h5>PYQ-2020</h5>
-          <a href="{% url 'contentView' %}?sub={{code}}"
-            ><span class="read">READ NOW</span></a
-          >
-        </div>
-        <div class="subject-short">{{code}}</div>
-      </div>
-      <div class="author">
-        <p>
-          Author:
-          <span class="author-name">D. Goswami & K.V Krishna</span> |
-          <span class="author-duration">size: 1.4MB</span>
-        </p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="image-container">
-        <div class="subject-name">
-          <h2>{{subject_name}}</h2>
-          <h5>PYQ-2019</h5>
-          <a href="{% url 'contentView' %}?sub={{code}}"
-            ><span class="read">READ NOW</span></a
-          >
-        </div>
-        <div class="subject-short">{{code}}</div>
-      </div>
-      <div class="author">
-        <p>
-          Author:
-          <span class="author-name">D. Goswami & K.V Krishna</span> |
-          <span class="author-duration">size: 1.4MB</span>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<hr />
-<div class="notes"><h1>GATE PYQ</h1></div>
+{% if notes %}
 
-<section id="gate-section">
-  <div class="subject-container">
-    <div class="card">
-      <div class="image-container">
-        <div class="subject-name">
-          <h2>{{subject_name}}</h2>
-          <h5>GATE-2020</h5>
-          <a href="{% url 'contentView' %}?sub={{code}}"
-            ><span class="read">READ NOW</span></a
-          >
+  <div class="notes"><h1>NOTES</h1></div>
+
+  <section id="notes-section">
+    <div class="subject-container">
+      {% for note in notes %}
+
+         <div class="card">
+          <div class="image-container">
+            <div class="subject-name">
+              <h2>{{note.title}}</h2>
+              <h5>{{note.subtitle}}</h5>
+              <a href="{% url 'contentView' %}?id={{note.id}}"
+                ><span class="read">READ NOW</span></a
+              >
+            </div>
+            <div class="subject-short">{{note.subject_code}}</div>
+          </div>
+          <div class="author">
+            <p>
+              Author:
+              <span class="author-name">{{note.author}}</span> |
+              <span class="author-duration">size: {{note.file_size}}</span>
+            </p>
+          </div>
         </div>
-        <div class="subject-short">{{code}}</div>
-      </div>
-      <div class="author">
-        <p>
-          Author:
-          <span class="author-name">D. Goswami & K.V Krishna</span> |
-          <span class="author-duration">size: 1.4MB</span>
-        </p>
-      </div>
+      
+      {% endfor %}
     </div>
-    <div class="card">
-      <div class="image-container">
-        <div class="subject-name">
-          <h2>{{subject_name}}</h2>
-          <h5>Gate 2021</h5>
-          <a href="{% url 'contentView' %}?sub={{code}}"
-            ><span class="read">READ NOW</span></a
-          >
-        </div>
-        <div class="subject-short">{{code}}</div>
+  </section>
+  <hr />
+
+{% endif %}
+
+
+{% if pyqs %}
+
+        <div class="notes"><h1>PYQ</h1></div>
+
+        <section id="pyq-section">
+          <div class="subject-container">
+
+            {% for pyq in pyqs %}
+
+                 <div class="card">
+                  <div class="image-container">
+                    <div class="subject-name">
+                      <h2>{{pyq.title}}</h2>
+                      <h5>{{pyq.subtitle}}</h5>
+                      <a href="{% url 'contentView' %}?id={{pyq.id}}"
+                        ><span class="read">READ NOW</span></a
+                      >
+                    </div>
+                    <div class="subject-short">{{pyq.subject_code}}</div>
+                  </div>
+                  <div class="author">
+                    <p>
+                      Author:
+                      <span class="author-name">{{pyq.author}}</span> |
+                      <span class="author-duration">size: {{pyq.file_size}}</span>
+                    </p>
+                  </div>
+                </div>
+            
+            {% endfor %}
+          
+          </div>
+        </section>
+        <hr />
+
+
+{% endif %}
+
+
+{% if gate_pyqs %}
+
+    <div class="notes"><h1>GATE PYQ</h1></div>
+
+    <section id="gate-section">
+      <div class="subject-container">
+         {% for gate_pyq in gate_pyqs %}
+
+           <div class="card">
+              <div class="image-container">
+                <div class="subject-name">
+                  <h2>{{gate_pyq.title}}</h2>
+                  <h5>{{gate_pyq.subtitle}}</h5>
+                  <a href="{% url 'contentView' %}?id={{gate_pyq.id}}"
+                    ><span class="read">READ NOW</span></a
+                  >
+                </div>
+                <div class="subject-short">{{gate_pyq.subject_code}}</div>
+              </div>
+              <div class="author">
+                <p>
+                  Author:
+                  <span class="author-name">{{gate_pyq.author}}</span> |
+                  <span class="author-duration">size: {{gate_pyq.file_size}}</span>
+                </p>
+              </div>
+            </div>
+      
+            
+            {% endfor %}
       </div>
-      <div class="author">
-        <p>
-          Author:
-          <span class="author-name">D. Goswami & K.V Krishna</span> |
-          <span class="author-duration">size: 1.4MB</span>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<hr />
+    </section>
+    <hr />
+
+
+{% endif %}
+
 
 <footer class="footer">
   <div class="row inner">

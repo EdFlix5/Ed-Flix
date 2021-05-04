@@ -30,6 +30,9 @@ $(".page").on("click", function(e) {
 
 });
 
+
+// console.log($("#mainContainer").contents().find("body").html());
+
 // After Login
 /*
 const singleCardWidth = document.querySelector(".card").offsetWidth;
