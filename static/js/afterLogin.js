@@ -8,23 +8,18 @@ const mostViewedCardNumber = document.querySelectorAll(".card-mostvisited").leng
 const mostViewedTotalWidth = (mostViewedCardNumber + 1) * singleCardWidth;
 document.querySelector(".most-viewed").style.width = `${mostViewedTotalWidth}px`;
 
-const mostRecentCardNumber = document.querySelectorAll(".card-recently_visited").length;
-const mostRecentTotalWidth = (mostRecentCardNumber + 1) * singleCardWidth;
-document.querySelector(".most-recent").style.width = `${mostRecentTotalWidth}px`;
 
 // Card slider
 const cardsRecommend = document.querySelectorAll(".card-recommend");
 const cardsMostVisited = document.querySelectorAll(".card-mostvisited");
-const cardsRecentlyVisited = document.querySelectorAll(".card-recently_visited");
+
 const rightArrow1 = document.querySelector(".right-arrow1");
 const leftArrow1 = document.querySelector(".left-arrow1");
 const rightArrow2 = document.querySelector(".right-arrow2");
 const leftArrow2 = document.querySelector(".left-arrow2");
-const rightArrow3 = document.querySelector(".right-arrow3");
-const leftArrow3 = document.querySelector(".left-arrow3");
+
 let oldPositionRecommend = 0;
 let oldPositionMostViewed = 0;
-let oldPositionRecent = 0;
 
 // When recommended cards are empty
 if (recommendCardNumber < 1) {
@@ -45,10 +40,6 @@ if (mostViewedCardNumber <= 4) {
 }
 
 
-if (mostRecentCardNumber <= 4) {
-    rightArrow3.style.display = "none";
-    leftArrow3.style.display = "none";
-}
 
 const onRightClick1 = function() {
     if (Math.abs((oldPositionRecommend * 614) / 40 - 1228) < recommendTotalWidth)
@@ -83,22 +74,13 @@ const onRightClick2 = function() {
 };
 
 
-const onRightClick3 = function() {
-    if (
-        Math.abs((oldPositionRecent * 614) / 40 - 1228) < mostRecentTotalWidth
-    )
-        oldPositionRecent -= 40;
-    cardsRecentlyVisited.forEach((c, i) => {
-        c.style.transform = `translateX(${oldPositionRecent}vw)`;
-    });
-    /*
-    console.log(
-      "clickedRight",
-      (oldPositionMostViewed * 614) / 40 - 1228,
-      mostViewedTotalWidth
-    );
-    */
-};
+/*
+console.log(
+  "clickedRight",
+  (oldPositionMostViewed * 614) / 40 - 1228,
+  mostViewedTotalWidth
+);
+*/
 
 const onLeftClick1 = function() {
     if (oldPositionRecommend < 0) {
@@ -120,24 +102,62 @@ const onLeftClick2 = function() {
     // console.log("clickedLeft", oldPositionMostViewed);
 };
 
-const onLeftClick3 = function() {
-    if (oldPositionRecent < 0) {
-        oldPositionRecent += 40;
-    }
-    cardsMostVisited.forEach((c, i) => {
-        c.style.transform = `translateX(${oldPositionRecent}vw)`;
-    });
-    // console.log("clickedLeft", oldPositionMostViewed);
-};
 
 rightArrow1.addEventListener("click", onRightClick1);
 leftArrow1.addEventListener("click", onLeftClick1);
 rightArrow2.addEventListener("click", onRightClick2);
 leftArrow2.addEventListener("click", onLeftClick2);
-rightArrow3.addEventListener("click", onRightClick3);
-leftArrow3.addEventListener("click", onLeftClick3);
 
 if ($(window).innerHeight() > $('.footer').offset().top) {
     var offset = $(window).innerHeight() - $('.footer').outerHeight();
     $('.footer').css('margin-top', parseInt($('.footer').css('marginTop'), 10) + offset - $('.footer ').offset().top);
+}
+
+
+
+
+if (document.querySelectorAll(".card-recently_visited") == null) {
+    const mostRecentCardNumber = document.querySelectorAll(".card-recently_visited").length;
+    const mostRecentTotalWidth = (mostRecentCardNumber + 1) * singleCardWidth;
+    document.querySelector(".most-recent").style.width = `${mostRecentTotalWidth}px`;
+
+    const cardsRecentlyVisited = document.querySelectorAll(".card-recently_visited");
+
+    const rightArrow3 = document.querySelector(".right-arrow3");
+    const leftArrow3 = document.querySelector(".left-arrow3");
+
+    let oldPositionRecent = 0;
+
+
+
+    if (mostRecentCardNumber <= 4) {
+        rightArrow3.style.display = "none";
+        leftArrow3.style.display = "none";
+    }
+
+
+    const onRightClick3 = function() {
+        if (
+            Math.abs((oldPositionRecent * 614) / 40 - 1228) < mostRecentTotalWidth
+        )
+            oldPositionRecent -= 40;
+        cardsRecentlyVisited.forEach((c, i) => {
+            c.style.transform = `translateX(${oldPositionRecent}vw)`;
+        });
+    };
+
+
+    const onLeftClick3 = function() {
+        if (oldPositionRecent < 0) {
+            oldPositionRecent += 40;
+        }
+        cardsMostVisited.forEach((c, i) => {
+            c.style.transform = `translateX(${oldPositionRecent}vw)`;
+        });
+        // console.log("clickedLeft", oldPositionMostViewed);
+    };
+
+
+    rightArrow3.addEventListener("click", onRightClick3);
+    leftArrow3.addEventListener("click", onLeftClick3);
 }

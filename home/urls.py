@@ -10,4 +10,5 @@ urlpatterns = [
     path('afterLogin',views.afterLogin,name="afterLogin"),
     path("subjectContent",views.sub_details,name="subjectContent"),
     path("subjectContent/contentView",views.contentView,name="contentView"),
+    path("search",views.search,name="search"),
 ]

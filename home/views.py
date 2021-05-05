@@ -840,6 +840,21 @@ def afterLogin(request):
     return render(request,"afterLogin.html",{"most_vieweds":most_viewed,"recommendations":recommendations,"recently_visiteds":recently_visited})
 
 
+
+
+def search(request):
+
+    query = request.GET.get("query")
+    files = []
+    if query is not None:
+        query_lower = query.lower()
+        for obj in FileUpload.objects.all():
+            if obj.title.lower().find(query_lower) != -1 or obj.subtitle.lower().find(query_lower) != -1 or obj.author.lower().find(query_lower) != -1:
+                files.append(obj)
+    print(files)
+
+    return render(request,"advancedSearch.html",{"query":query,"files":files});
+
 @login_required(login_url="login")
 def home(request):
     return render(request, 'auth.html')
