@@ -1,9 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
+{% extends 'base_with_navbar.html' %}
+
+{% load static %}
+
+{% block title %}
+Search
+{% endblock title %}
+
+
+
+{% block css-ex %}
+
+ <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css
     "
@@ -12,24 +19,25 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="css/advancedSearch.css" />
-    <script src="js/advancedSearch.js" defer></script>
+    <link rel="stylesheet" href="{% static 'css/advancedSearch.css' %}" />
+   
 
-    <title>Search</title>
-  </head>
-  <body>
-    <main class="main">
+{% endblock css-ex %}
+
+{% block content-ex %}
+
+<main class="main">
       <section class="hero">
         <div class="hero-content">
           <h1>Search for Query</h1>
-          <h2>"Text"</h2>
+          <h2>"{{query}}"</h2>
           <!-- <input type="checkbox" id="adv-search-check" />
           <label for="adv-search-check">Enable Advanced Search</label> -->
           <div class="pretty p-switch p-fill check-container">
             <input type="checkbox" id="adv-search-check" />
             <div class="state">
               <label for="adv-search-check" class="adv-search-label"
-                ><span>Enable Advanced Search</span></label
+                ><span>Advanced Search</span></label
               >
             </div>
           </div>
@@ -37,120 +45,30 @@
       </section>
       <section id="notes-section">
         <div class="subject-container">
-          <div class="card">
-            <div class="image-container">
-              <div class="subject-name">
-                <h2>Applied Physics</h2>
-                <h5>MODULE-I</h5>
-                <a href="{% url 'contentView' %}?sub={{code}}"
-                  ><span class="read">READ NOW</span></a
-                >
+
+          {% for file in files %}
+
+           <div class="card">
+              <div class="image-container">
+                <div class="subject-name">
+                  <h2>{{file.title}}</h2>
+                  <h5>{{file.subtitle}}</h5>
+                  <a href="{% url 'contentView' %}?id={{file.id}}"><span class="read">READ NOW</span></a>
+                </div>
+                <div class="subject-short">{{file.subject_code}}</div>
               </div>
-              <div class="subject-short">PHY</div>
-            </div>
-            <div class="author">
-              <p>
-                Author:
-                <span class="author-name">D. Goswami & K.V Krishna</span> |
-                <span class="author-duration">size: 1.4MB</span>
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="image-container">
-              <div class="subject-name">
-                <h2>Applied Physics</h2>
-                <h5>MODULE-II</h5>
-                <a href="{% url 'contentView' %}?sub={{code}}"
-                  ><span class="read">READ NOW</span></a
-                >
+              <div class="author">
+                <p>
+                  Author:
+                  <span class="author-name">{{file.author}}</span> |
+                  <span class="author-duration">size: {{file.file_size}}</span>
+                </p>
               </div>
-              <div class="subject-short">PHY</div>
             </div>
-            <div class="author">
-              <p>
-                Author:
-                <span class="author-name">D. Goswami & K.V Krishna</span> |
-                <span class="author-duration">size: 1.4MB</span>
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="image-container">
-              <div class="subject-name">
-                <h2>Applied Physics</h2>
-                <h5>MODULE-III</h5>
-                <a href="{% url 'contentView' %}?sub={{code}}"
-                  ><span class="read">READ NOW</span></a
-                >
-              </div>
-              <div class="subject-short">PHY</div>
-            </div>
-            <div class="author">
-              <p>
-                Author:
-                <span class="author-name">D. Goswami & K.V Krishna</span> |
-                <span class="author-duration">size: 1.4MB</span>
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="image-container">
-              <div class="subject-name">
-                <h2>Applied Physics</h2>
-                <h5>MODULE-IV</h5>
-                <a href="{% url 'contentView' %}?sub={{code}}"
-                  ><span class="read">READ NOW</span></a
-                >
-              </div>
-              <div class="subject-short">PHY</div>
-            </div>
-            <div class="author">
-              <p>
-                Author:
-                <span class="author-name">D. Goswami & K.V Krishna</span> |
-                <span class="author-duration">size: 1.4MB</span>
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="image-container">
-              <div class="subject-name">
-                <h2>Applied Physics</h2>
-                <h5>PYQ-2020</h5>
-                <a href="{% url 'contentView' %}?sub={{code}}"
-                  ><span class="read">READ NOW</span></a
-                >
-              </div>
-              <div class="subject-short">PHY</div>
-            </div>
-            <div class="author">
-              <p>
-                Author:
-                <span class="author-name">D. Goswami & K.V Krishna</span> |
-                <span class="author-duration">size: 1.4MB</span>
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="image-container">
-              <div class="subject-name">
-                <h2>Applied Physics</h2>
-                <h5>GATE-PYQ 2020</h5>
-                <a href="{% url 'contentView' %}?sub={{code}}"
-                  ><span class="read">READ NOW</span></a
-                >
-              </div>
-              <div class="subject-short">PHY</div>
-            </div>
-            <div class="author">
-              <p>
-                Author:
-                <span class="author-name">D. Goswami & K.V Krishna</span> |
-                <span class="author-duration">size: 1.4MB</span>
-              </p>
-            </div>
-          </div>
+          
+          {% endfor %}
+         
+         
         </div>
       </section>
       <footer class="footer">
@@ -173,5 +91,9 @@
         </p>
       </footer>
     </main>
-  </body>
-</html>
+
+{% endblock content-ex %}
+
+{% block js %}
+ <script src="{% static 'js/advancedSearch.js' %}" defer></script>
+{% endblock js %}

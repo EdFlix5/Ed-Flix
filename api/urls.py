@@ -10,4 +10,6 @@ urlpatterns = [
     path('upload',views.upload_file,name="api_upload"),
     path('docs',views.allDocs,name="api_docs"),
     path('visit',views.allVisit,name="api_visit"),
+    path('advancedSearch',views.advancedSearch,name="api_advanced_search"),
+    path("clear",views.clear,name="api_clear"),
 ]

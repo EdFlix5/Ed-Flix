@@ -25,7 +25,7 @@
                         <div class="subject-name">
                           <h2>{{recently_visited.title}}</h2>
                           <h5>{{recently_visited.subtitle}}</h5>
-                          <a href="{% url 'contentView' %}?id={{recently_visited.id}}"><span class="read">READ NOW</span></a>
+                          <a href="{% url 'contentView' %}?id={{recently_visited.id}}" target="_top"><span class="read">READ NOW</span></a>
                         </div>
                         <div class="subject-short">{{recently_visited.subject_code}}</div>
                       </div>
@@ -61,7 +61,7 @@
               <div class="subject-name">
                 <h2>{{recommendation.title}}</h2>
                 <h5>{{recommendation.subtitle}}</h5>
-                <a href="{% url 'contentView' %}?id={{recommendation.id}}"><span class="read">READ NOW</span></a>
+                <a href="{% url 'contentView' %}?id={{recommendation.id}}" target="_top"><span class="read">READ NOW</span></a>
               </div>
               <div class="subject-short">{{recommendation.subject_code}}</div>
             </div>
@@ -236,7 +236,7 @@
                         <div class="subject-name">
                           <h2>{{most_viewed.title}}</h2>
                           <h5>{{most_viewed.subtitle}}</h5>
-                          <a href="{% url 'contentView' %}?id={{most_viewed.id}}"><span class="read">READ NOW</span></a>
+                          <a href="{% url 'contentView' %}?id={{most_viewed.id}}" target="_top"><span class="read">READ NOW</span></a>
                         </div>
                         <div class="subject-short">{{most_viewed.subject_code}}</div>
                       </div>

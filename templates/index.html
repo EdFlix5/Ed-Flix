@@ -234,9 +234,8 @@ Ed-Flix : An E-Learning Hub
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
            
             <!-- SEARCHBAR -->
-            <form class="form-inline my-2 my-lg-0 ml-auto" method="post">
-            {% csrf_token %}
-                <input class="form-control mr-sm-2 search-input" type="search" placeholder="Search">
+            <form class="form-inline my-2 my-lg-0 ml-auto" method="get" action="{% url 'search' %}">
+                <input class="form-control mr-sm-2 search-input" type="search" placeholder="Search" name="query">
                 <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
                 
             </form>

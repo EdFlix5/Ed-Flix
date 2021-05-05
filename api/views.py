@@ -10,7 +10,9 @@ from django.contrib.auth import get_user_model
 from .converter import longToSizeString
 import pytesseract
 import pdf2image
-import re
+import re,json
+
+ 
 
 def processPdf(pdf_path, lang_code):
     print(pdf_path)
@@ -109,6 +111,7 @@ def upload_file(request):
         file = request.FILES['file']
         fs = FileSystemStorage("static/contents")
         file.name = file.name.replace(" ","_")
+        file.name = file.name.replace("&","_and_")
         filename = fs.save(file.name, file)
         uploaded_file_url = fs.url(filename)
         title = request.POST.get('title')
@@ -133,6 +136,30 @@ def upload_file(request):
     return JsonResponse(reply)
 
 
+
+
+def advancedSearch(request):
+
+    query = request.GET.get("query")
+    files = []
+    if query is not None:
+        query_lower = query.lower()
+        for obj in FileUpload.objects.all():
+            if obj.title.lower().find(query_lower) != -1 or obj.subtitle.lower().find(query_lower) != -1 or obj.author.lower().find(query_lower) != -1 or obj.file_text.lower().find(query_lower) != -1:
+                files.append(obj)
+    jsonString = "["
+    for file in files:
+        jsonString += file.toStr().replace("'","\"")+","
+    print(jsonString[-1])
+    if jsonString[-1] == ',':
+        jsonString = jsonString[:-1]
+    jsonString += "]"
+
+
+    return HttpResponse(jsonString)
+
+
+
 def allDocs(request):
     res = []
     for obj in FileUpload.objects.all():
@@ -145,3 +172,12 @@ def allVisit(request):
     for obj in DocViews.objects.all():
         res.append(str(obj.id) + "\t| " + obj.username + "\t| " + str(obj.visit_id) + "<br><br><br><br>" )
     return HttpResponse(res)
+
+def clear(request):
+    for obj in DocViews.objects.all():
+        obj.delete()
+    for obj in FileUpload.objects.all():
+        obj.delete()
+    return HttpResponse("Success")
+
+
