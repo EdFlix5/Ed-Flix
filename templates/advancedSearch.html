@@ -78,7 +78,9 @@
     </p>
   </footer>
 </main>
-
 {% endblock content-ex %} {% block js %}
-<script src="{% static 'js/advancedSearch.js' %}" defer></script>
+<script>
+  var q = "{{query}}";
+</script>
+ <script src="{% static 'js/advancedSearch.js' %}" defer></script>
 {% endblock js %}

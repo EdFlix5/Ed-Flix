@@ -7,21 +7,22 @@ var cards = [];
 var prev = "";
 
 checkBox.addEventListener("click", () => {
-  checkBox.checked
-    ? (label.innerHTML = "Advanced Search")
-    : (label.innerHTML = "Advanced Search");
 
-  if (checkBox.checked == true) {
-    query = "query=" + $("#adv-search-check").val();
-    $.ajax({
-      type: "GET",
-      url: "/api/advancedSearch",
-      data: query, // serializes the form's elements.
-      success: function (data) {
-        data = JSON.parse(data);
-        cards = [];
-        for (let i = 0; i < data.length; i++) {
-          var card = ` <div class="card advanced">
+    checkBox.checked ?
+        (label.innerHTML = "Advanced Search") :
+        (label.innerHTML = "Advanced Search");
+    if (checkBox.checked == true) {
+        query = "query=" + q;
+        console.log(query);
+        $.ajax({
+            type: "GET",
+            url: "/api/advancedSearch",
+            data: query, // serializes the form's elements.
+            success: function(data) {
+                data = JSON.parse(data);
+                cards = []
+                for (let i = 0; i < data.length; i++) {
+                    var card = ` <div class="card advanced">
                     <div class="image-container">
                       <div class="subject-name">
                         <h2>${data[i].title}</h2>
