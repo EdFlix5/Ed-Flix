@@ -11,7 +11,8 @@ checkBox.addEventListener("click", () => {
         (label.innerHTML = "Advanced Search");
 
     if (checkBox.checked == true) {
-        query = "query=" + $('#adv-search-check').val();
+        query = "query=" + q;
+        console.log(query);
         $.ajax({
             type: "GET",
             url: "/api/advancedSearch",

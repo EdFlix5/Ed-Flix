@@ -95,5 +95,8 @@ Search
 {% endblock content-ex %}
 
 {% block js %}
+<script>
+  var q = "{{query}}";
+</script>
  <script src="{% static 'js/advancedSearch.js' %}" defer></script>
 {% endblock js %}
