@@ -1,100 +1,84 @@
-{% extends 'base_with_navbar.html' %}
+{% extends 'base_with_navbar.html' %} {% load static %} {% block title %} Search
+{% endblock title %} {% block css-ex %}
 
-{% load static %}
-
-{% block title %}
-Search
-{% endblock title %}
-
-
-
-{% block css-ex %}
-
- <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css
     "
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="{% static 'css/advancedSearch.css' %}" />
-   
+/>
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<link rel="stylesheet" href="{% static 'css/advancedSearch.css' %}" />
 
-{% endblock css-ex %}
-
-{% block content-ex %}
+{% endblock css-ex %} {% block content-ex %}
 
 <main class="main">
-      <section class="hero">
-        <div class="hero-content">
-          <h1>Search for Query</h1>
-          <h2>"{{query}}"</h2>
-          <!-- <input type="checkbox" id="adv-search-check" />
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Search for Query</h1>
+      <h2>"{{query}}"</h2>
+      <!-- <input type="checkbox" id="adv-search-check" />
           <label for="adv-search-check">Enable Advanced Search</label> -->
-          <div class="pretty p-switch p-fill check-container">
-            <input type="checkbox" id="adv-search-check" />
-            <div class="state">
-              <label for="adv-search-check" class="adv-search-label"
-                ><span>Advanced Search</span></label
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="notes-section">
-        <div class="subject-container">
-
-          {% for file in files %}
-
-           <div class="card">
-              <div class="image-container">
-                <div class="subject-name">
-                  <h2>{{file.title}}</h2>
-                  <h5>{{file.subtitle}}</h5>
-                  <a href="{% url 'contentView' %}?id={{file.id}}"><span class="read">READ NOW</span></a>
-                </div>
-                <div class="subject-short">{{file.subject_code}}</div>
-              </div>
-              <div class="author">
-                <p>
-                  Author:
-                  <span class="author-name">{{file.author}}</span> |
-                  <span class="author-duration">size: {{file.file_size}}</span>
-                </p>
-              </div>
-            </div>
-          
-          {% endfor %}
-         
-         
-        </div>
-      </section>
-      <footer class="footer">
-        <div class="row inner">
-          <copy class="copyright col-12 d-flex justify-content-center">
-            ©copyright
-            <script>
-              document.write(new Date().getFullYear());
-            </script>
-            Team Ed-Flix
-          </copy>
-        </div>
-        <p class="text-center">
-          Website designed and developed by
-          <strong
-            ><a href="https://github.com/EdFlix5" style="color: #ffffff"
-              >Team Ed-Flix</a
-            ></strong
+      <div class="pretty p-switch p-fill check-container">
+        <input type="checkbox" id="adv-search-check" />
+        <div class="state p-success">
+          <label for="adv-search-check" class="adv-search-label"
+            ><span>Advanced Search</span></label
           >
-        </p>
-      </footer>
-    </main>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="notes-section">
+    <div class="subject-container">
+      {% for file in files %}
 
-{% endblock content-ex %}
+      <div class="card">
+        <div class="image-container">
+          <div class="subject-name">
+            <h2>{{file.title}}</h2>
+            <h5>{{file.subtitle}}</h5>
+            <a href="{% url 'contentView' %}?id={{file.id}}"
+              ><span class="read">READ NOW</span></a
+            >
+          </div>
+          <div class="subject-short">{{file.subject_code}}</div>
+        </div>
+        <div class="author">
+          <p>
+            Author:
+            <span class="author-name">{{file.author}}</span> |
+            <span class="author-duration">size: {{file.file_size}}</span>
+          </p>
+        </div>
+      </div>
 
-{% block js %}
+      {% endfor %}
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="row inner">
+      <copy class="copyright col-12 d-flex justify-content-center">
+        ©copyright
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Team Ed-Flix
+      </copy>
+    </div>
+    <p class="text-center">
+      Website designed and developed by
+      <strong
+        ><a href="https://github.com/EdFlix5" style="color: #ffffff"
+          >Team Ed-Flix</a
+        ></strong
+      >
+    </p>
+  </footer>
+</main>
+{% endblock content-ex %} {% block js %}
 <script>
   var q = "{{query}}";
 </script>

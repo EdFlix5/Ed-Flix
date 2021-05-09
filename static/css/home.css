@@ -41,6 +41,7 @@
 
 body {
   font-size: 0.9rem;
+  overflow-x: hidden;
 }
 
 .page-wrapper .sidebar-wrapper,

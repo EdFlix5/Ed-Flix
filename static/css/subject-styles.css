@@ -446,6 +446,15 @@ footer {
   font-size: 11px;
 }
 
+.footer {
+  background-color: #4c458b;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 1.2rem !important;
+  padding: 50px;
+}
+
 footer .inner {
   display: flex;
 }
@@ -828,9 +837,9 @@ body {
 
 @media (max-width: 500px) {
   .hero-content h1 {
-    font-size: 1.3rem !important;
+    font-size: 1.8rem !important;
   }
   .hero-content h2 {
-    font-size: 1rem !important;
+    font-size: 1.2rem !important;
   }
 }

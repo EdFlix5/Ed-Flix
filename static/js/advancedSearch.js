@@ -1,15 +1,16 @@
 const checkBox = document.querySelector("#adv-search-check");
 const label = document.querySelector(".adv-search-label span");
+// document.body.style.overflowX = "hidden";
 
-var cards = []
+var cards = [];
 
-var prev = ""
+var prev = "";
 
 checkBox.addEventListener("click", () => {
+
     checkBox.checked ?
         (label.innerHTML = "Advanced Search") :
         (label.innerHTML = "Advanced Search");
-
     if (checkBox.checked == true) {
         query = "query=" + q;
         console.log(query);
@@ -38,19 +39,15 @@ checkBox.addEventListener("click", () => {
                       </p>
                     </div>
                   </div>`;
-                    cards.push(card);
-                }
+          cards.push(card);
+        }
 
-                prev = $('.subject-container').html();
-                $('.subject-container').html(cards);
-
-            }
-
-
-
-        });
-    } else {
-        $('.advanced').remove();
-        $('.subject-container').html(prev);
-    }
+        prev = $(".subject-container").html();
+        $(".subject-container").html(cards);
+      },
+    });
+  } else {
+    $(".advanced").remove();
+    $(".subject-container").html(prev);
+  }
 });
