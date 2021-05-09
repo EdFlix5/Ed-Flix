@@ -15,6 +15,13 @@ body {
   scrollbar-color: transparent transparent;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
 h1 {
   color: #4c458b;
   font-weight: 600;
