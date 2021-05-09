@@ -99,15 +99,16 @@ leftArrow1.addEventListener("click", onLeftClick1);
 rightArrow2.addEventListener("click", onRightClick2);
 leftArrow2.addEventListener("click", onLeftClick2);
 
-if ($(window).innerHeight() > $(".footer").offset().top) {
-  var offset = $(window).innerHeight() - $(".footer").outerHeight();
-  $(".footer").css(
-    "margin-top",
-    parseInt($(".footer").css("marginTop"), 10) +
-      offset -
-      $(".footer ").offset().top
-  );
-}
+// Not needed
+// if ($(window).innerHeight() > $(".footer").offset().top) {
+//   var offset = $(window).innerHeight() - $(".footer").outerHeight();
+//   $(".footer").css(
+//     "margin-top",
+//     parseInt($(".footer").css("marginTop"), 10) +
+//       offset -
+//       $(".footer ").offset().top
+//   );
+// }
 
 if (document.querySelectorAll(".card-recently_visited").length !== 0) {
   const mostRecentCardNumber =

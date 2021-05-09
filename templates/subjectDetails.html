@@ -10,18 +10,16 @@
   }
 </style>
 {% endblock css-ex %} {% block content-ex %}
+<main class="main">
+  <div class="menu-bar">
+    <ul class="navbar-list">
+      <a href="#notes-section"><li class="navbar-item">NOTES</li></a>
+      <a href="#pyq-section"><li class="navbar-item">PYQ</li></a>
+      <a href="#gate-section"><li class="navbar-item">GATE PYQ</li></a>
+    </ul>
+  </div>
 
-<div class="menu-bar">
-  <ul class="navbar-list">
-    <a href="#"><li class="navbar-item">NOTES</li></a>
-    <a href="#pyq-section"><li class="navbar-item">PYQ</li></a>
-    <a href="#gate-section"><li class="navbar-item">GATE PYQ</li></a>
-  </ul>
-</div>
-
-
-
-{% if notes %}
+  {% if notes %}
 
   <div class="notes"><h1>NOTES</h1></div>
 
@@ -29,130 +27,119 @@
     <div class="subject-container">
       {% for note in notes %}
 
-         <div class="card">
-          <div class="image-container">
-            <div class="subject-name">
-              <h2>{{note.title}}</h2>
-              <h5>{{note.subtitle}}</h5>
-              <a href="{% url 'contentView' %}?id={{note.id}}"
-                ><span class="read">READ NOW</span></a
-              >
-            </div>
-            <div class="subject-short">{{note.subject_code}}</div>
+      <div class="card">
+        <div class="image-container">
+          <div class="subject-name">
+            <h2>{{note.title}}</h2>
+            <h5>{{note.subtitle}}</h5>
+            <a href="{% url 'contentView' %}?id={{note.id}}"
+              ><span class="read">READ NOW</span></a
+            >
           </div>
-          <div class="author">
-            <p>
-              Author:
-              <span class="author-name">{{note.author}}</span> |
-              <span class="author-duration">size: {{note.file_size}}</span>
-            </p>
-          </div>
+          <div class="subject-short">{{note.subject_code}}</div>
         </div>
-      
+        <div class="author">
+          <p>
+            Author:
+            <span class="author-name">{{note.author}}</span> |
+            <span class="author-duration">size: {{note.file_size}}</span>
+          </p>
+        </div>
+      </div>
+
       {% endfor %}
     </div>
   </section>
   <hr />
 
-{% endif %}
+  {% endif %} {% if pyqs %}
 
+  <div class="notes"><h1>PYQ</h1></div>
 
-{% if pyqs %}
+  <section id="pyq-section">
+    <div class="subject-container">
+      {% for pyq in pyqs %}
 
-        <div class="notes"><h1>PYQ</h1></div>
-
-        <section id="pyq-section">
-          <div class="subject-container">
-
-            {% for pyq in pyqs %}
-
-                 <div class="card">
-                  <div class="image-container">
-                    <div class="subject-name">
-                      <h2>{{pyq.title}}</h2>
-                      <h5>{{pyq.subtitle}}</h5>
-                      <a href="{% url 'contentView' %}?id={{pyq.id}}"
-                        ><span class="read">READ NOW</span></a
-                      >
-                    </div>
-                    <div class="subject-short">{{pyq.subject_code}}</div>
-                  </div>
-                  <div class="author">
-                    <p>
-                      Author:
-                      <span class="author-name">{{pyq.author}}</span> |
-                      <span class="author-duration">size: {{pyq.file_size}}</span>
-                    </p>
-                  </div>
-                </div>
-            
-            {% endfor %}
-          
+      <div class="card">
+        <div class="image-container">
+          <div class="subject-name">
+            <h2>{{pyq.title}}</h2>
+            <h5>{{pyq.subtitle}}</h5>
+            <a href="{% url 'contentView' %}?id={{pyq.id}}"
+              ><span class="read">READ NOW</span></a
+            >
           </div>
-        </section>
-        <hr />
-
-
-{% endif %}
-
-
-{% if gate_pyqs %}
-
-    <div class="notes"><h1>GATE PYQ</h1></div>
-
-    <section id="gate-section">
-      <div class="subject-container">
-         {% for gate_pyq in gate_pyqs %}
-
-           <div class="card">
-              <div class="image-container">
-                <div class="subject-name">
-                  <h2>{{gate_pyq.title}}</h2>
-                  <h5>{{gate_pyq.subtitle}}</h5>
-                  <a href="{% url 'contentView' %}?id={{gate_pyq.id}}"
-                    ><span class="read">READ NOW</span></a
-                  >
-                </div>
-                <div class="subject-short">{{gate_pyq.subject_code}}</div>
-              </div>
-              <div class="author">
-                <p>
-                  Author:
-                  <span class="author-name">{{gate_pyq.author}}</span> |
-                  <span class="author-duration">size: {{gate_pyq.file_size}}</span>
-                </p>
-              </div>
-            </div>
-      
-            
-            {% endfor %}
+          <div class="subject-short">{{pyq.subject_code}}</div>
+        </div>
+        <div class="author">
+          <p>
+            Author:
+            <span class="author-name">{{pyq.author}}</span> |
+            <span class="author-duration">size: {{pyq.file_size}}</span>
+          </p>
+        </div>
       </div>
-    </section>
-    <hr />
 
+      {% endfor %}
+    </div>
+  </section>
+  <hr />
 
-{% endif %}
+  {% endif %} {% if gate_pyqs %}
 
+  <div class="notes"><h1>GATE PYQ</h1></div>
 
-<footer class="footer">
-  <div class="row inner">
-    <copy class="copyright col-12 d-flex justify-content-center">
-      ©copyright
-      <script>
-        document.write(new Date().getFullYear());
-      </script>
-      Team Ed-Flix
-    </copy>
-  </div>
-  <p class="text-center">
-    Website designed and developed by
-    <strong
-      ><a href="https://github.com/EdFlix5" style="color: #ffffff"
-        >Team Ed-Flix</a
-      ></strong
-    >
-  </p>
-</footer>
+  <section id="gate-section">
+    <div class="subject-container">
+      {% for gate_pyq in gate_pyqs %}
+
+      <div class="card">
+        <div class="image-container">
+          <div class="subject-name">
+            <h2>{{gate_pyq.title}}</h2>
+            <h5>{{gate_pyq.subtitle}}</h5>
+            <a href="{% url 'contentView' %}?id={{gate_pyq.id}}"
+              ><span class="read">READ NOW</span></a
+            >
+          </div>
+          <div class="subject-short">{{gate_pyq.subject_code}}</div>
+        </div>
+        <div class="author">
+          <p>
+            Author:
+            <span class="author-name">{{gate_pyq.author}}</span> |
+            <span class="author-duration">size: {{gate_pyq.file_size}}</span>
+          </p>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </section>
+  <hr />
+
+  {% endif %}
+
+  <footer class="footer">
+    <div class="row inner">
+      <copy class="copyright col-12 d-flex justify-content-center">
+        ©copyright
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Team Ed-Flix
+      </copy>
+    </div>
+    <p class="text-center">
+      Website designed and developed by
+      <strong
+        ><a href="https://github.com/EdFlix5" style="color: #ffffff"
+          >Team Ed-Flix</a
+        ></strong
+      >
+    </p>
+  </footer>
+</main>
 
 {% endblock content-ex %} {% block js %}
 <script src="{% static 'js/subjectDetails.js' %}" defer></script>

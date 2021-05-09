@@ -1,26 +1,27 @@
 const checkBox = document.querySelector("#adv-search-check");
 const label = document.querySelector(".adv-search-label span");
+// document.body.style.overflowX = "hidden";
 
-var cards = []
+var cards = [];
 
-var prev = ""
+var prev = "";
 
 checkBox.addEventListener("click", () => {
-    checkBox.checked ?
-        (label.innerHTML = "Advanced Search") :
-        (label.innerHTML = "Advanced Search");
+  checkBox.checked
+    ? (label.innerHTML = "Advanced Search")
+    : (label.innerHTML = "Advanced Search");
 
-    if (checkBox.checked == true) {
-        query = "query=" + $('#adv-search-check').val();
-        $.ajax({
-            type: "GET",
-            url: "/api/advancedSearch",
-            data: query, // serializes the form's elements.
-            success: function(data) {
-                data = JSON.parse(data);
-                cards = []
-                for (let i = 0; i < data.length; i++) {
-                    var card = ` <div class="card advanced">
+  if (checkBox.checked == true) {
+    query = "query=" + $("#adv-search-check").val();
+    $.ajax({
+      type: "GET",
+      url: "/api/advancedSearch",
+      data: query, // serializes the form's elements.
+      success: function (data) {
+        data = JSON.parse(data);
+        cards = [];
+        for (let i = 0; i < data.length; i++) {
+          var card = ` <div class="card advanced">
                     <div class="image-container">
                       <div class="subject-name">
                         <h2>${data[i].title}</h2>
@@ -37,19 +38,15 @@ checkBox.addEventListener("click", () => {
                       </p>
                     </div>
                   </div>`;
-                    cards.push(card);
-                }
+          cards.push(card);
+        }
 
-                prev = $('.subject-container').html();
-                $('.subject-container').html(cards);
-
-            }
-
-
-
-        });
-    } else {
-        $('.advanced').remove();
-        $('.subject-container').html(prev);
-    }
+        prev = $(".subject-container").html();
+        $(".subject-container").html(cards);
+      },
+    });
+  } else {
+    $(".advanced").remove();
+    $(".subject-container").html(prev);
+  }
 });
