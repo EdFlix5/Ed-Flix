@@ -88,7 +88,7 @@ const onLeftClick2 = function () {
   if (oldPositionMostViewed < 0) {
     oldPositionMostViewed += 40;
   }
-  cardsRecentlyVisited.forEach((c, i) => {
+  cardsMostVisited.forEach((c, i) => {
     c.style.transform = `translateX(${oldPositionMostViewed}vw)`;
   });
   // console.log("clickedLeft", oldPositionMostViewed);
@@ -114,6 +114,7 @@ if (document.querySelectorAll(".card-recently_visited").length !== 0) {
   const mostRecentCardNumber =
     document.querySelectorAll(".card-recently_visited") &&
     document.querySelectorAll(".card-recently_visited").length;
+  console.log(mostRecentCardNumber);
   const mostRecentTotalWidth = (mostRecentCardNumber + 1) * singleCardWidth;
 
   document.querySelector(
@@ -146,7 +147,7 @@ if (document.querySelectorAll(".card-recently_visited").length !== 0) {
     if (oldPositionRecent < 0) {
       oldPositionRecent += 40;
     }
-    cardsMostVisited.forEach((c, i) => {
+    cardsRecentlyVisited.forEach((c, i) => {
       c.style.transform = `translateX(${oldPositionRecent}vw)`;
     });
     // console.log("clickedLeft", oldPositionMostViewed);
