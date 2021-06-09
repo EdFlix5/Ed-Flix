@@ -5,8 +5,8 @@ const recommendCardNumber = document.querySelectorAll(".card-recommend").length;
 const recommendTotalWidth = (recommendCardNumber + 1) * singleCardWidth;
 document.querySelector(".recommend").style.width = `${recommendTotalWidth}px`;
 
-const mostViewedCardNumber = document.querySelectorAll(".card-mostvisited")
-  .length;
+const mostViewedCardNumber =
+  document.querySelectorAll(".card-mostvisited").length;
 const mostViewedTotalWidth = (mostViewedCardNumber + 1) * singleCardWidth;
 document.querySelector(
   ".most-viewed"
@@ -114,7 +114,6 @@ if (document.querySelectorAll(".card-recently_visited").length !== 0) {
   const mostRecentCardNumber =
     document.querySelectorAll(".card-recently_visited") &&
     document.querySelectorAll(".card-recently_visited").length;
-  console.log(mostRecentCardNumber);
   const mostRecentTotalWidth = (mostRecentCardNumber + 1) * singleCardWidth;
 
   document.querySelector(
