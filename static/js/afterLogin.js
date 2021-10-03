@@ -5,8 +5,8 @@ const recommendCardNumber = document.querySelectorAll(".card-recommend").length;
 const recommendTotalWidth = (recommendCardNumber + 1) * singleCardWidth;
 document.querySelector(".recommend").style.width = `${recommendTotalWidth}px`;
 
-const mostViewedCardNumber = document.querySelectorAll(".card-mostvisited")
-  .length;
+const mostViewedCardNumber =
+  document.querySelectorAll(".card-mostvisited").length;
 const mostViewedTotalWidth = (mostViewedCardNumber + 1) * singleCardWidth;
 document.querySelector(
   ".most-viewed"
@@ -88,7 +88,7 @@ const onLeftClick2 = function () {
   if (oldPositionMostViewed < 0) {
     oldPositionMostViewed += 40;
   }
-  cardsRecentlyVisited.forEach((c, i) => {
+  cardsMostVisited.forEach((c, i) => {
     c.style.transform = `translateX(${oldPositionMostViewed}vw)`;
   });
   // console.log("clickedLeft", oldPositionMostViewed);
@@ -146,7 +146,7 @@ if (document.querySelectorAll(".card-recently_visited").length !== 0) {
     if (oldPositionRecent < 0) {
       oldPositionRecent += 40;
     }
-    cardsMostVisited.forEach((c, i) => {
+    cardsRecentlyVisited.forEach((c, i) => {
       c.style.transform = `translateX(${oldPositionRecent}vw)`;
     });
     // console.log("clickedLeft", oldPositionMostViewed);

@@ -14,6 +14,6 @@ links.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     const id = this.getAttribute("href");
-    id.scrollIntoView({ behavior: "smooth" });
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   });
 });
