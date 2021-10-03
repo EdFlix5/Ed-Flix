@@ -1,7 +1,7 @@
 # Ed-Flix
   An E-Learning Hub
   
-  Ed-Flix provides a free platform to the students, teachers and learning enthusiasts to gain and provides undefined knowledge for various puposes.
+  Ed-Flix provides a free platform to the students, teachers and learning enthusiasts to gain and provides undefined knowledge for various purposes.
   
   ### Team Ed-Flix
    1. [Abhinab Kumar Nayak](https://github.com/Abhi-nab)
